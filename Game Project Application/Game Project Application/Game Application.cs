@@ -55,7 +55,7 @@ namespace Game_Project_Application
             {
 
             }
-            else if()
+            /*else if()
             {
                 
             }
@@ -63,8 +63,8 @@ namespace Game_Project_Application
             {
 
             }
-
-            Game g = new Game(title, genre, price, isUsed);
+            */
+            //Game g = new Game(title, genre, price, isUsed);
         }
     }
 }
