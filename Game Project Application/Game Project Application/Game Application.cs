@@ -16,5 +16,55 @@ namespace Game_Project_Application
         {
             InitializeComponent();
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string title;
+            string genre;
+            double price;
+            bool isUsed;
+
+            if(uxTitle.Text == "")
+            {
+                title = "*";
+            }
+            else
+            {
+                title = uxTitle.Text;
+            }
+
+            if (uxGenre.Text == "")
+            {
+                genre = "*";
+            }
+            else
+            {
+                genre = uxGenre.Text;
+            }
+
+            if (uxPrice.Text == "")
+            {
+                title = "*";
+            }
+            else
+            {
+                title = uxTitle.Text;
+            }
+
+            if(uxUsed.Checked == false  && uxNew.Checked == false)
+            {
+
+            }
+            else if()
+            {
+                
+            }
+            else
+            {
+
+            }
+
+            Game g = new Game(title, genre, price, isUsed);
+        }
     }
 }
