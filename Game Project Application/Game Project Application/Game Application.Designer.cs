@@ -43,6 +43,8 @@
             this.btnAddToReceipt = new System.Windows.Forms.Button();
             this.uxStoreId = new System.Windows.Forms.TextBox();
             this.uxStoreIdLabel = new System.Windows.Forms.Label();
+            this.uxReceipt = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxTitleLabel
@@ -154,7 +156,7 @@
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(18, 299);
+            this.btnFind.Location = new System.Drawing.Point(18, 300);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(84, 34);
             this.btnFind.TabIndex = 12;
@@ -189,11 +191,32 @@
             this.uxStoreIdLabel.TabIndex = 14;
             this.uxStoreIdLabel.Text = "StoreId:";
             // 
+            // uxReceipt
+            // 
+            this.uxReceipt.FormattingEnabled = true;
+            this.uxReceipt.ItemHeight = 16;
+            this.uxReceipt.Location = new System.Drawing.Point(18, 350);
+            this.uxReceipt.Name = "uxReceipt";
+            this.uxReceipt.Size = new System.Drawing.Size(576, 148);
+            this.uxReceipt.TabIndex = 16;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Location = new System.Drawing.Point(349, 299);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(245, 34);
+            this.btnRemove.TabIndex = 17;
+            this.btnRemove.Text = "Remove from Receipt";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
             // uxStoreApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 522);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.uxReceipt);
             this.Controls.Add(this.uxStoreId);
             this.Controls.Add(this.uxStoreIdLabel);
             this.Controls.Add(this.btnAddToReceipt);
@@ -233,6 +256,8 @@
         private System.Windows.Forms.Button btnAddToReceipt;
         private System.Windows.Forms.TextBox uxStoreId;
         private System.Windows.Forms.Label uxStoreIdLabel;
+        private System.Windows.Forms.ListBox uxReceipt;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 
