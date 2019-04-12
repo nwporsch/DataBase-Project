@@ -8,7 +8,9 @@ BEGIN
    );
 END;
 
---Unique constraints
+/**************************
+Unique constraints
+***************************/
 
 IF NOT EXISTS
    (
