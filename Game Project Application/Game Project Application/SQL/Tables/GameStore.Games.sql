@@ -1,0 +1,7 @@
+﻿IF OBJECT_ID(N'GameStore.Games') IS NULL
+BEGIN
+   CREATE TABLE GameStore.Games
+   (
+      GameId INT NOT NULL IDENTITY(1,1) PRIMARY KEY
+   );
+END;

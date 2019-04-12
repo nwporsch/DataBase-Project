@@ -92,7 +92,6 @@
   <ItemGroup>
     <Folder Include="Documentation\" />
     <Folder Include="SQL\Procedures\" />
-    <Folder Include="SQL\Tables\" />
   </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -107,6 +106,21 @@
       <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\Schema\GameStore.sql" />
+    <Content Include="SQL\Tables\DropTables.sql" />
+    <Content Include="SQL\Tables\GameStore.Customers.sql" />
+    <Content Include="SQL\Tables\GameStore.Employees.sql" />
+    <Content Include="SQL\Tables\GameStore.GameGenre.sql" />
+    <Content Include="SQL\Tables\GameStore.GamePlatform.sql" />
+    <Content Include="SQL\Tables\GameStore.Games.sql" />
+    <Content Include="SQL\Tables\GameStore.Genre.sql" />
+    <Content Include="SQL\Tables\GameStore.Hours.sql" />
+    <Content Include="SQL\Tables\GameStore.OrderLines.sql" />
+    <Content Include="SQL\Tables\GameStore.Orders.sql" />
+    <Content Include="SQL\Tables\GameStore.Platforms.sql" />
+    <Content Include="SQL\Tables\GameStore.Stores.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

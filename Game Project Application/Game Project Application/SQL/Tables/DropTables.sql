@@ -1,0 +1,11 @@
+﻿DROP TABLE IF EXISTS GameStore.Games;
+DROP TABLE IF EXISTS GameStore.Stores;
+DROP TABLE IF EXISTS GameStore.Orders;
+DROP TABLE IF EXISTS GameStore.OrderLines;
+DROP TABLE IF EXISTS GameStore.Customers;
+DROP TABLE IF EXISTS GameStore.Employeess;
+DROP TABLE IF EXISTS GameStore.Genres;
+DROP TABLE IF EXISTS GameStore.Platforms;
+DROP TABLE IF EXISTS GameStore.GameGenres;
+DROP TABLE IF EXISTS GameStore.GamePlatforms;
+DROP TABLE IF EXISTS GameStore.Hours;
