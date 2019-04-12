@@ -21,8 +21,8 @@ namespace Game_Project_Application
         {
             string title;
             string genre;
-            double price;
-            bool isUsed;
+            string priceRange;
+            string condition;
 
             if(uxTitle.Text == "")
             {
@@ -42,29 +42,25 @@ namespace Game_Project_Application
                 genre = uxGenre.Text;
             }
 
-            if (uxPrice.Text == "")
+            if (uxPriceRange.Text == "")
             {
-                title = "*";
+                priceRange = "*";
             }
             else
             {
-                title = uxTitle.Text;
+                priceRange = uxPriceRange.Text;
             }
 
-            if(uxUsed.Checked == false  && uxNew.Checked == false)
+            if(uxCondition.Text == " ")
             {
-
-            }
-            /*else if()
-            {
-                
+                condition = "*";
             }
             else
             {
-
+                condition = uxCondition.Text;
             }
-            */
-            //Game g = new Game(title, genre, price, isUsed);
+
+            Game g = new Game(title, genre, priceRange, condition);
         }
     }
 }

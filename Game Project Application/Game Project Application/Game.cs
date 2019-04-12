@@ -10,12 +10,12 @@ namespace Game_Project_Application
     {
         private string title;
         private string genre;
-        private double price;
-        private bool isUsed;
+        private string price;
+        private string isUsed;
 
 
 
-        public Game(string title, string genre, double price, bool isUsed)
+        public Game(string title, string genre, string price, string isUsed)
         {
             this.title = title;
             this.genre = genre;

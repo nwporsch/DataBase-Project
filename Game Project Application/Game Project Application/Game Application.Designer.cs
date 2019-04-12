@@ -36,15 +36,14 @@
             this.uxTitle = new System.Windows.Forms.TextBox();
             this.uxGenre = new System.Windows.Forms.TextBox();
             this.uxPlatform = new System.Windows.Forms.TextBox();
-            this.uxPrice = new System.Windows.Forms.TextBox();
-            this.uxUsed = new System.Windows.Forms.RadioButton();
-            this.uxNew = new System.Windows.Forms.RadioButton();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnAddToReceipt = new System.Windows.Forms.Button();
             this.uxStoreId = new System.Windows.Forms.TextBox();
             this.uxStoreIdLabel = new System.Windows.Forms.Label();
             this.uxReceipt = new System.Windows.Forms.ListBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.uxPriceRange = new System.Windows.Forms.ComboBox();
+            this.uxCondition = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // uxTitleLabel
@@ -108,7 +107,7 @@
             // uxGenre
             // 
             this.uxGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxGenre.Location = new System.Drawing.Point(124, 53);
+            this.uxGenre.Location = new System.Drawing.Point(124, 62);
             this.uxGenre.Name = "uxGenre";
             this.uxGenre.Size = new System.Drawing.Size(470, 30);
             this.uxGenre.TabIndex = 7;
@@ -120,38 +119,6 @@
             this.uxPlatform.Name = "uxPlatform";
             this.uxPlatform.Size = new System.Drawing.Size(470, 30);
             this.uxPlatform.TabIndex = 8;
-            // 
-            // uxPrice
-            // 
-            this.uxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPrice.Location = new System.Drawing.Point(124, 161);
-            this.uxPrice.Name = "uxPrice";
-            this.uxPrice.Size = new System.Drawing.Size(470, 30);
-            this.uxPrice.TabIndex = 9;
-            // 
-            // uxUsed
-            // 
-            this.uxUsed.AutoSize = true;
-            this.uxUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxUsed.Location = new System.Drawing.Point(124, 265);
-            this.uxUsed.Name = "uxUsed";
-            this.uxUsed.Size = new System.Drawing.Size(79, 29);
-            this.uxUsed.TabIndex = 10;
-            this.uxUsed.TabStop = true;
-            this.uxUsed.Text = "Used";
-            this.uxUsed.UseVisualStyleBackColor = true;
-            // 
-            // uxNew
-            // 
-            this.uxNew.AutoSize = true;
-            this.uxNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxNew.Location = new System.Drawing.Point(209, 265);
-            this.uxNew.Name = "uxNew";
-            this.uxNew.Size = new System.Drawing.Size(72, 29);
-            this.uxNew.TabIndex = 11;
-            this.uxNew.TabStop = true;
-            this.uxNew.Text = "New";
-            this.uxNew.UseVisualStyleBackColor = true;
             // 
             // btnFind
             // 
@@ -211,20 +178,52 @@
             this.btnRemove.Text = "Remove from Receipt";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
+            // uxPriceRange
+            // 
+            this.uxPriceRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxPriceRange.FormattingEnabled = true;
+            this.uxPriceRange.Items.AddRange(new object[] {
+            " ",
+            "$0 - $9.99",
+            "$10 - $19.99",
+            "$20 - $29.99",
+            "$30 - $39.99",
+            "$40 - $49.99",
+            "$50 - $59.99",
+            "$60 - $69.99",
+            "$70 - $79.99",
+            "Above $80"});
+            this.uxPriceRange.Location = new System.Drawing.Point(124, 158);
+            this.uxPriceRange.Name = "uxPriceRange";
+            this.uxPriceRange.Size = new System.Drawing.Size(470, 33);
+            this.uxPriceRange.TabIndex = 18;
+            // 
+            // uxCondition
+            // 
+            this.uxCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxCondition.FormattingEnabled = true;
+            this.uxCondition.Items.AddRange(new object[] {
+            " ",
+            "New",
+            "Used"});
+            this.uxCondition.Location = new System.Drawing.Point(124, 253);
+            this.uxCondition.Name = "uxCondition";
+            this.uxCondition.Size = new System.Drawing.Size(470, 33);
+            this.uxCondition.TabIndex = 19;
+            // 
             // uxStoreApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 522);
+            this.Controls.Add(this.uxCondition);
+            this.Controls.Add(this.uxPriceRange);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.uxReceipt);
             this.Controls.Add(this.uxStoreId);
             this.Controls.Add(this.uxStoreIdLabel);
             this.Controls.Add(this.btnAddToReceipt);
             this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.uxNew);
-            this.Controls.Add(this.uxUsed);
-            this.Controls.Add(this.uxPrice);
             this.Controls.Add(this.uxPlatform);
             this.Controls.Add(this.uxGenre);
             this.Controls.Add(this.uxTitle);
@@ -250,15 +249,14 @@
         private System.Windows.Forms.TextBox uxTitle;
         private System.Windows.Forms.TextBox uxGenre;
         private System.Windows.Forms.TextBox uxPlatform;
-        private System.Windows.Forms.TextBox uxPrice;
-        private System.Windows.Forms.RadioButton uxUsed;
-        private System.Windows.Forms.RadioButton uxNew;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnAddToReceipt;
         private System.Windows.Forms.TextBox uxStoreId;
         private System.Windows.Forms.Label uxStoreIdLabel;
         private System.Windows.Forms.ListBox uxReceipt;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.ComboBox uxPriceRange;
+        private System.Windows.Forms.ComboBox uxCondition;
     }
 }
 
