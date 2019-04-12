@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
-    public partial class Form1 : Form
+    public partial class uxStoreApplication : Form
     {
-        public Form1()
+        public uxStoreApplication()
         {
             InitializeComponent();
         }
