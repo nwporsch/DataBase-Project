@@ -2,7 +2,7 @@
 BEGIN
    CREATE TABLE GameStore.Genre
    (
-      GenreId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	  GenreName NVARCHAR(64)
+      GenreId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	  GenreName NVARCHAR(64) UNIQUE NOT NULL
    );
 END;

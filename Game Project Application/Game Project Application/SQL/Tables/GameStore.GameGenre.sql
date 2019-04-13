@@ -2,7 +2,9 @@
 BEGIN
    CREATE TABLE GameStore.GameGenre
    (
-      GameId INT NOT NULL,
-	  GenreId INT NOT NULL
+      GameId INT FOREIGN KEY REFERENCES GameStore.Games(GameId )NOT NULL,
+	  GenreId INT FOREIGN KEY REFERENCES GameStore.Genres(GenreId) NOT NULL
+
+	  PRIMARY KEY(GameId, GenreId)
    );
 END;

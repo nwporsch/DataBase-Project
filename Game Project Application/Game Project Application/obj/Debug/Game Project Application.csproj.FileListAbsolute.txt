@@ -32,3 +32,15 @@ C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project A
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe.config
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.pdb
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.Data.Tools.Components.dll
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.uxStoreApplication.resources
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.GenerateResource.cache
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CoreCompileInputs.cache
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
+C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb

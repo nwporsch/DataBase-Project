@@ -2,8 +2,8 @@
 BEGIN
    CREATE TABLE GameStore.Orders
    (
-      OrderId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	  CustomerId INT NOT NULL,
+      OrderId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	  CustomerId INT FOREIGN KEY REFERENCES GameStore.Customers(CustomerId) NOT NULL,
 	  DatePlaced DATETIMEOFFSET NOT NULL
    );
 END;

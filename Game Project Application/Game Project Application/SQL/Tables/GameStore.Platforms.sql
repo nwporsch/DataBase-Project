@@ -2,7 +2,7 @@
 BEGIN
    CREATE TABLE GameStore.Platform
    (
-      PlatformId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	  PlatformName NVARCHAR(64)
+      PlatformId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	  PlatformName NVARCHAR(64) UNIQUE NOT NULL
    );
 END;
