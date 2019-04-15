@@ -185,7 +185,7 @@
             this.uxPriceRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxPriceRange.FormattingEnabled = true;
             this.uxPriceRange.Items.AddRange(new object[] {
-            " ",
+            "-- Select Price --",
             "$0 - $9.99",
             "$10 - $19.99",
             "$20 - $29.99",
@@ -206,7 +206,7 @@
             this.uxCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxCondition.FormattingEnabled = true;
             this.uxCondition.Items.AddRange(new object[] {
-            " ",
+            "-- Select Condition --",
             "New",
             "Used"});
             this.uxCondition.Location = new System.Drawing.Point(124, 253);
@@ -237,6 +237,7 @@
             this.Controls.Add(this.uxTitleLabel);
             this.Name = "uxStoreApplication";
             this.Text = "Store Application";
+            this.Load += new System.EventHandler(this.uxStoreApplication_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

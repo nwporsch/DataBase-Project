@@ -19,21 +19,19 @@ namespace Game_Project_Application
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            string title;
             string genre;
             string priceRange;
             string condition;
 
             Game g;
-
+            int storeId = Convert.ToInt32(uxStoreId.Text);
 
             if (uxTitle.Text != "")
             {
-                g = new Game(uxTitle.Text, uxCondition.Text);
+                g = new Game(uxTitle.Text.ToLower(), uxCondition.Text, storeId);
             }
             else
             {
-                title = "*";
 
                 if (uxGenre.Text == "")
                 {
@@ -44,7 +42,7 @@ namespace Game_Project_Application
                     genre = uxGenre.Text;
                 }
 
-                if (uxPriceRange.Text == "")
+                if (uxPriceRange.SelectedIndex == 0)
                 {
                     priceRange = "*";
                 }
@@ -53,7 +51,7 @@ namespace Game_Project_Application
                     priceRange = uxPriceRange.Text;
                 }
 
-                if (uxCondition.Text == " ")
+                if (uxCondition.SelectedIndex == 0)
                 {
                     condition = "*";
                 }
@@ -62,7 +60,7 @@ namespace Game_Project_Application
                     condition = uxCondition.Text;
                 }
 
-                g = new Game(title, genre, priceRange, condition);
+                g = new Game(genre, priceRange, condition, storeId);
             }
             
         }
@@ -85,6 +83,12 @@ namespace Game_Project_Application
                 uxPriceRange.Enabled = false;
                 uxPriceRange.SelectedIndex = 0;
             }
+        }
+
+        private void uxStoreApplication_Load(object sender, EventArgs e)
+        {
+            uxPriceRange.SelectedIndex = 0;
+            uxCondition.SelectedIndex = 0;
         }
     }
 }
