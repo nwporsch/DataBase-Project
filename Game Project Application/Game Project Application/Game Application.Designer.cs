@@ -181,6 +181,7 @@
             // 
             // uxPriceRange
             // 
+            this.uxPriceRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uxPriceRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxPriceRange.FormattingEnabled = true;
             this.uxPriceRange.Items.AddRange(new object[] {
@@ -201,6 +202,7 @@
             // 
             // uxCondition
             // 
+            this.uxCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uxCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxCondition.FormattingEnabled = true;
             this.uxCondition.Items.AddRange(new object[] {
