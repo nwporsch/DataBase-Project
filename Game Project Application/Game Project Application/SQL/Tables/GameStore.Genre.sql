@@ -1,6 +1,6 @@
-﻿IF OBJECT_ID(N'GameStore.Genre') IS NULL
+﻿IF OBJECT_ID(N'GameStore.Genres') IS NULL
 BEGIN
-   CREATE TABLE GameStore.Genre
+   CREATE TABLE GameStore.Genres
    (
       GenreId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	  GenreName NVARCHAR(64) UNIQUE NOT NULL
