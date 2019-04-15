@@ -24,43 +24,67 @@ namespace Game_Project_Application
             string priceRange;
             string condition;
 
-            if(uxTitle.Text == "")
+            Game g;
+
+
+            if (uxTitle.Text != "")
+            {
+                g = new Game(uxTitle.Text, uxCondition.Text);
+            }
+            else
             {
                 title = "*";
+
+                if (uxGenre.Text == "")
+                {
+                    genre = "*";
+                }
+                else
+                {
+                    genre = uxGenre.Text;
+                }
+
+                if (uxPriceRange.Text == "")
+                {
+                    priceRange = "*";
+                }
+                else
+                {
+                    priceRange = uxPriceRange.Text;
+                }
+
+                if (uxCondition.Text == " ")
+                {
+                    condition = "*";
+                }
+                else
+                {
+                    condition = uxCondition.Text;
+                }
+
+                g = new Game(title, genre, priceRange, condition);
+            }
+            
+        }
+
+        private void uxTitle_TextChanged(object sender, EventArgs e)
+        {
+            if(uxTitle.Text == "")
+            {
+                uxGenre.Enabled = true;
+                uxPlatform.Enabled = true;
+                uxPriceRange.Enabled = true;
+
             }
             else
             {
-                title = uxTitle.Text;
+                uxGenre.Enabled = false;
+                uxGenre.Text = "";
+                uxPlatform.Enabled = false;
+                uxPlatform.Text = "";
+                uxPriceRange.Enabled = false;
+                uxPriceRange.SelectedIndex = 0;
             }
-
-            if (uxGenre.Text == "")
-            {
-                genre = "*";
-            }
-            else
-            {
-                genre = uxGenre.Text;
-            }
-
-            if (uxPriceRange.Text == "")
-            {
-                priceRange = "*";
-            }
-            else
-            {
-                priceRange = uxPriceRange.Text;
-            }
-
-            if(uxCondition.Text == " ")
-            {
-                condition = "*";
-            }
-            else
-            {
-                condition = uxCondition.Text;
-            }
-
-            Game g = new Game(title, genre, priceRange, condition);
         }
     }
 }

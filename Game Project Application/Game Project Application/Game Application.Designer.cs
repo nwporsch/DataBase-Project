@@ -103,6 +103,7 @@
             this.uxTitle.Name = "uxTitle";
             this.uxTitle.Size = new System.Drawing.Size(470, 30);
             this.uxTitle.TabIndex = 6;
+            this.uxTitle.TextChanged += new System.EventHandler(this.uxTitle_TextChanged);
             // 
             // uxGenre
             // 

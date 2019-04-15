@@ -24,5 +24,13 @@ namespace Game_Project_Application
 
         }
 
+        public Game(string title, string isUsed)
+        {
+            this.title = title;
+            this.isUsed = isUsed;
+            this.genre = "*";
+            this.price = "*";
+        }
+
     }
 }
