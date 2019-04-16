@@ -22,6 +22,14 @@ namespace Game_Project_Application
 
         private void btnFind_Click(object sender, EventArgs e)
         {
+            string connectionString = null;
+            SqlConnection cnn;
+            connectionString = "Data SOurce=mssql.cs.ksu.edu;Initial Catalog=mdlier;Integrated Security=true";
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            MessageBox.Show("connection established");
+            cnn.Close();
+
             string genre;
             string priceRange;
             string condition;
