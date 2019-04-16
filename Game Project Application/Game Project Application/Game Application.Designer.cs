@@ -1,6 +1,6 @@
 ﻿namespace Game_Project_Application
 {
-    partial class uxStoreApplication
+    partial class StoreApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,14 @@
             this.uxGenre = new System.Windows.Forms.TextBox();
             this.uxPlatform = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnAddToReceipt = new System.Windows.Forms.Button();
             this.uxStoreId = new System.Windows.Forms.TextBox();
             this.uxStoreIdLabel = new System.Windows.Forms.Label();
             this.uxReceipt = new System.Windows.Forms.ListBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.uxPriceRange = new System.Windows.Forms.ComboBox();
             this.uxCondition = new System.Windows.Forms.ComboBox();
+            this.btnFinishTransaction = new System.Windows.Forms.Button();
+            this.btnAddToReceipt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxTitleLabel
@@ -132,16 +133,6 @@
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // btnAddToReceipt
-            // 
-            this.btnAddToReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToReceipt.Location = new System.Drawing.Point(124, 300);
-            this.btnAddToReceipt.Name = "btnAddToReceipt";
-            this.btnAddToReceipt.Size = new System.Drawing.Size(204, 34);
-            this.btnAddToReceipt.TabIndex = 13;
-            this.btnAddToReceipt.Text = "Add to Receipt";
-            this.btnAddToReceipt.UseVisualStyleBackColor = true;
-            // 
             // uxStoreId
             // 
             this.uxStoreId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,7 +163,7 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(349, 299);
+            this.btnRemove.Location = new System.Drawing.Point(349, 300);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(245, 34);
             this.btnRemove.TabIndex = 17;
@@ -214,18 +205,39 @@
             this.uxCondition.Size = new System.Drawing.Size(470, 33);
             this.uxCondition.TabIndex = 19;
             // 
-            // uxStoreApplication
+            // btnFinishTransaction
+            // 
+            this.btnFinishTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinishTransaction.Location = new System.Drawing.Point(18, 504);
+            this.btnFinishTransaction.Name = "btnFinishTransaction";
+            this.btnFinishTransaction.Size = new System.Drawing.Size(576, 34);
+            this.btnFinishTransaction.TabIndex = 20;
+            this.btnFinishTransaction.Text = "Finish Transaction";
+            this.btnFinishTransaction.UseVisualStyleBackColor = true;
+            // 
+            // btnAddToReceipt
+            // 
+            this.btnAddToReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToReceipt.Location = new System.Drawing.Point(124, 300);
+            this.btnAddToReceipt.Name = "btnAddToReceipt";
+            this.btnAddToReceipt.Size = new System.Drawing.Size(211, 34);
+            this.btnAddToReceipt.TabIndex = 21;
+            this.btnAddToReceipt.Text = "Add to Receipt";
+            this.btnAddToReceipt.UseVisualStyleBackColor = true;
+            // 
+            // StoreApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 522);
+            this.ClientSize = new System.Drawing.Size(623, 547);
+            this.Controls.Add(this.btnAddToReceipt);
+            this.Controls.Add(this.btnFinishTransaction);
             this.Controls.Add(this.uxCondition);
             this.Controls.Add(this.uxPriceRange);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.uxReceipt);
             this.Controls.Add(this.uxStoreId);
             this.Controls.Add(this.uxStoreIdLabel);
-            this.Controls.Add(this.btnAddToReceipt);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.uxPlatform);
             this.Controls.Add(this.uxGenre);
@@ -235,7 +247,7 @@
             this.Controls.Add(this.uxConditionLabel);
             this.Controls.Add(this.uxGenreLabel);
             this.Controls.Add(this.uxTitleLabel);
-            this.Name = "uxStoreApplication";
+            this.Name = "StoreApplication";
             this.Text = "Store Application";
             this.Load += new System.EventHandler(this.uxStoreApplication_Load);
             this.ResumeLayout(false);
@@ -254,13 +266,14 @@
         private System.Windows.Forms.TextBox uxGenre;
         private System.Windows.Forms.TextBox uxPlatform;
         private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.Button btnAddToReceipt;
         private System.Windows.Forms.TextBox uxStoreId;
         private System.Windows.Forms.Label uxStoreIdLabel;
         private System.Windows.Forms.ListBox uxReceipt;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ComboBox uxPriceRange;
         private System.Windows.Forms.ComboBox uxCondition;
+        private System.Windows.Forms.Button btnFinishTransaction;
+        private System.Windows.Forms.Button btnAddToReceipt;
     }
 }
 

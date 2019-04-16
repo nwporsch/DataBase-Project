@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
-    public partial class uxStoreApplication : Form
+    public partial class StoreApplication : Form
     {
-        public uxStoreApplication()
+
+        private SearchResults searchWindow = new SearchResults();
+
+        public StoreApplication()
         {
             InitializeComponent();
         }
@@ -22,46 +25,59 @@ namespace Game_Project_Application
             string genre;
             string priceRange;
             string condition;
-
+            int storeId;
             Game g;
-            int storeId = Convert.ToInt32(uxStoreId.Text);
 
-            if (uxTitle.Text != "")
+            if(uxStoreId.Text == "")
             {
-                g = new Game(uxTitle.Text.ToLower(), uxCondition.Text, storeId);
+                MessageBox.Show("Please enter a Store Id.");
             }
             else
             {
+                storeId = Convert.ToInt32(uxStoreId.Text);
 
-                if (uxGenre.Text == "")
+                if (uxTitle.Text != "")
                 {
-                    genre = "*";
+                    g = new Game(uxTitle.Text.ToLower(), uxCondition.Text, storeId);
                 }
                 else
                 {
-                    genre = uxGenre.Text;
+
+                    if (uxGenre.Text == "")
+                    {
+                        genre = "*";
+                    }
+                    else
+                    {
+                        genre = uxGenre.Text;
+                    }
+
+                    if (uxPriceRange.SelectedIndex == 0)
+                    {
+                        priceRange = "*";
+                    }
+                    else
+                    {
+                        priceRange = uxPriceRange.Text;
+                    }
+
+                    if (uxCondition.SelectedIndex == 0)
+                    {
+                        condition = "*";
+                    }
+                    else
+                    {
+                        condition = uxCondition.Text;
+                    }
+
+                    g = new Game(genre, priceRange, condition, storeId);
                 }
 
-                if (uxPriceRange.SelectedIndex == 0)
-                {
-                    priceRange = "*";
-                }
-                else
-                {
-                    priceRange = uxPriceRange.Text;
-                }
 
-                if (uxCondition.SelectedIndex == 0)
-                {
-                    condition = "*";
-                }
-                else
-                {
-                    condition = uxCondition.Text;
-                }
 
-                g = new Game(genre, priceRange, condition, storeId);
+                searchWindow.ShowDialog();
             }
+            
             
         }
 
