@@ -23,7 +23,6 @@ namespace Game_Project_Application
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            ConnectSQL(); 
             string genre;
             string priceRange;
             string condition;
@@ -107,15 +106,6 @@ namespace Game_Project_Application
         {
             uxPriceRange.SelectedIndex = 0;
             uxCondition.SelectedIndex = 0;
-        }
-
-        private void ConnectSQL()
-        {
-             string connectionString = null;
-            SqlConnection cnn;
-            connectionString = "Data SOurce=mssql.cs.ksu.edu;Initial Catalog=mdlier;Integrated Security=true";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
         }
     }
 }

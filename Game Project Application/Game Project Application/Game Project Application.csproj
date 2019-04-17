@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Game Application.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +131,6 @@
     <Content Include="SQL\Tables\GameStore.GamePlatform.sql" />
     <Content Include="SQL\Tables\GameStore.Games.sql" />
     <Content Include="SQL\Tables\GameStore.Genre.sql" />
-    <Content Include="SQL\Tables\GameStore.Hours.sql" />
     <Content Include="SQL\Tables\GameStore.OrderLines.sql" />
     <Content Include="SQL\Tables\GameStore.Orders.sql" />
     <Content Include="SQL\Tables\GameStore.Platforms.sql" />
