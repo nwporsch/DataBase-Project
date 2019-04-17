@@ -23,6 +23,8 @@ namespace Game_Project_Application
 
         private void btnFind_Click(object sender, EventArgs e)
         {
+            Connection C = new Connection();
+            //C.OpenConnection(); 
             string genre;
             string priceRange;
             string condition;
@@ -78,8 +80,8 @@ namespace Game_Project_Application
 
                 searchWindow.ShowDialog();
             }
-            
-            
+
+            //C.CloseConnection();
         }
 
         private void uxTitle_TextChanged(object sender, EventArgs e)

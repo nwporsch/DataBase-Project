@@ -106,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documentation\" />
-    <Folder Include="SQL\Procedures\" />
   </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -123,6 +122,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL\Procedures\CreateCustomer.sql" />
+    <Content Include="SQL\Procedures\CreateGame.sql" />
     <Content Include="SQL\Schema\GameStore.sql" />
     <Content Include="SQL\Tables\DropTables.sql" />
     <Content Include="SQL\Tables\GameStore.Customers.sql" />
