@@ -16,6 +16,7 @@ namespace Game_Project_Application
         public Connection()
         {
             connectionString = "Data Source:mssql.cs.ksu.edu;Initial Catalog:mdlier; Integrated Security=true";
+            //connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=GameStore;Integrated Security=SSPI;";
             try
             {
                 cnn = new SqlConnection(connectionString);
