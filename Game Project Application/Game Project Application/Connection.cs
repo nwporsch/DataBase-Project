@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
@@ -15,7 +16,16 @@ namespace Game_Project_Application
         public Connection()
         {
             connectionString = "Data Source:mssql.cs.ksu.edu;Initial Catalog:mdlier; Integrated Security=true";
-            cnn = new SqlConnection(connectionString);
+            try
+            {
+                cnn = new SqlConnection(connectionString);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+            
         }
 
         public void OpenConnection()
