@@ -13,17 +13,24 @@ namespace Game_Project_Application
     public partial class SearchResults : Form
     {
         private StoreApplication sa;
-        private Game g;
-
 
 
         public SearchResults(StoreApplication sa, Game g)
         {
             this.sa = sa;
-            this.g = g;
+            GameRepository gr = new GameRepository();
+            List<Game> l = gr.GetGame(g);
 
+            foreach(Game ga in l)
+            {
 
+            }
             InitializeComponent();
+        }
+
+        public void hideButton()
+        {
+            btnAddToReceipt.Hide();
         }
 
         private void btnAddToReceipt_Click(object sender, EventArgs e)

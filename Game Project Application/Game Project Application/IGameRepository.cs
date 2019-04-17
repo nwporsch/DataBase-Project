@@ -10,7 +10,7 @@ namespace Game_Project_Application
     {
         IReadOnlyList<Game> RetrieveGames();
 
-        Game GetGame(int gameId);
+        List<Game> GetGame(Game g);
 
         Game CreateGame(int StoreId, string Title, decimal UnitPrice, bool IsUsed, int Quantity);
     }

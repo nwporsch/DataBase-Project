@@ -12,7 +12,7 @@ namespace Game_Project_Application
         {
             throw new NotImplementedException();
         }
-        public Game GetGame(int gameId)
+        public List<Game> GetGame(Game g)
         {
             throw new NotImplementedException();
         }
