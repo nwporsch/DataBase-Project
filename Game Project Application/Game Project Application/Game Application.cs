@@ -110,5 +110,11 @@ namespace Game_Project_Application
             uxPriceRange.SelectedIndex = 0;
             uxCondition.SelectedIndex = 0;
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            int selected = uxReceipt.SelectedIndex;
+            uxReceipt.Items.RemoveAt(selected);
+        }
     }
 }
