@@ -229,6 +229,7 @@
             this.btnFinishTransaction.TabIndex = 20;
             this.btnFinishTransaction.Text = "Finish Transaction";
             this.btnFinishTransaction.UseVisualStyleBackColor = true;
+            this.btnFinishTransaction.Click += new System.EventHandler(this.btnFinishTransaction_Click);
             // 
             // StoreApplication
             // 

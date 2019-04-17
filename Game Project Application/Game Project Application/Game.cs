@@ -9,11 +9,77 @@ namespace Game_Project_Application
     public class Game
     {
         private string title;
+        public string Title
+        {
+            get
+            {
+                return this.title;
+            }
+            set
+            {
+                this.title = value;
+            }
+        }
         private string genre;
+        public string Genre
+        {
+            get
+            {
+                return this.genre;
+            }
+            set
+            {
+                this.genre = value;
+            }
+        }
         private string price;
+        public string Price
+        {
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                this.price = value;
+            }
+        }
         private string isUsed;
+        public string IsUsed
+        {
+            get
+            {
+                return this.isUsed;
+            }
+            set
+            {
+                this.isUsed = value;
+            }
+        }
         private int storeId;
+        public int StoreId
+        {
+            get
+            {
+                return this.storeId;
+            }
+            set
+            {
+                this.storeId = value;
+            }
+        }
         private int gameId;
+        public int GameId
+        {
+            get
+            {
+                return this.gameId;
+            }
+            set
+            {
+                this.gameId = value;
+            }
+        }
 
         /// <summary>
         /// This constructor is used when the data from the sql database is pulled down for a search

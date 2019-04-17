@@ -8,5 +8,10 @@ namespace Game_Project_Application
 {
     class Order
     {
+        public Order()
+        {
+
+        }
+
     }
 }

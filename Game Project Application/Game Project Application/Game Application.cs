@@ -22,6 +22,9 @@ namespace Game_Project_Application
             searchWindow = new SearchResults(this);
         }
 
+        /// <summary>
+        /// Connects to the database and querys using the given input paramaters then opens a window to display the query results
+        /// </summary>
         private void btnFind_Click(object sender, EventArgs e)
         {
             //Connection C = new Connection();
@@ -85,6 +88,9 @@ namespace Game_Project_Application
             //C.CloseConnection();
         }
 
+        /// <summary>
+        /// Prevents the user from adding in superfluous input
+        /// </summary>
         private void uxTitle_TextChanged(object sender, EventArgs e)
         {
             if(uxTitle.Text == "")
@@ -111,10 +117,48 @@ namespace Game_Project_Application
             uxCondition.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Removes a selected game from the receipt
+        /// </summary>
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int selected = uxReceipt.SelectedIndex;
-            uxReceipt.Items.RemoveAt(selected);
+            if(uxReceipt.SelectedIndex >= 0)
+            {
+                int selected = uxReceipt.SelectedIndex;
+                uxReceipt.Items.RemoveAt(selected);
+            }
+            else
+            {
+                MessageBox.Show("Please select a game to remove from the receipt");
+            }
+            
+
+
+        }
+
+        /// <summary>
+        /// Finalizes receipt then sends it to the database to be stored and closes the search window
+        /// </summary>
+        private void btnFinishTransaction_Click(object sender, EventArgs e)
+        {
+            //Connection C = new Connection();
+            OrderLine[] orderList = new OrderLine[uxReceipt.Items.Count];
+
+            foreach (Game game in uxReceipt.Items)
+            {
+                string title = game.Title;
+                int gameId = game.GameId;
+                int storeId = game.StoreId;
+                double price = Convert.ToDouble(game.Price);
+                OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
+                //orderList[] = orderLine;
+            }
+            Order order = new Order();
+
+            searchWindow.Close();
+            //C.CloseConnection();
+
+            MessageBox.Show("Thank you for you patronage, please come again.");
         }
     }
 }
