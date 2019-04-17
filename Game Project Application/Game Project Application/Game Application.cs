@@ -14,16 +14,17 @@ namespace Game_Project_Application
     public partial class StoreApplication : Form
     {
 
-        private SearchResults searchWindow = new SearchResults();
+        private SearchResults searchWindow;
 
         public StoreApplication()
         {
             InitializeComponent();
+            searchWindow = new SearchResults(this);
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            Connection C = new Connection();
+            //Connection C = new Connection();
             //C.OpenConnection(); 
             string genre;
             string priceRange;

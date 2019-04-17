@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS GameStore.GamePlatforms;
 --DROP TABLE IF EXISTS GameStore.Genres;
 --DROP TABLE IF EXISTS GameStore.Platforms;
 
---DROP TABLE IF EXISTS GameStore.Games;
+DROP TABLE IF EXISTS GameStore.Games;
 --DROP TABLE IF EXISTS GameStore.Stores;
 
 --Schema

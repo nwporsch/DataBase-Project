@@ -44,7 +44,6 @@
             this.uxPriceRange = new System.Windows.Forms.ComboBox();
             this.uxCondition = new System.Windows.Forms.ComboBox();
             this.btnFinishTransaction = new System.Windows.Forms.Button();
-            this.btnAddToReceipt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxTitleLabel
@@ -125,9 +124,9 @@
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(18, 300);
+            this.btnFind.Location = new System.Drawing.Point(124, 300);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(84, 34);
+            this.btnFind.Size = new System.Drawing.Size(165, 34);
             this.btnFind.TabIndex = 12;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -163,9 +162,9 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(349, 300);
+            this.btnRemove.Location = new System.Drawing.Point(355, 300);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(245, 34);
+            this.btnRemove.Size = new System.Drawing.Size(239, 34);
             this.btnRemove.TabIndex = 17;
             this.btnRemove.Text = "Remove from Receipt";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -215,22 +214,11 @@
             this.btnFinishTransaction.Text = "Finish Transaction";
             this.btnFinishTransaction.UseVisualStyleBackColor = true;
             // 
-            // btnAddToReceipt
-            // 
-            this.btnAddToReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToReceipt.Location = new System.Drawing.Point(124, 300);
-            this.btnAddToReceipt.Name = "btnAddToReceipt";
-            this.btnAddToReceipt.Size = new System.Drawing.Size(211, 34);
-            this.btnAddToReceipt.TabIndex = 21;
-            this.btnAddToReceipt.Text = "Add to Receipt";
-            this.btnAddToReceipt.UseVisualStyleBackColor = true;
-            // 
             // StoreApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 547);
-            this.Controls.Add(this.btnAddToReceipt);
             this.Controls.Add(this.btnFinishTransaction);
             this.Controls.Add(this.uxCondition);
             this.Controls.Add(this.uxPriceRange);
@@ -273,7 +261,6 @@
         private System.Windows.Forms.ComboBox uxPriceRange;
         private System.Windows.Forms.ComboBox uxCondition;
         private System.Windows.Forms.Button btnFinishTransaction;
-        private System.Windows.Forms.Button btnAddToReceipt;
     }
 }
 
