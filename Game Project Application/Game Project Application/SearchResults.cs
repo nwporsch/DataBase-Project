@@ -24,7 +24,7 @@ namespace Game_Project_Application
         {
             if (uxSearchResults.SelectedIndex >= 0)
             {
-                string item = uxSearchResults.SelectedItem.ToString();
+                string item = uxSearchResults.GetItemText(uxSearchResults.SelectedItem);
             }
             else
             {
