@@ -25,8 +25,6 @@ namespace Game_Project_Application
             {
                 MessageBox.Show(ex.ToString());
             }
-            
-            
         }
 
         public void OpenConnection()

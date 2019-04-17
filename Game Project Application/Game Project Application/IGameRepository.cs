@@ -12,5 +12,6 @@ namespace Game_Project_Application
 
         Game GetGame(int gameId);
 
+        Game CreateGame(int StoreId, string Title, decimal UnitPrice, bool IsUsed, int Quantity);
     }
 }

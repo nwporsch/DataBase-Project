@@ -8,6 +8,10 @@ namespace Game_Project_Application
 {
     class GameRepository : IGameRepository
     {
+        public Game CreateGame(int storeId, string gameTitle, decimal UnitPrice, bool isUsed, int quantity)
+        {
+            throw new NotImplementedException();
+        }
         public Game GetGame(int gameId)
         {
             throw new NotImplementedException();
