@@ -19,7 +19,6 @@ namespace Game_Project_Application
         public StoreApplication()
         {
             InitializeComponent();
-            searchWindow = new SearchResults(this);
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -77,8 +76,7 @@ namespace Game_Project_Application
                     g = new Game(genre, priceRange, condition, storeId);
                 }
 
-
-
+                searchWindow = new SearchResults(this, g);
                 searchWindow.ShowDialog();
             }
 

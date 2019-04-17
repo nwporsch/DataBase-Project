@@ -13,10 +13,16 @@ namespace Game_Project_Application
     public partial class SearchResults : Form
     {
         private StoreApplication sa;
+        private Game g;
 
-        public SearchResults(StoreApplication sa)
+
+
+        public SearchResults(StoreApplication sa, Game g)
         {
             this.sa = sa;
+            this.g = g;
+
+
             InitializeComponent();
         }
 
