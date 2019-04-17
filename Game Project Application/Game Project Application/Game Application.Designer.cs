@@ -144,7 +144,7 @@
             // uxStoreId
             // 
             this.uxStoreId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStoreId.Location = new System.Drawing.Point(93, 160);
+            this.uxStoreId.Location = new System.Drawing.Point(93, 166);
             this.uxStoreId.Margin = new System.Windows.Forms.Padding(2);
             this.uxStoreId.Name = "uxStoreId";
             this.uxStoreId.Size = new System.Drawing.Size(354, 26);
