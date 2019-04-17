@@ -164,10 +164,10 @@
             // uxReceipt
             // 
             this.uxReceipt.FormattingEnabled = true;
-            this.uxReceipt.Location = new System.Drawing.Point(14, 232);
+            this.uxReceipt.Location = new System.Drawing.Point(15, 232);
             this.uxReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.uxReceipt.Name = "uxReceipt";
-            this.uxReceipt.Size = new System.Drawing.Size(433, 173);
+            this.uxReceipt.Size = new System.Drawing.Size(431, 173);
             this.uxReceipt.TabIndex = 16;
             // 
             // btnRemove
