@@ -12,6 +12,5 @@ namespace Game_Project_Application
         {
 
         }
-
     }
 }

@@ -131,9 +131,6 @@ namespace Game_Project_Application
             {
                 MessageBox.Show("Please select a game to remove from the receipt");
             }
-            
-
-
         }
 
         /// <summary>
