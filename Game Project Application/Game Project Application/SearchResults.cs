@@ -13,8 +13,17 @@ namespace Game_Project_Application
 {
     public partial class SearchResults : Form
     {
+        /// <summary>
+        /// A StoreApplication object which is the creator of this form.  This is needed to be able to send information back and forth
+        /// between forms.
+        /// </summary>
         private StoreApplication sa;
 
+        /// <summary>
+        /// Constructor for SearchResults and retireves all the games related to the search parameters in g
+        /// </summary>
+        /// <param name="sa">The Store application that created this form.</param>
+        /// <param name="g">A game object with all the parameters given to find games</param>
         public SearchResults(StoreApplication sa, Game g)
         {
             this.sa = sa;
