@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="CustomerInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerInput.Designer.cs">
+      <DependentUpon>CustomerInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="SearchResults.Designer.cs">
       <DependentUpon>SearchResults.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomerInput.resx">
+      <DependentUpon>CustomerInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeView.resx">
       <DependentUpon>EmployeeView.cs</DependentUpon>
     </EmbeddedResource>

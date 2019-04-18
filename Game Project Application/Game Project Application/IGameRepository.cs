@@ -8,9 +8,9 @@ namespace Game_Project_Application
 {
     interface IGameRepository
     {
-        IReadOnlyList<Game> RetrieveGames();
+        List<Game> RetrieveGames(Game g);
 
-        List<Game> GetGame(Game g);
+        List<Game> GetGame();
 
         Game CreateGame(int StoreId, string Title, decimal UnitPrice, bool IsUsed, int Quantity);
     }
