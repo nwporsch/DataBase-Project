@@ -21,6 +21,11 @@ namespace Game_Project_Application
             InitializeComponent();
         }
 
+        public void AddItemToReceipt(string s)
+        {
+            uxReceipt.Items.Add(s);
+        }
+
         /// <summary>
         /// Connects to the database and querys using the given input paramaters then opens a window to display the query results
         /// </summary>

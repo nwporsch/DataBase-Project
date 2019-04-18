@@ -37,12 +37,22 @@ namespace Game_Project_Application
 
                     while (reader.Read())
                     {
+                        string condition;
+
+                        if (reader.GetBoolean(reader.GetOrdinal("IsUsed")) == true) {
+                            condition = "Used";
+                        }
+                        else
+                        {
+                            condition = "New";
+                        }
+
                         gameList.Add(new Game(
                            reader.GetString(reader.GetOrdinal("Title")),
-                           reader.GetString(reader.GetOrdinal("Genre")),
-                           reader.GetString(reader.GetOrdinal("UnitPrice")),
-                           reader.GetString(reader.GetOrdinal("Quantity")),
-                           reader.GetString(reader.GetOrdinal("IsUsed")),
+                           "GENRE",
+                           reader.GetDecimal(reader.GetOrdinal("UnitPrice")).ToString(),
+                           reader.GetInt32(reader.GetOrdinal("Quantity")).ToString(),
+                           condition,
                            reader.GetInt32(reader.GetOrdinal("storeId")),
                            reader.GetInt32(reader.GetOrdinal("gameId"))));
                     }

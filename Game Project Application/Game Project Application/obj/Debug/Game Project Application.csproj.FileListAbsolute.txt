@@ -80,3 +80,40 @@ C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Proje
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe.config
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.pdb
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.Build.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\Microsoft.Build.Framework.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\System.Collections.Immutable.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\System.IO.Compression.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\System.Threading.Tasks.Dataflow.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\cs\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\de\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\en\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\es\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\fr\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\it\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\ja\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\ko\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\pl\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\pt-BR\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\ru\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\tr\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Reciept_Viewer.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.GenerateResource.cache
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CoreCompileInputs.cache
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb

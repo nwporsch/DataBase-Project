@@ -19,18 +19,17 @@ namespace Game_Project_Application
         public SearchResults(StoreApplication sa, Game g)
         {
             this.sa = sa;
-            c = new Connection();
-
          
 
             GameRepository gr = new GameRepository();
             List<Game> l = gr.RetrieveGames(g);
-            
-            foreach(Game ga in l)
-            {
-                string s = ga.Title.ToString();
-            }
+           
             InitializeComponent();
+            foreach (Game ga in l)
+            {
+                string s = ga.Title.ToString() + "    " + ga.Genre.ToString() + "    " + "    " + ga.Price + "    " + ga.IsUsed + "    " + ga.StoreId;
+                this.uxSearchResults.Items.Add(s);
+            }
         }
 
         public void hideButton()
@@ -43,6 +42,7 @@ namespace Game_Project_Application
             if (uxSearchResults.SelectedIndex >= 0)
             {
                 string item = uxSearchResults.GetItemText(uxSearchResults.SelectedItem);
+                sa.AddItemToReceipt(item);
             }
             else
             {
