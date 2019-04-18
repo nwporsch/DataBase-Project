@@ -81,10 +81,24 @@ namespace Game_Project_Application
             }
         }
 
+        private string quantity;
+
+        public string Quantity
+        {
+            get
+            {
+                return this.quantity;
+            }
+            set
+            {
+                this.quantity = value;
+            }
+        }
+
         /// <summary>
         /// This constructor is used when the data from the sql database is pulled down for a search
         /// </summary>
-        public Game(string title, string genre, string price, string isUsed, int storeId, int gameId)
+        public Game(string title, string genre, string price, string quantity, string isUsed, int storeId, int gameId)
         {
             this.title = title;
             this.genre = genre;
@@ -92,6 +106,7 @@ namespace Game_Project_Application
             this.isUsed = isUsed;
             this.storeId = storeId;
             this.gameId = gameId;
+            this.quantity = quantity;
 
         }
 
@@ -101,6 +116,7 @@ namespace Game_Project_Application
         public Game(string genre, string price, string isUsed, int storeId)
         {
             this.title = "*";
+            this.gameId = gameId;
             this.genre = genre;
             this.price = price;
             this.isUsed = isUsed;
