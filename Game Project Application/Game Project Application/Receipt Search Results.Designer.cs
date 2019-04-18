@@ -28,32 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxSearchResults = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ReceiptId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // uxSearchResults
+            // dataGridView1
             // 
-            this.uxSearchResults.FormattingEnabled = true;
-            this.uxSearchResults.Location = new System.Drawing.Point(11, 11);
-            this.uxSearchResults.Margin = new System.Windows.Forms.Padding(2);
-            this.uxSearchResults.Name = "uxSearchResults";
-            this.uxSearchResults.Size = new System.Drawing.Size(561, 433);
-            this.uxSearchResults.TabIndex = 1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ReceiptId,
+            this.FirstName,
+            this.LastName,
+            this.Email});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(559, 432);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // ReceiptId
+            // 
+            this.ReceiptId.HeaderText = "Receipt #";
+            this.ReceiptId.Name = "ReceiptId";
+            this.ReceiptId.Width = 50;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
             // ReceiptSearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 456);
-            this.Controls.Add(this.uxSearchResults);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "ReceiptSearchResults";
             this.Text = "Receipt Search Results";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox uxSearchResults;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }
