@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Game Project Application"
+    "\\Game Project Application",
+    "\\Game Project Application\\Game Project Application",
+    "\\Game Project Application\\Game Project Application\\SQL",
+    "\\Game Project Application\\Game Project Application\\SQL\\Schema"
   ],
   "SelectedNode": "\\Game Project Application\\Game Project Application.sln",
   "PreviewInSolutionExplorer": false
