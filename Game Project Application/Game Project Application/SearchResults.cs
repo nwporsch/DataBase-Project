@@ -26,7 +26,7 @@ namespace Game_Project_Application
             InitializeComponent();
             foreach (Game ga in l)
             {
-                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString() };
+                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString() };
                 this.uxResults.Rows.Add(s);
             }
         }
@@ -43,6 +43,11 @@ namespace Game_Project_Application
                 foreach (DataGridViewRow r in uxResults.SelectedRows)
                 {
                     string[] item = new string[r.Cells.Count];
+                    for(int i = 0; i < r.Cells.Count; i++)
+                    {
+                        item[i] = r.Cells[i].Value.ToString();
+                    }
+
                     sa.AddItemToReceipt(item);
                 }    
                     

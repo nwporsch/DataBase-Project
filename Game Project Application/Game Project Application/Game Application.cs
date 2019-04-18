@@ -125,10 +125,15 @@ namespace Game_Project_Application
         /// </summary>
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if(uxReceipt.SelectedRows.Count >= 0)
+            if (uxReceipt.SelectedRows.Count > 0)
             {
-                int selected = uxReceipt.CurrentCell.RowIndex;
-                uxReceipt.Rows.RemoveAt(selected);
+                foreach (DataGridViewRow r in uxReceipt.SelectedRows)
+                {
+                    int selected = uxReceipt.CurrentCell.RowIndex;
+                    uxReceipt.Rows.RemoveAt(selected);
+
+                }
+
             }
             else
             {
