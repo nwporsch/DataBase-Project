@@ -29,6 +29,21 @@ namespace Game_Project_Application
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
+                    command.Parameters.AddWithValue("Title", g.Title);
+                    command.Parameters.AddWithValue("Genre", g.Genre);
+                    command.Parameters.AddWithValue("UnitPrice", "*");
+                    if (g.IsUsed == "Used")
+                    {
+                        command.Parameters.AddWithValue("IsUsed", 1);
+                    }
+                    else if (g.IsUsed == "New")
+                    {
+                        command.Parameters.AddWithValue("IsUsed", 0);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("IsUsed", '*');
+                    }
                     connection.Open();
 
                     var reader = command.ExecuteReader();

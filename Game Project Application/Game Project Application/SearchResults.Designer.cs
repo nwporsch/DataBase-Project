@@ -43,7 +43,7 @@
             // 
             this.btnAddToReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToReceipt.Location = new System.Drawing.Point(9, 343);
-            this.btnAddToReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddToReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToReceipt.Name = "btnAddToReceipt";
             this.btnAddToReceipt.Size = new System.Drawing.Size(582, 44);
             this.btnAddToReceipt.TabIndex = 22;
@@ -62,8 +62,9 @@
             this.GameId,
             this.StoreId});
             this.uxResults.Location = new System.Drawing.Point(9, 11);
-            this.uxResults.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxResults.Margin = new System.Windows.Forms.Padding(2);
             this.uxResults.Name = "uxResults";
+            this.uxResults.ReadOnly = true;
             this.uxResults.RowTemplate.Height = 24;
             this.uxResults.Size = new System.Drawing.Size(582, 328);
             this.uxResults.TabIndex = 23;
@@ -72,32 +73,38 @@
             // 
             this.Title.HeaderText = "Title";
             this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
             // 
             // Genre
             // 
             this.Genre.HeaderText = "Genre";
             this.Genre.Name = "Genre";
+            this.Genre.ReadOnly = true;
             // 
             // Price
             // 
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // Condition
             // 
             this.Condition.HeaderText = "Condition";
             this.Condition.Name = "Condition";
+            this.Condition.ReadOnly = true;
             // 
             // GameId
             // 
             this.GameId.HeaderText = "GameId";
             this.GameId.Name = "GameId";
+            this.GameId.ReadOnly = true;
             this.GameId.Visible = false;
             // 
             // StoreId
             // 
             this.StoreId.HeaderText = "StoreId";
             this.StoreId.Name = "StoreId";
+            this.StoreId.ReadOnly = true;
             this.StoreId.Visible = false;
             // 
             // SearchResults
@@ -107,7 +114,7 @@
             this.ClientSize = new System.Drawing.Size(600, 398);
             this.Controls.Add(this.uxResults);
             this.Controls.Add(this.btnAddToReceipt);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchResults";
             this.Text = "Search Results";
             this.Load += new System.EventHandler(this.SearchResults_Load);
