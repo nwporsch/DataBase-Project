@@ -76,6 +76,12 @@
     <Compile Include="OrderLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipt Search Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt Search Results.Designer.cs">
+      <DependentUpon>Receipt Search Results.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchResults.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Receipt Search Results.resx">
+      <DependentUpon>Receipt Search Results.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxCondition = new System.Windows.Forms.ComboBox();
             this.uxStoreIdLabel = new System.Windows.Forms.Label();
-            this.uxPlatformLabel = new System.Windows.Forms.Label();
-            this.uxPriceLabel = new System.Windows.Forms.Label();
-            this.uxConditionLabel = new System.Windows.Forms.Label();
-            this.uxGenreLabel = new System.Windows.Forms.Label();
-            this.uxTitleLabel = new System.Windows.Forms.Label();
-            this.uxPriceRange = new System.Windows.Forms.ComboBox();
+            this.uxLastName = new System.Windows.Forms.Label();
+            this.uxFirstName = new System.Windows.Forms.Label();
+            this.uxReceiptId = new System.Windows.Forms.Label();
             this.uxStoreId = new System.Windows.Forms.TextBox();
             this.uxPlatform = new System.Windows.Forms.TextBox();
             this.uxGenre = new System.Windows.Forms.TextBox();
@@ -43,116 +39,59 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.uxView = new System.Windows.Forms.ToolStripMenuItem();
             this.uxEmployeeView = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFindReceipt = new System.Windows.Forms.Button();
+            this.btnFinish = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // uxCondition
-            // 
-            this.uxCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uxCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCondition.FormattingEnabled = true;
-            this.uxCondition.Items.AddRange(new object[] {
-            "-- Select Condition --",
-            "New",
-            "Used"});
-            this.uxCondition.Location = new System.Drawing.Point(98, 184);
-            this.uxCondition.Margin = new System.Windows.Forms.Padding(2);
-            this.uxCondition.Name = "uxCondition";
-            this.uxCondition.Size = new System.Drawing.Size(354, 28);
-            this.uxCondition.TabIndex = 40;
             // 
             // uxStoreIdLabel
             // 
             this.uxStoreIdLabel.AutoSize = true;
             this.uxStoreIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStoreIdLabel.Location = new System.Drawing.Point(11, 157);
+            this.uxStoreIdLabel.Location = new System.Drawing.Point(11, 122);
             this.uxStoreIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxStoreIdLabel.Name = "uxStoreIdLabel";
-            this.uxStoreIdLabel.Size = new System.Drawing.Size(66, 20);
+            this.uxStoreIdLabel.Size = new System.Drawing.Size(73, 20);
             this.uxStoreIdLabel.TabIndex = 47;
-            this.uxStoreIdLabel.Text = "StoreId:";
+            this.uxStoreIdLabel.Text = "Store ID:";
             // 
-            // uxPlatformLabel
+            // uxLastName
             // 
-            this.uxPlatformLabel.AutoSize = true;
-            this.uxPlatformLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPlatformLabel.Location = new System.Drawing.Point(11, 95);
-            this.uxPlatformLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.uxPlatformLabel.Name = "uxPlatformLabel";
-            this.uxPlatformLabel.Size = new System.Drawing.Size(72, 20);
-            this.uxPlatformLabel.TabIndex = 46;
-            this.uxPlatformLabel.Text = "Platform:";
+            this.uxLastName.AutoSize = true;
+            this.uxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxLastName.Location = new System.Drawing.Point(11, 92);
+            this.uxLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxLastName.Name = "uxLastName";
+            this.uxLastName.Size = new System.Drawing.Size(90, 20);
+            this.uxLastName.TabIndex = 46;
+            this.uxLastName.Text = "Last Name:";
             // 
-            // uxPriceLabel
+            // uxFirstName
             // 
-            this.uxPriceLabel.AutoSize = true;
-            this.uxPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPriceLabel.Location = new System.Drawing.Point(11, 125);
-            this.uxPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.uxPriceLabel.Name = "uxPriceLabel";
-            this.uxPriceLabel.Size = new System.Drawing.Size(48, 20);
-            this.uxPriceLabel.TabIndex = 45;
-            this.uxPriceLabel.Text = "Price:";
+            this.uxFirstName.AutoSize = true;
+            this.uxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxFirstName.Location = new System.Drawing.Point(11, 62);
+            this.uxFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxFirstName.Name = "uxFirstName";
+            this.uxFirstName.Size = new System.Drawing.Size(90, 20);
+            this.uxFirstName.TabIndex = 43;
+            this.uxFirstName.Text = "First Name:";
             // 
-            // uxConditionLabel
+            // uxReceiptId
             // 
-            this.uxConditionLabel.AutoSize = true;
-            this.uxConditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxConditionLabel.Location = new System.Drawing.Point(11, 187);
-            this.uxConditionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.uxConditionLabel.Name = "uxConditionLabel";
-            this.uxConditionLabel.Size = new System.Drawing.Size(80, 20);
-            this.uxConditionLabel.TabIndex = 44;
-            this.uxConditionLabel.Text = "Condition:";
-            // 
-            // uxGenreLabel
-            // 
-            this.uxGenreLabel.AutoSize = true;
-            this.uxGenreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxGenreLabel.Location = new System.Drawing.Point(11, 65);
-            this.uxGenreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.uxGenreLabel.Name = "uxGenreLabel";
-            this.uxGenreLabel.Size = new System.Drawing.Size(58, 20);
-            this.uxGenreLabel.TabIndex = 43;
-            this.uxGenreLabel.Text = "Genre:";
-            // 
-            // uxTitleLabel
-            // 
-            this.uxTitleLabel.AutoSize = true;
-            this.uxTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTitleLabel.Location = new System.Drawing.Point(11, 35);
-            this.uxTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.uxTitleLabel.Name = "uxTitleLabel";
-            this.uxTitleLabel.Size = new System.Drawing.Size(42, 20);
-            this.uxTitleLabel.TabIndex = 42;
-            this.uxTitleLabel.Text = "Title:";
-            // 
-            // uxPriceRange
-            // 
-            this.uxPriceRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uxPriceRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPriceRange.FormattingEnabled = true;
-            this.uxPriceRange.Items.AddRange(new object[] {
-            "-- Select Price --",
-            "$0 - $9.99",
-            "$10 - $19.99",
-            "$20 - $29.99",
-            "$30 - $39.99",
-            "$40 - $49.99",
-            "$50 - $59.99",
-            "$60 - $69.99",
-            "$70 - $79.99",
-            "Above $80"});
-            this.uxPriceRange.Location = new System.Drawing.Point(98, 122);
-            this.uxPriceRange.Margin = new System.Windows.Forms.Padding(2);
-            this.uxPriceRange.Name = "uxPriceRange";
-            this.uxPriceRange.Size = new System.Drawing.Size(354, 28);
-            this.uxPriceRange.TabIndex = 39;
+            this.uxReceiptId.AutoSize = true;
+            this.uxReceiptId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxReceiptId.Location = new System.Drawing.Point(11, 32);
+            this.uxReceiptId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxReceiptId.Name = "uxReceiptId";
+            this.uxReceiptId.Size = new System.Drawing.Size(89, 20);
+            this.uxReceiptId.TabIndex = 42;
+            this.uxReceiptId.Text = "Receipt ID:";
             // 
             // uxStoreId
             // 
             this.uxStoreId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStoreId.Location = new System.Drawing.Point(98, 154);
+            this.uxStoreId.Location = new System.Drawing.Point(116, 119);
             this.uxStoreId.Margin = new System.Windows.Forms.Padding(2);
             this.uxStoreId.Name = "uxStoreId";
             this.uxStoreId.Size = new System.Drawing.Size(354, 26);
@@ -161,7 +100,7 @@
             // uxPlatform
             // 
             this.uxPlatform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPlatform.Location = new System.Drawing.Point(98, 92);
+            this.uxPlatform.Location = new System.Drawing.Point(116, 89);
             this.uxPlatform.Margin = new System.Windows.Forms.Padding(2);
             this.uxPlatform.Name = "uxPlatform";
             this.uxPlatform.Size = new System.Drawing.Size(354, 26);
@@ -170,7 +109,7 @@
             // uxGenre
             // 
             this.uxGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxGenre.Location = new System.Drawing.Point(98, 62);
+            this.uxGenre.Location = new System.Drawing.Point(116, 59);
             this.uxGenre.Margin = new System.Windows.Forms.Padding(2);
             this.uxGenre.Name = "uxGenre";
             this.uxGenre.Size = new System.Drawing.Size(354, 26);
@@ -179,7 +118,7 @@
             // uxTitle
             // 
             this.uxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTitle.Location = new System.Drawing.Point(98, 32);
+            this.uxTitle.Location = new System.Drawing.Point(116, 29);
             this.uxTitle.Margin = new System.Windows.Forms.Padding(2);
             this.uxTitle.Name = "uxTitle";
             this.uxTitle.Size = new System.Drawing.Size(354, 26);
@@ -191,7 +130,7 @@
             this.uxView});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(488, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(489, 24);
             this.menuStrip1.TabIndex = 41;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -209,19 +148,39 @@
             this.uxEmployeeView.Size = new System.Drawing.Size(154, 22);
             this.uxEmployeeView.Text = "Customer View";
             // 
+            // btnFindReceipt
+            // 
+            this.btnFindReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindReceipt.Location = new System.Drawing.Point(116, 149);
+            this.btnFindReceipt.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFindReceipt.Name = "btnFindReceipt";
+            this.btnFindReceipt.Size = new System.Drawing.Size(232, 28);
+            this.btnFindReceipt.TabIndex = 48;
+            this.btnFindReceipt.Text = "Find Receipt";
+            this.btnFindReceipt.UseVisualStyleBackColor = true;
+            // 
+            // btnFinish
+            // 
+            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.Location = new System.Drawing.Point(352, 149);
+            this.btnFinish.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(118, 28);
+            this.btnFinish.TabIndex = 50;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = true;
+            // 
             // EmployeeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 450);
-            this.Controls.Add(this.uxCondition);
+            this.ClientSize = new System.Drawing.Size(489, 197);
+            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.btnFindReceipt);
             this.Controls.Add(this.uxStoreIdLabel);
-            this.Controls.Add(this.uxPlatformLabel);
-            this.Controls.Add(this.uxPriceLabel);
-            this.Controls.Add(this.uxConditionLabel);
-            this.Controls.Add(this.uxGenreLabel);
-            this.Controls.Add(this.uxTitleLabel);
-            this.Controls.Add(this.uxPriceRange);
+            this.Controls.Add(this.uxLastName);
+            this.Controls.Add(this.uxFirstName);
+            this.Controls.Add(this.uxReceiptId);
             this.Controls.Add(this.uxStoreId);
             this.Controls.Add(this.uxPlatform);
             this.Controls.Add(this.uxGenre);
@@ -237,15 +196,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox uxCondition;
         private System.Windows.Forms.Label uxStoreIdLabel;
-        private System.Windows.Forms.Label uxPlatformLabel;
-        private System.Windows.Forms.Label uxPriceLabel;
-        private System.Windows.Forms.Label uxConditionLabel;
-        private System.Windows.Forms.Label uxGenreLabel;
-        private System.Windows.Forms.Label uxTitleLabel;
-        private System.Windows.Forms.ComboBox uxPriceRange;
+        private System.Windows.Forms.Label uxLastName;
+        private System.Windows.Forms.Label uxFirstName;
+        private System.Windows.Forms.Label uxReceiptId;
         private System.Windows.Forms.TextBox uxStoreId;
         private System.Windows.Forms.TextBox uxPlatform;
         private System.Windows.Forms.TextBox uxGenre;
@@ -253,5 +207,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem uxView;
         private System.Windows.Forms.ToolStripMenuItem uxEmployeeView;
+        private System.Windows.Forms.Button btnFindReceipt;
+        private System.Windows.Forms.Button btnFinish;
     }
 }
