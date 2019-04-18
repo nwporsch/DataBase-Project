@@ -28,9 +28,23 @@ namespace Game_Project_Application
                 using (var command = new SqlCommand("GameStore.RetrieveGames", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+                    string title = "ALL";
+                    string genre = "ALL";
 
-                    command.Parameters.AddWithValue("Title", g.Title);
-                    command.Parameters.AddWithValue("Genre", g.Genre);
+                    if (g.Title != "*")
+                    {
+                        title = g.Title;
+                    }
+
+                    if (g.Genre != "*")
+                    {
+                        genre = g.Genre;
+                    }
+
+
+
+                    command.Parameters.AddWithValue("Title", title);
+                    command.Parameters.AddWithValue("Genre", genre);
                     command.Parameters.AddWithValue("UnitPrice", "*");
                     if (g.IsUsed == "Used")
                     {
