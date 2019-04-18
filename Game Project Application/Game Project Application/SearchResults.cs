@@ -14,7 +14,6 @@ namespace Game_Project_Application
     public partial class SearchResults : Form
     {
         private StoreApplication sa;
-        private Connection c;
 
         public SearchResults(StoreApplication sa, Game g)
         {
@@ -27,8 +26,8 @@ namespace Game_Project_Application
             InitializeComponent();
             foreach (Game ga in l)
             {
-                string s = ga.Title.ToString() + "    " + ga.Genre.ToString() + "    " + "    " + ga.Price + "    " + ga.IsUsed + "    " + ga.StoreId;
-                this.uxSearchResults.Items.Add(s);
+                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString() };
+                this.uxResults.Rows.Add(s);
             }
         }
 
@@ -39,16 +38,25 @@ namespace Game_Project_Application
 
         private void btnAddToReceipt_Click(object sender, EventArgs e)
         {
-            if (uxSearchResults.SelectedIndex >= 0)
+            if (uxResults.SelectedRows.Count > 0)
             {
-                string item = uxSearchResults.GetItemText(uxSearchResults.SelectedItem);
-                sa.AddItemToReceipt(item);
+                foreach (DataGridViewRow r in uxResults.SelectedRows)
+                {
+                    string[] item = new string[r.Cells.Count];
+                    sa.AddItemToReceipt(item);
+                }    
+                    
             }
             else
             {
                 MessageBox.Show("Please select an item.");
             }
             
+        }
+
+        private void SearchResults_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -80,3 +80,4 @@ C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Proje
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
+C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.ReceiptSearchResults.resources

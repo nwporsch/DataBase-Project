@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxSearchResults = new System.Windows.Forms.ListBox();
+            this.FINDME = new System.Windows.Forms.ListBox();
             this.btnAddToReceipt = new System.Windows.Forms.Button();
+            this.uxResults = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.uxResults)).BeginInit();
             this.SuspendLayout();
             // 
-            // uxSearchResults
+            // FINDME
             // 
-            this.uxSearchResults.FormattingEnabled = true;
-            this.uxSearchResults.ItemHeight = 16;
-            this.uxSearchResults.Location = new System.Drawing.Point(12, 12);
-            this.uxSearchResults.Name = "uxSearchResults";
-            this.uxSearchResults.Size = new System.Drawing.Size(776, 404);
-            this.uxSearchResults.TabIndex = 0;
+            this.FINDME.BackColor = System.Drawing.SystemColors.Window;
+            this.FINDME.FormattingEnabled = true;
+            this.FINDME.ItemHeight = 16;
+            this.FINDME.Location = new System.Drawing.Point(12, 12);
+            this.FINDME.Name = "FINDME";
+            this.FINDME.Size = new System.Drawing.Size(776, 404);
+            this.FINDME.TabIndex = 0;
             // 
             // btnAddToReceipt
             // 
@@ -52,22 +55,35 @@
             this.btnAddToReceipt.UseVisualStyleBackColor = true;
             this.btnAddToReceipt.Click += new System.EventHandler(this.btnAddToReceipt_Click);
             // 
+            // uxResults
+            // 
+            this.uxResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uxResults.Location = new System.Drawing.Point(12, 12);
+            this.uxResults.Name = "uxResults";
+            this.uxResults.RowTemplate.Height = 24;
+            this.uxResults.Size = new System.Drawing.Size(776, 404);
+            this.uxResults.TabIndex = 23;
+            // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 466);
+            this.Controls.Add(this.uxResults);
             this.Controls.Add(this.btnAddToReceipt);
-            this.Controls.Add(this.uxSearchResults);
+            this.Controls.Add(this.FINDME);
             this.Name = "SearchResults";
             this.Text = "Search Results";
+            this.Load += new System.EventHandler(this.SearchResults_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.uxResults)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox uxSearchResults;
+        private System.Windows.Forms.ListBox FINDME;
         private System.Windows.Forms.Button btnAddToReceipt;
+        private System.Windows.Forms.DataGridView uxResults;
     }
 }

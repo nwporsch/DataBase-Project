@@ -21,9 +21,9 @@ namespace Game_Project_Application
             InitializeComponent();
         }
 
-        public void AddItemToReceipt(string s)
+        public void AddItemToReceipt(string[] s)
         {
-            uxReceipt.Items.Add(s);
+            uxReceipt.Rows.Add(s);
         }
 
         /// <summary>
@@ -125,10 +125,10 @@ namespace Game_Project_Application
         /// </summary>
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if(uxReceipt.SelectedIndex >= 0)
+            if(uxReceipt.SelectedRows.Count >= 0)
             {
-                int selected = uxReceipt.SelectedIndex;
-                uxReceipt.Items.RemoveAt(selected);
+                int selected = uxReceipt.CurrentCell.RowIndex;
+                uxReceipt.Rows.RemoveAt(selected);
             }
             else
             {
@@ -142,14 +142,14 @@ namespace Game_Project_Application
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
             //Connection C = new Connection();
-            OrderLine[] orderList = new OrderLine[uxReceipt.Items.Count];
+            OrderLine[] orderList = new OrderLine[uxReceipt.Rows.Count];
 
-            foreach (Game game in uxReceipt.Items)
+            foreach (string[] game in uxReceipt.Rows)
             {
-                string title = game.Title;
-                int gameId = game.GameId;
-                int storeId = game.StoreId;
-                double price = Convert.ToDouble(game.Price);
+                string title = game[0];
+                int gameId = Convert.ToInt32(game[4]);
+                int storeId = Convert.ToInt32(game[5]);
+                double price = Convert.ToDouble(game[2]);
                 OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
                 //orderList[] = orderLine;
             }
