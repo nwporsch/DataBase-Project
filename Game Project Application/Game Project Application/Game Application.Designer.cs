@@ -57,8 +57,7 @@
             // 
             this.uxTitleLabel.AutoSize = true;
             this.uxTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTitleLabel.Location = new System.Drawing.Point(11, 13);
-            this.uxTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxTitleLabel.Location = new System.Drawing.Point(15, 16);
             this.uxTitleLabel.Name = "uxTitleLabel";
             this.uxTitleLabel.Size = new System.Drawing.Size(55, 25);
             this.uxTitleLabel.TabIndex = 0;
@@ -68,8 +67,7 @@
             // 
             this.uxGenreLabel.AutoSize = true;
             this.uxGenreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxGenreLabel.Location = new System.Drawing.Point(11, 43);
-            this.uxGenreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxGenreLabel.Location = new System.Drawing.Point(15, 53);
             this.uxGenreLabel.Name = "uxGenreLabel";
             this.uxGenreLabel.Size = new System.Drawing.Size(72, 25);
             this.uxGenreLabel.TabIndex = 1;
@@ -79,8 +77,7 @@
             // 
             this.uxConditionLabel.AutoSize = true;
             this.uxConditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxConditionLabel.Location = new System.Drawing.Point(11, 169);
-            this.uxConditionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxConditionLabel.Location = new System.Drawing.Point(15, 208);
             this.uxConditionLabel.Name = "uxConditionLabel";
             this.uxConditionLabel.Size = new System.Drawing.Size(101, 25);
             this.uxConditionLabel.TabIndex = 3;
@@ -90,8 +87,7 @@
             // 
             this.uxPriceLabel.AutoSize = true;
             this.uxPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPriceLabel.Location = new System.Drawing.Point(11, 103);
-            this.uxPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxPriceLabel.Location = new System.Drawing.Point(15, 127);
             this.uxPriceLabel.Name = "uxPriceLabel";
             this.uxPriceLabel.Size = new System.Drawing.Size(62, 25);
             this.uxPriceLabel.TabIndex = 4;
@@ -101,8 +97,7 @@
             // 
             this.uxPlatformLabel.AutoSize = true;
             this.uxPlatformLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPlatformLabel.Location = new System.Drawing.Point(11, 73);
-            this.uxPlatformLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxPlatformLabel.Location = new System.Drawing.Point(15, 90);
             this.uxPlatformLabel.Name = "uxPlatformLabel";
             this.uxPlatformLabel.Size = new System.Drawing.Size(89, 25);
             this.uxPlatformLabel.TabIndex = 5;
@@ -111,38 +106,38 @@
             // uxTitle
             // 
             this.uxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTitle.Location = new System.Drawing.Point(93, 10);
-            this.uxTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxTitle.Location = new System.Drawing.Point(124, 12);
+            this.uxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxTitle.Name = "uxTitle";
-            this.uxTitle.Size = new System.Drawing.Size(354, 30);
+            this.uxTitle.Size = new System.Drawing.Size(471, 30);
             this.uxTitle.TabIndex = 6;
             this.uxTitle.TextChanged += new System.EventHandler(this.uxTitle_TextChanged);
             // 
             // uxGenre
             // 
             this.uxGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxGenre.Location = new System.Drawing.Point(93, 40);
-            this.uxGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxGenre.Location = new System.Drawing.Point(124, 49);
+            this.uxGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxGenre.Name = "uxGenre";
-            this.uxGenre.Size = new System.Drawing.Size(354, 30);
+            this.uxGenre.Size = new System.Drawing.Size(471, 30);
             this.uxGenre.TabIndex = 7;
             // 
             // uxPlatform
             // 
             this.uxPlatform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPlatform.Location = new System.Drawing.Point(93, 70);
-            this.uxPlatform.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxPlatform.Location = new System.Drawing.Point(124, 86);
+            this.uxPlatform.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxPlatform.Name = "uxPlatform";
-            this.uxPlatform.Size = new System.Drawing.Size(354, 30);
+            this.uxPlatform.Size = new System.Drawing.Size(471, 30);
             this.uxPlatform.TabIndex = 8;
             // 
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(93, 198);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Location = new System.Drawing.Point(124, 244);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(124, 28);
+            this.btnFind.Size = new System.Drawing.Size(165, 34);
             this.btnFind.TabIndex = 12;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -151,18 +146,17 @@
             // uxStoreId
             // 
             this.uxStoreId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStoreId.Location = new System.Drawing.Point(93, 132);
-            this.uxStoreId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxStoreId.Location = new System.Drawing.Point(124, 162);
+            this.uxStoreId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxStoreId.Name = "uxStoreId";
-            this.uxStoreId.Size = new System.Drawing.Size(354, 30);
+            this.uxStoreId.Size = new System.Drawing.Size(471, 30);
             this.uxStoreId.TabIndex = 15;
             // 
             // uxStoreIdLabel
             // 
             this.uxStoreIdLabel.AutoSize = true;
             this.uxStoreIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStoreIdLabel.Location = new System.Drawing.Point(11, 135);
-            this.uxStoreIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxStoreIdLabel.Location = new System.Drawing.Point(15, 166);
             this.uxStoreIdLabel.Name = "uxStoreIdLabel";
             this.uxStoreIdLabel.Size = new System.Drawing.Size(81, 25);
             this.uxStoreIdLabel.TabIndex = 14;
@@ -171,10 +165,10 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(268, 198);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemove.Location = new System.Drawing.Point(357, 244);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(179, 28);
+            this.btnRemove.Size = new System.Drawing.Size(239, 34);
             this.btnRemove.TabIndex = 17;
             this.btnRemove.Text = "Remove from Receipt";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -196,10 +190,10 @@
             "$60 - $69.99",
             "$70 - $79.99",
             "Above $80"});
-            this.uxPriceRange.Location = new System.Drawing.Point(93, 100);
-            this.uxPriceRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxPriceRange.Location = new System.Drawing.Point(124, 123);
+            this.uxPriceRange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxPriceRange.Name = "uxPriceRange";
-            this.uxPriceRange.Size = new System.Drawing.Size(354, 33);
+            this.uxPriceRange.Size = new System.Drawing.Size(471, 33);
             this.uxPriceRange.TabIndex = 18;
             // 
             // uxCondition
@@ -211,19 +205,19 @@
             "-- Select Condition --",
             "New",
             "Used"});
-            this.uxCondition.Location = new System.Drawing.Point(93, 166);
-            this.uxCondition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxCondition.Location = new System.Drawing.Point(124, 204);
+            this.uxCondition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxCondition.Name = "uxCondition";
-            this.uxCondition.Size = new System.Drawing.Size(354, 33);
+            this.uxCondition.Size = new System.Drawing.Size(471, 33);
             this.uxCondition.TabIndex = 19;
             // 
             // btnFinishTransaction
             // 
             this.btnFinishTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinishTransaction.Location = new System.Drawing.Point(14, 410);
-            this.btnFinishTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFinishTransaction.Location = new System.Drawing.Point(19, 505);
+            this.btnFinishTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinishTransaction.Name = "btnFinishTransaction";
-            this.btnFinishTransaction.Size = new System.Drawing.Size(432, 28);
+            this.btnFinishTransaction.Size = new System.Drawing.Size(576, 34);
             this.btnFinishTransaction.TabIndex = 20;
             this.btnFinishTransaction.Text = "Finish Transaction";
             this.btnFinishTransaction.UseVisualStyleBackColor = true;
@@ -231,6 +225,8 @@
             // 
             // uxReceipt
             // 
+            this.uxReceipt.AllowUserToAddRows = false;
+            this.uxReceipt.AllowUserToDeleteRows = false;
             this.uxReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uxReceipt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Title,
@@ -239,12 +235,12 @@
             this.Condition,
             this.GameId,
             this.StoreId});
-            this.uxReceipt.Location = new System.Drawing.Point(15, 234);
-            this.uxReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxReceipt.Location = new System.Drawing.Point(20, 288);
+            this.uxReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxReceipt.Name = "uxReceipt";
             this.uxReceipt.ReadOnly = true;
             this.uxReceipt.RowTemplate.Height = 24;
-            this.uxReceipt.Size = new System.Drawing.Size(431, 172);
+            this.uxReceipt.Size = new System.Drawing.Size(575, 212);
             this.uxReceipt.TabIndex = 21;
             // 
             // Title
@@ -287,9 +283,9 @@
             // 
             // StoreApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 444);
+            this.ClientSize = new System.Drawing.Size(623, 546);
             this.Controls.Add(this.uxReceipt);
             this.Controls.Add(this.btnFinishTransaction);
             this.Controls.Add(this.uxCondition);
@@ -306,7 +302,7 @@
             this.Controls.Add(this.uxConditionLabel);
             this.Controls.Add(this.uxGenreLabel);
             this.Controls.Add(this.uxTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StoreApplication";
             this.Text = "Store Application";
             this.Load += new System.EventHandler(this.uxStoreApplication_Load);
