@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace Game_Project_Application
     {
 
         private SearchResults searchWindow;
+        private CustomerInput customerWindow;
+        private Customer customer;
 
         public StoreApplication()
         {
@@ -136,8 +139,6 @@ namespace Game_Project_Application
             }
         }
 
-
-
         /// <summary>
         /// Prevents the user from adding in superfluous input
         /// </summary>
@@ -197,7 +198,7 @@ namespace Game_Project_Application
         /// </summary>
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
-            OrderLine[] orderList = new OrderLine[uxReceipt.Rows.Count];
+            ArrayList list = new ArrayList();
 
             foreach (string[] game in uxReceipt.Rows)
             {
@@ -206,11 +207,14 @@ namespace Game_Project_Application
                 int storeId = Convert.ToInt32(game[5]);
                 double price = Convert.ToDouble(game[2]);
                 OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
-                //orderList[] = orderLine;
+                list.Add(orderLine);
             }
-            //Order order = new Order(orderList, );
+            customerWindow = new CustomerInput();
+            //Customer customer = new Customer();
+            Order order = new Order(list);
 
             searchWindow.Close();
+            uxReceipt.Rows.Clear();
 
             MessageBox.Show("Thank you for you patronage, please come again.");
         }

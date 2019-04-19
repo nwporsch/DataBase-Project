@@ -60,7 +60,7 @@ namespace Game_Project_Application
                 {
                     first = uxFirstName.Text;
                 }
-                o = new Order();
+                o = new Order(receiptId, first, last, email);
             }
             searchWindow = new ReceiptSearchResults();
             searchWindow.ShowDialog();

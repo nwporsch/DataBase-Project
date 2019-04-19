@@ -25,7 +25,7 @@ namespace Game_Project_Application
             string address;
             string city;
             string state;
-            //Customer c;
+            Customer c;
             if (uxEmail.Text == "")
             {
                 email = "*";
@@ -79,7 +79,7 @@ namespace Game_Project_Application
             {
                 state = uxState.Text;
             }
-            //c = new Customer(first, last, email, address, city, state);
+            c = new Customer(first, last, email, address, city, state);
         }
     }
 }

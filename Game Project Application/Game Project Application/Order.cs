@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace Game_Project_Application
     public class Order
     {
 
-        private OrderLine[] orderList;
-        public OrderLine[] OrderList
+        private ArrayList orderList;
+        public ArrayList OrderList
         {
             get
             {
@@ -107,11 +108,9 @@ namespace Game_Project_Application
         }
 
         //This constructor is used to make a full order given a list of Order Lines
-        public Order(OrderLine[] orderList, int orderId, int customerId)
+        public Order(ArrayList orderList)
         {
             this.OrderList = orderList;
-            this.OrderID = orderId;
-            this.CustomerID = customerId;
             total = 0;
             foreach(OrderLine orderLine in orderList)
             {
@@ -120,10 +119,12 @@ namespace Game_Project_Application
         }
 
         //return customer information from a given order
-        public Order(int orderId, string first, string last, string email, int quantity, double total)
+        public Order(int orderId, string first, string last, string email)
         {
             this.OrderID = orderId;
-            
+            this.First = first;
+            this.Last = last;
+            this.Email = email;
         }
     }
 }
