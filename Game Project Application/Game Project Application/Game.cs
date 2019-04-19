@@ -80,9 +80,7 @@ namespace Game_Project_Application
                 this.gameId = value;
             }
         }
-
         private string quantity;
-
         public string Quantity
         {
             get
