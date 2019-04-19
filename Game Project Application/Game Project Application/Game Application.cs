@@ -31,8 +31,6 @@ namespace Game_Project_Application
         /// </summary>
         private void btnFind_Click(object sender, EventArgs e)
         {
-            //Connection C = new Connection();
-            //C.OpenConnection();
             string title;
             string genre;
             double minPrice;
@@ -138,7 +136,6 @@ namespace Game_Project_Application
             }
         }
 
-        //C.CloseConnection();
 
 
         /// <summary>
@@ -164,6 +161,11 @@ namespace Game_Project_Application
             }
         }
 
+        /// <summary>
+        /// Makes sure the first indexes of the priceRange and the condition are in the default condition.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxStoreApplication_Load(object sender, EventArgs e)
         {
             uxPriceRange.SelectedIndex = 0;
@@ -195,7 +197,6 @@ namespace Game_Project_Application
         /// </summary>
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
-            //Connection C = new Connection();
             OrderLine[] orderList = new OrderLine[uxReceipt.Rows.Count];
 
             foreach (string[] game in uxReceipt.Rows)
@@ -210,7 +211,6 @@ namespace Game_Project_Application
             Order order = new Order();
 
             searchWindow.Close();
-            //C.CloseConnection();
 
             MessageBox.Show("Thank you for you patronage, please come again.");
         }

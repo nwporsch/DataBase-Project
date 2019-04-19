@@ -268,6 +268,7 @@
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            this.Price.Width = 87;
             // 
             // Condition
             // 
