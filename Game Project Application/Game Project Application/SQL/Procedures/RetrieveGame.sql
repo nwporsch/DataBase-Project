@@ -3,13 +3,15 @@
 @Genre NVARCHAR(128),
 @MinPrice DECIMAL(4,2),
 @MaxPrice DECIMAL(4,2),
+@StoreId INT,
 @IsUsed BIT
 
 AS
 
 SELECT G.GameId, G.StoreId, G.Title, G.UnitPrice, G.Quantity, G.IsUsed, G.Title
 FROM GameStore.Games G
-WHERE G.Title = CASE @Title
+WHERE G.StoreId = @StoreId
+AND G.Title = CASE @Title
 				WHEN N'*'
 				THEN
 					G.Title

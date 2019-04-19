@@ -35,6 +35,7 @@ namespace Game_Project_Application
                     command.Parameters.AddWithValue("Genre", sc.Genre);
                     command.Parameters.AddWithValue("MinPrice", sc.MinPrice);
                     command.Parameters.AddWithValue("MaxPrice", sc.MaxPrice);
+                    command.Parameters.AddWithValue("StoreId", sc.StoreId);
                     command.Parameters.AddWithValue("IsUsed", sc.IsUsed);
                     connection.Open();
 
