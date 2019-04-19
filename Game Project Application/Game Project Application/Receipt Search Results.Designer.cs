@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.uxResults = new System.Windows.Forms.DataGridView();
             this.ReceiptId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GameCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uxResults)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // uxResults
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.uxResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uxResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ReceiptId,
             this.FirstName,
             this.LastName,
             this.Email,
             this.GameCount,
             this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 432);
-            this.dataGridView1.TabIndex = 0;
+            this.uxResults.Location = new System.Drawing.Point(12, 12);
+            this.uxResults.Name = "uxResults";
+            this.uxResults.Size = new System.Drawing.Size(559, 432);
+            this.uxResults.TabIndex = 0;
             // 
             // ReceiptId
             // 
@@ -89,17 +89,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 456);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.uxResults);
             this.Name = "ReceiptSearchResults";
             this.Text = "Receipt Search Results";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uxResults)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView uxResults;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;

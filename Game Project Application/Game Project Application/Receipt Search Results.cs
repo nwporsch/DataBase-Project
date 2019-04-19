@@ -12,6 +12,7 @@ namespace Game_Project_Application
 {
     public partial class ReceiptSearchResults : Form
     {
+        private EmployeeView ev;
         public ReceiptSearchResults()
         {
             InitializeComponent();
