@@ -98,13 +98,13 @@ namespace Game_Project_Application
         /// </summary>
         public Game(string title, string genre, string price, string quantity, string isUsed, int storeId, int gameId)
         {
-            this.title = title;
-            this.genre = genre;
-            this.price = price;
-            this.isUsed = isUsed;
-            this.storeId = storeId;
-            this.gameId = gameId;
-            this.quantity = quantity;
+            this.Title = title;
+            this.Genre = genre;
+            this.Price = price;
+            this.Quantity = quantity;
+            this.IsUsed = isUsed;
+            this.StoreId = storeId;
+            this.GameId = gameId;
         }
 
         /// <summary>
@@ -112,12 +112,11 @@ namespace Game_Project_Application
         /// </summary>
         public Game(string genre, string price, string isUsed, int storeId)
         {
-            this.title = "*";
-            this.gameId = gameId;
-            this.genre = genre;
-            this.price = price;
-            this.isUsed = isUsed;
-            this.storeId = storeId;
+            this.Title = "*";
+            this.Genre = genre;
+            this.Price = price;
+            this.IsUsed = isUsed;
+            this.StoreId = storeId;
         }
 
         /// <summary>
@@ -125,11 +124,11 @@ namespace Game_Project_Application
         /// </summary>
         public Game(string title, string isUsed, int storeId)
         {
-            this.title = title;
-            this.isUsed = isUsed;
-            this.genre = "*";
-            this.price = "*";
-            this.storeId = storeId;
+            this.Title = title;
+            this.IsUsed = isUsed;
+            this.Genre = "*";
+            this.Price = "*";
+            this.StoreId = storeId;
         }
 
     }
