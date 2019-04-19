@@ -78,9 +78,11 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameRepository.cs" />
     <Compile Include="IGameRepository.cs" />
+    <Compile Include="IOrderRepository.cs" />
     <Compile Include="IOrdersInterface.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderLine.cs" />
+    <Compile Include="OrderRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipt Search Results.cs">

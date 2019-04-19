@@ -158,3 +158,14 @@ U:\Database Team Project Repository\Game Project Application\Game Project Applic
 U:\Database Team Project Repository\Game Project Application\Game Project Application\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
 U:\Database Team Project Repository\Game Project Application\Game Project Application\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.CustomerInput.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.ReceiptSearchResults.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.GenerateResource.cache
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CoreCompileInputs.cache
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
