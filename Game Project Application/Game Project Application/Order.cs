@@ -21,7 +21,6 @@ namespace Game_Project_Application
                 this.orderList = value;
             }
         }
-
         private int orderId;
         public int OrderID
         {
@@ -34,7 +33,6 @@ namespace Game_Project_Application
                 this.orderId = value;
             }
         }
-
         private int customerId;
         public int CustomerID
         {
@@ -47,7 +45,6 @@ namespace Game_Project_Application
                 this.customerId = value;
             }
         }
-
         private double total;
         public double Total
         {
@@ -58,6 +55,54 @@ namespace Game_Project_Application
             set
             {
                 this.total = value;
+            }
+        }
+        private string first;
+        public string First
+        {
+            get
+            {
+                return this.first;
+            }
+            set
+            {
+                this.first = value;
+            }
+        }
+        private string last;
+        public string Last
+        {
+            get
+            {
+                return this.last;
+            }
+            set
+            {
+                this.last = value;
+            }
+        }
+        private string email;
+        public string Email
+        {
+            get
+            {
+                return this.email;
+            }
+            set
+            {
+                this.email = value;
+            }
+        }
+        private int quantity;
+        public int Quantity
+        {
+            get
+            {
+                return this.quantity;
+            }
+            set
+            {
+                this.quantity = value;
             }
         }
 
@@ -75,9 +120,10 @@ namespace Game_Project_Application
         }
 
         //return customer information from a given order
-        public Order()
+        public Order(int orderId, string first, string last, string email, int quantity, double total)
         {
-
+            this.OrderID = orderId;
+            
         }
     }
 }

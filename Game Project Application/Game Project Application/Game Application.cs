@@ -208,7 +208,7 @@ namespace Game_Project_Application
                 OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
                 //orderList[] = orderLine;
             }
-            Order order = new Order();
+            //Order order = new Order(orderList, );
 
             searchWindow.Close();
 
