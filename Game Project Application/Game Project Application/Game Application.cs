@@ -73,42 +73,42 @@ namespace Game_Project_Application
                     minPrice = -1;
                     maxPrice = -1;
                 }
-                else if (uxPriceRange.SelectedIndex == 2)
+                else if (uxPriceRange.SelectedIndex == 1)
                 {
                     minPrice = 0;
                     maxPrice = 9.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 3)
+                else if (uxPriceRange.SelectedIndex == 2)
                 {
                     minPrice = 10;
                     maxPrice = 19.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 4)
+                else if (uxPriceRange.SelectedIndex == 3)
                 {
                     minPrice = 20;
                     maxPrice = 29.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 5)
+                else if (uxPriceRange.SelectedIndex == 4)
                 {
                     minPrice = 30;
                     maxPrice = 39.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 6)
+                else if (uxPriceRange.SelectedIndex == 5)
                 {
                     minPrice = 40;
                     maxPrice = 49.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 7)
+                else if (uxPriceRange.SelectedIndex == 6)
                 {
                     minPrice = 50;
                     maxPrice = 59.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 8)
+                else if (uxPriceRange.SelectedIndex == 7)
                 {
                     minPrice = 60;
                     maxPrice = 69.99;
                 }
-                else if (uxPriceRange.SelectedIndex == 9)
+                else if (uxPriceRange.SelectedIndex == 8)
                 {
                     minPrice = 70;
                     maxPrice = 79.99;
