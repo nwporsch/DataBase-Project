@@ -48,12 +48,30 @@ namespace Game_Project_Application
             }
         }
 
+        private double total;
+        public double Total
+        {
+            get
+            {
+                return this.total;
+            }
+            set
+            {
+                this.total = value;
+            }
+        }
+
         //This constructor is used to make a full order given a list of Order Lines
         public Order(OrderLine[] orderList, int orderId, int customerId)
         {
             this.OrderList = orderList;
             this.OrderID = orderId;
             this.CustomerID = customerId;
+            total = 0;
+            foreach(OrderLine orderLine in orderList)
+            {
+                total += orderLine.Quantity * orderLine.Price;
+            }
         }
 
         //return customer information from a given order
