@@ -25,61 +25,21 @@ namespace Game_Project_Application
             string address;
             string city;
             string state;
-            //Customer c;
+            Customer c;
             if (uxEmail.Text == "")
             {
-                email = "*";
+                MessageBox.Show("Please enter an Email address.");
             }
             else
             {
                 email = uxEmail.Text;
-            }
-
-            if (uxLastName.Text == "")
-            {
-                last = "*";
-            }
-            else
-            {
                 last = uxLastName.Text;
-            }
-
-            if (uxFirstName.Text == "")
-            {
-                first = "*";
-            }
-            else
-            {
                 first = uxFirstName.Text;
-            }
-
-            if (uxAddress.Text == "")
-            {
-                address = "*";
-            }
-            else
-            {
                 address = uxAddress.Text;
-            }
-
-            if (uxCity.Text == "")
-            {
-                city = "*";
-            }
-            else
-            {
                 city = uxCity.Text;
-            }
-
-            if (uxState.Text == "")
-            {
-                state = "*";
-            }
-            else
-            {
                 state = uxState.Text;
+                c = new Customer(first, last, email, address, city, state);
             }
-            //c = new Customer(first, last, email, address, city, state);
         }
     }
 }

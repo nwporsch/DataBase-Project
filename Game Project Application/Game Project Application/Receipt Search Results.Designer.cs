@@ -33,6 +33,8 @@
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GameCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,9 @@
             this.ReceiptId,
             this.FirstName,
             this.LastName,
-            this.Email});
+            this.Email,
+            this.GameCount,
+            this.Total});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(559, 432);
@@ -70,6 +74,16 @@
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
+            // GameCount
+            // 
+            this.GameCount.HeaderText = "Games Purchased";
+            this.GameCount.Name = "GameCount";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
             // ReceiptSearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,5 +104,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GameCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }
