@@ -42,10 +42,10 @@
             // btnAddToReceipt
             // 
             this.btnAddToReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToReceipt.Location = new System.Drawing.Point(12, 422);
-            this.btnAddToReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddToReceipt.Location = new System.Drawing.Point(9, 343);
+            this.btnAddToReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToReceipt.Name = "btnAddToReceipt";
-            this.btnAddToReceipt.Size = new System.Drawing.Size(776, 54);
+            this.btnAddToReceipt.Size = new System.Drawing.Size(582, 44);
             this.btnAddToReceipt.TabIndex = 22;
             this.btnAddToReceipt.Text = "Add to Receipt";
             this.btnAddToReceipt.UseVisualStyleBackColor = true;
@@ -55,6 +55,7 @@
             // 
             this.uxResults.AllowUserToAddRows = false;
             this.uxResults.AllowUserToDeleteRows = false;
+            this.uxResults.AllowUserToOrderColumns = true;
             this.uxResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uxResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Title,
@@ -63,12 +64,14 @@
             this.Condition,
             this.GameId,
             this.StoreId});
-            this.uxResults.Location = new System.Drawing.Point(12, 14);
-            this.uxResults.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uxResults.Location = new System.Drawing.Point(9, 11);
+            this.uxResults.Margin = new System.Windows.Forms.Padding(2);
             this.uxResults.Name = "uxResults";
             this.uxResults.ReadOnly = true;
             this.uxResults.RowTemplate.Height = 24;
-            this.uxResults.Size = new System.Drawing.Size(776, 404);
+            this.uxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.uxResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.uxResults.Size = new System.Drawing.Size(582, 328);
             this.uxResults.TabIndex = 23;
             // 
             // Title
@@ -76,12 +79,14 @@
             this.Title.HeaderText = "Title";
             this.Title.Name = "Title";
             this.Title.ReadOnly = true;
+            this.Title.Width = 200;
             // 
             // Genre
             // 
             this.Genre.HeaderText = "Genre";
             this.Genre.Name = "Genre";
             this.Genre.ReadOnly = true;
+            this.Genre.Width = 137;
             // 
             // Price
             // 
@@ -111,12 +116,12 @@
             // 
             // SearchResults
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.ClientSize = new System.Drawing.Size(600, 398);
             this.Controls.Add(this.uxResults);
             this.Controls.Add(this.btnAddToReceipt);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchResults";
             this.Text = "Search Results";
             this.Load += new System.EventHandler(this.SearchResults_Load);
