@@ -24,7 +24,7 @@ namespace Game_Project_Application
         /// </summary>
         /// <param name="sa">The Store application that created this form.</param>
         /// <param name="g">A game object with all the parameters given to find games</param>
-        public SearchResults(StoreApplication sa, Game g)
+        public SearchResults(StoreApplication sa, SearchConditions g)
         {
             this.sa = sa;
          

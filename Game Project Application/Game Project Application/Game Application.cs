@@ -32,14 +32,16 @@ namespace Game_Project_Application
         private void btnFind_Click(object sender, EventArgs e)
         {
             //Connection C = new Connection();
-            //C.OpenConnection(); 
+            //C.OpenConnection();
+            string title;
             string genre;
-            string priceRange;
-            string condition;
+            double minPrice;
+            double maxPrice;
+            int isUsed;
             int storeId;
-            Game g;
+            SearchConditions sc;
 
-            if(uxStoreId.Text == "")
+            if (uxStoreId.Text == "")
             {
                 MessageBox.Show("Please enter a Store Id.");
             }
@@ -49,54 +51,102 @@ namespace Game_Project_Application
 
                 if (uxTitle.Text != "")
                 {
-                    g = new Game(uxTitle.Text.ToLower(), uxCondition.Text, storeId);
+                    title = uxTitle.Text;
                 }
                 else
                 {
-
-                    if (uxGenre.Text == "")
-                    {
-                        genre = "*";
-                    }
-                    else
-                    {
-                        genre = uxGenre.Text;
-                    }
-
-                    if (uxPriceRange.SelectedIndex == 0)
-                    {
-                        priceRange = "*";
-                    }
-                    else
-                    {
-                        priceRange = uxPriceRange.Text;
-                    }
-
-                    if (uxCondition.SelectedIndex == 0)
-                    {
-                        condition = "*";
-                    }
-                    else
-                    {
-                        condition = uxCondition.Text;
-                    }
-
-                    g = new Game(genre, priceRange, condition, storeId);
+                    title = "*";
                 }
 
-                searchWindow = new SearchResults(this, g);
+
+                if (uxGenre.Text == "")
+                {
+                    genre = "*";
+                }
+                else
+                {
+                    genre = uxGenre.Text;
+                }
+
+                if (uxPriceRange.SelectedIndex == 0)
+                {
+                    minPrice = -1;
+                    maxPrice = -1;
+                }
+                else if (uxPriceRange.SelectedIndex == 2)
+                {
+                    minPrice = 0;
+                    maxPrice = 9.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 3)
+                {
+                    minPrice = 10;
+                    maxPrice = 19.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 4)
+                {
+                    minPrice = 20;
+                    maxPrice = 29.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 5)
+                {
+                    minPrice = 30;
+                    maxPrice = 39.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 6)
+                {
+                    minPrice = 40;
+                    maxPrice = 49.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 7)
+                {
+                    minPrice = 50;
+                    maxPrice = 59.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 8)
+                {
+                    minPrice = 60;
+                    maxPrice = 69.99;
+                }
+                else if (uxPriceRange.SelectedIndex == 9)
+                {
+                    minPrice = 70;
+                    maxPrice = 79.99;
+                }
+                else
+                {
+                    minPrice = 80;
+                    maxPrice = -1;
+                }
+
+                if (uxCondition.SelectedIndex == 0)
+                {
+                    isUsed = -1;
+                }
+                else if (uxCondition.SelectedIndex == 1)
+                {
+                    isUsed = 0;
+                }
+                else
+                {
+                    isUsed = 1;
+                }
+
+                sc = new SearchConditions(title, genre, minPrice, maxPrice, isUsed, storeId);
+                searchWindow = new SearchResults(this, sc);
                 searchWindow.ShowDialog();
             }
-
-            //C.CloseConnection();
         }
+
+        //C.CloseConnection();
+
 
         /// <summary>
         /// Prevents the user from adding in superfluous input
         /// </summary>
         private void uxTitle_TextChanged(object sender, EventArgs e)
         {
-            if(uxTitle.Text == "")
+            if (uxTitle.Text == "")
             {
                 uxGenre.Enabled = true;
                 uxPlatform.Enabled = true;
@@ -166,4 +216,5 @@ namespace Game_Project_Application
             MessageBox.Show("Thank you for you patronage, please come again.");
         }
     }
+
 }

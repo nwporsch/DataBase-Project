@@ -8,7 +8,7 @@ namespace Game_Project_Application
 {
     interface IGameRepository
     {
-        List<Game> RetrieveGames(Game g);
+        List<Game> RetrieveGames(SearchConditions g);
 
         List<Game> GetGame();
 

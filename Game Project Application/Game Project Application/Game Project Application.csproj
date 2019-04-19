@@ -88,6 +88,7 @@
     <Compile Include="Receipt Search Results.Designer.cs">
       <DependentUpon>Receipt Search Results.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchConditions.cs" />
     <Compile Include="SearchResults.cs">
       <SubType>Form</SubType>
     </Compile>
