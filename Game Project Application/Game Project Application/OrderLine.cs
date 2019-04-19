@@ -73,7 +73,11 @@ namespace Game_Project_Application
         //This constructor is given all the information need for one purchase made of a certain game
         public OrderLine(string title, int quantity, double price, int gameId, int storeId)
         {
-
+            this.Title = title;
+            this.Quantity = quantity;
+            this.Price = price;
+            this.GameID = gameId;
+            this.StoreID = storeId;
         }
 
 

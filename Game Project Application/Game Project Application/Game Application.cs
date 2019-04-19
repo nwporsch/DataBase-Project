@@ -181,7 +181,6 @@ namespace Game_Project_Application
                 {
                     int selected = uxReceipt.CurrentCell.RowIndex;
                     uxReceipt.Rows.RemoveAt(selected);
-
                 }
 
             }

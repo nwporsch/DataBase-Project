@@ -30,14 +30,15 @@ namespace Game_Project_Application
          
 
             GameRepository gr = new GameRepository();
-            List<Game> l = gr.RetrieveGames(g);
-           
+            List<Game> lg = gr.RetrieveGames(g);
+
             InitializeComponent();
-            foreach (Game ga in l)
+            foreach (Game ga in lg)
             {
                 string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString() };
                 this.uxResults.Rows.Add(s);
             }
+            this.uxResults.Rows.RemoveAt(uxResults.RowCount-1);
         }
 
         public void hideButton()

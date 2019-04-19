@@ -105,7 +105,6 @@ namespace Game_Project_Application
             this.storeId = storeId;
             this.gameId = gameId;
             this.quantity = quantity;
-
         }
 
         /// <summary>
@@ -119,7 +118,6 @@ namespace Game_Project_Application
             this.price = price;
             this.isUsed = isUsed;
             this.storeId = storeId;
-
         }
 
         /// <summary>

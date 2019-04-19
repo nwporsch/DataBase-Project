@@ -8,7 +8,6 @@ namespace Game_Project_Application
 {
     public class Order
     {
-        private int orderId;
 
         private OrderLine[] orderList;
         public OrderLine[] OrderList
