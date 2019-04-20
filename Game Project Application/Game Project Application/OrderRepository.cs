@@ -22,41 +22,27 @@ namespace Game_Project_Application
 
 
 
-                    /*command.Parameters.AddWithValue("Title", sc.Title);
-                    command.Parameters.AddWithValue("Genre", sc.Genre);
-                    command.Parameters.AddWithValue("MinPrice", sc.MinPrice);
-                    command.Parameters.AddWithValue("MaxPrice", sc.MaxPrice);
-                    command.Parameters.AddWithValue("StoreId", sc.StoreId);
-                    command.Parameters.AddWithValue("IsUsed", sc.IsUsed);
+                    command.Parameters.AddWithValue("OrderId", sc.OrderId);
+                    command.Parameters.AddWithValue("First", sc.First);
+                    command.Parameters.AddWithValue("Last", sc.Last);
+                    command.Parameters.AddWithValue("Email", sc.Email);
                     connection.Open();
                     
                     var reader = command.ExecuteReader();
-                    */
+                    
                     var orderList = new List<Order>();
 
-                    /*while (reader.Read())
+                    while (reader.Read())
                     {
-                        string condition;
-
-                        if (reader.GetBoolean(reader.GetOrdinal("IsUsed")) == true)
-                        {
-                            condition = "Used";
-                        }
-                        else
-                        {
-                            condition = "New";
-                        }
-
                         orderList.Add(new Order(
-                           reader.GetString(reader.GetOrdinal("Title")),
-                           "GENRE",
-                           reader.GetDecimal(reader.GetOrdinal("UnitPrice")).ToString(),
-                           reader.GetInt32(reader.GetOrdinal("Quantity")).ToString(),
-                           condition,
-                           reader.GetInt32(reader.GetOrdinal("storeId")),
-                           reader.GetInt32(reader.GetOrdinal("gameId"))));
+                           reader.GetInt32(reader.GetOrdinal("OrderId")),
+                           reader.GetString(reader.GetOrdinal("First")),
+                           reader.GetString(reader.GetOrdinal("Last")),
+                           reader.GetString(reader.GetOrdinal("Email")),
+                           reader.GetInt32(reader.GetOrdinal("Count")),
+                           Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("Total")))));
                     }
-                    */
+                    
                     return orderList;
                 }
             }
