@@ -156,6 +156,7 @@
     <Content Include="SQL\Procedures\CreateCustomer.sql" />
     <Content Include="SQL\Procedures\CreateGame.sql" />
     <Content Include="SQL\Procedures\GetGame.sql" />
+    <Content Include="SQL\Procedures\RetrieveOrder.sql" />
     <Content Include="SQL\Procedures\RetrieveGame.sql" />
     <Content Include="SQL\Schema\GameStore.sql" />
     <Content Include="SQL\Setup Script.sql" />

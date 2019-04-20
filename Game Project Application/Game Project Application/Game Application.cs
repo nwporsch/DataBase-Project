@@ -16,6 +16,7 @@ namespace Game_Project_Application
     {
 
         private SearchResults searchWindow;
+        private EmployeeView receiptLookup;
         private CustomerInput customerWindow;
         private Customer customer;
         private List<string[]> temporaryQuantitiesFromDatabase;
@@ -245,6 +246,12 @@ namespace Game_Project_Application
             uxReceipt.Rows.Clear();
 
             MessageBox.Show("Thank you for you patronage, please come again.");
+        }
+
+        private void uxEmployeeView_Click(object sender, EventArgs e)
+        {
+            receiptLookup = new EmployeeView();
+            receiptLookup.ShowDialog();
         }
     }
 

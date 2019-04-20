@@ -107,6 +107,19 @@ namespace Game_Project_Application
             }
         }
 
+        private int count;
+        public int Count
+        {
+            get
+            {
+                return this.count;
+            }
+            set
+            {
+                this.count = value;
+            }
+        }
+
         //This constructor is used to make a full order given a list of Order Lines
         public Order(ArrayList orderList)
         {
@@ -118,13 +131,15 @@ namespace Game_Project_Application
             }
         }
 
-        //return customer information from a given order
-        public Order(int orderId, string first, string last, string email)
+        //an order joined with other info, to be displayed
+        public Order(int orderId, string first, string last, string email, int count, double total)
         {
             this.OrderID = orderId;
             this.First = first;
             this.Last = last;
             this.Email = email;
+            this.Count = count;
+            this.Total = total;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Game_Project_Application
             string last;
             string email;
             int receiptId;
-            Order o;
+            SearchConditions o;
             if (uxReceiptId.Text == "")
             {
                 MessageBox.Show("Please enter a Receipt Id.");
@@ -60,10 +60,15 @@ namespace Game_Project_Application
                 {
                     first = uxFirstName.Text;
                 }
-                o = new Order(receiptId, first, last, email);
+                o = new SearchConditions(receiptId, first, last, email);
+                searchWindow = new ReceiptSearchResults(this, o);
+                searchWindow.ShowDialog();
             }
-            searchWindow = new ReceiptSearchResults();
-            searchWindow.ShowDialog();
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

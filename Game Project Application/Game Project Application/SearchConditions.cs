@@ -82,6 +82,54 @@ namespace Game_Project_Application
                 this.storeId = value;
             }
         }
+        private int orderId;
+        public int OrderId
+        {
+            get
+            {
+                return this.orderId;
+            }
+            set
+            {
+                this.orderId = value;
+            }
+        }
+        private string first;
+        public string First
+        {
+            get
+            {
+                return this.first;
+            }
+            set
+            {
+                this.first = value;
+            }
+        }
+        private string last;
+        public string Last
+        {
+            get
+            {
+                return this.last;
+            }
+            set
+            {
+                this.last = value;
+            }
+        }
+        private string email;
+        public string Email
+        {
+            get
+            {
+                return this.email;
+            }
+            set
+            {
+                this.email = value;
+            }
+        }
 
         public SearchConditions(string title, string genre, double minPrice, double maxPrice, int isUsed, int storeId)
         {
@@ -93,5 +141,14 @@ namespace Game_Project_Application
             this.storeId = storeId;
         }
 
+
+        //return customer information from a given order
+        public SearchConditions(int orderId, string first, string last, string email)
+        {
+            this.OrderId = orderId;
+            this.First = first;
+            this.Last = last;
+            this.Email = email;
+        }
     }
 }

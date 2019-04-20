@@ -8,7 +8,7 @@
 
 AS
 
-SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition, G.Title
+SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition
 FROM GameStore.GamePlatform GP
 INNER JOIN GameStore.GameStoreInfo GSI ON GSI.GamePlatformId = GP.GamePlatformId
 INNER JOIN GameStore.Games G ON G.GameId = GP.GameId
