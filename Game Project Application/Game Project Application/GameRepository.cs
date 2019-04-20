@@ -59,7 +59,7 @@ namespace Game_Project_Application
                            reader.GetString(reader.GetOrdinal("Title")),
                            "GENRE",
                            reader.GetDecimal(reader.GetOrdinal("UnitPrice")).ToString(),
-                           reader.GetInt32(reader.GetOrdinal("Quantity")).ToString(),
+                           reader.GetInt32(reader.GetOrdinal("Quantity")),
                            condition,
                            reader.GetInt32(reader.GetOrdinal("storeId")),
                            reader.GetInt32(reader.GetOrdinal("gameId"))));

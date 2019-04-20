@@ -80,8 +80,8 @@ namespace Game_Project_Application
                 this.gameId = value;
             }
         }
-        private string quantity;
-        public string Quantity
+        private int quantity;
+        public int Quantity
         {
             get
             {
@@ -96,7 +96,7 @@ namespace Game_Project_Application
         /// <summary>
         /// This constructor is used when the data from the sql database is pulled down for a search
         /// </summary>
-        public Game(string title, string genre, string price, string quantity, string isUsed, int storeId, int gameId)
+        public Game(string title, string genre, string price, int quantity, string isUsed, int storeId, int gameId)
         {
             this.Title = title;
             this.Genre = genre;

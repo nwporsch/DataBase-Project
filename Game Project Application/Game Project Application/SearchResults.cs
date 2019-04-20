@@ -38,7 +38,6 @@ namespace Game_Project_Application
                 string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString() };
                 this.uxResults.Rows.Add(s);
             }
-            this.uxResults.Rows.RemoveAt(uxResults.RowCount-1);
         }
 
         public void hideButton()
@@ -50,6 +49,8 @@ namespace Game_Project_Application
         {
             if (uxResults.SelectedRows.Count > 0)
             {
+                List<int> rowsToRemove = new List<int>();
+
                 foreach (DataGridViewRow r in uxResults.SelectedRows)
                 {
                     string[] item = new string[r.Cells.Count];
@@ -58,8 +59,20 @@ namespace Game_Project_Application
                         item[i] = r.Cells[i].Value.ToString();
                     }
 
+                    bool toRemoveRow = sa.AddToTempQuantitites(item);
+
+                    if(toRemoveRow == true)
+                    {
+                        rowsToRemove.Add(r.Index);
+                    }
+                    
                     sa.AddItemToReceipt(item);
-                }    
+                }
+                
+                foreach(int index in rowsToRemove)
+                {
+                    uxResults.Rows.RemoveAt(index);
+                }
                     
             }
             else

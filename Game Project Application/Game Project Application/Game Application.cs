@@ -18,15 +18,43 @@ namespace Game_Project_Application
         private SearchResults searchWindow;
         private CustomerInput customerWindow;
         private Customer customer;
+        private List<string[]> temporaryQuantitiesFromDatabase;
 
         public StoreApplication()
         {
             InitializeComponent();
+            temporaryQuantitiesFromDatabase = new List<string[]>();
         }
 
         public void AddItemToReceipt(string[] s)
         {
             uxReceipt.Rows.Add(s);
+        }
+
+        public bool AddToTempQuantitites(string[] s)
+        {
+            bool removeFromGameList = false;
+
+            foreach (string[] item in temporaryQuantitiesFromDatabase){
+                if(item[5] == s[5] && s[4] ==s[4] && s[3] == s[3])
+                {
+                    int temp = Convert.ToInt32(s[6]);
+                    temp++;
+                    s[6] = temp.ToString();
+
+                    if(item[6] == s[6])
+                    {
+                        removeFromGameList = true;
+                    }
+                }
+                else
+                {
+                    s[6] = "1";
+                    temporaryQuantitiesFromDatabase.Add(s);
+                }
+            }
+
+            return removeFromGameList;
         }
 
         /// <summary>

@@ -8,9 +8,12 @@
 
 AS
 
-SELECT G.GameId, G.StoreId, G.Title, G.UnitPrice, G.Quantity, G.IsUsed, G.Title
-FROM GameStore.Games G
-WHERE G.StoreId = @StoreId
+SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition, G.Title
+FROM GameStore.GamePlatform GP
+INNER JOIN GameStore.GameStoreInfo GSI ON GSI.GamePlatformId = GP.GamePlatformId
+INNER JOIN GameStore.Games G ON G.GameId = GP.GameId
+INNER JOIN GameStore.Conditions C ON C.ConditionId = GSI.ConditionId
+WHERE GSI.StoreId = @StoreId
 AND G.Title = CASE @Title
 				WHEN N'*'
 				THEN
@@ -18,20 +21,20 @@ AND G.Title = CASE @Title
 				ELSE
 					@Title
 				END
-GROUP BY G.StoreId, G.GameId, G.UnitPrice, G.Title, G.Quantity, G.IsUsed
-HAVING G.UnitPrice >=
+GROUP BY GSI.StoreId, GP.GameId, GSI.UnitPrice, G.Title, GSI.Quantity, C.Condition
+HAVING GSI.UnitPrice >=
 		CASE @MinPrice
 				WHEN -1
 				THEN
-					MIN(G.UnitPrice)
+					MIN(GSI.UnitPrice)
 				ELSE
 					@MinPrice
 				END
-AND G.UnitPrice <=
+AND GSI.UnitPrice <=
 		 CASE @MaxPrice
 				WHEN -1
 				THEN
-					Max(G.UnitPrice)
+					Max(GSI.UnitPrice)
 				ELSE
 					@MaxPrice
 				END

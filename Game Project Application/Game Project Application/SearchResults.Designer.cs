@@ -36,6 +36,7 @@
             this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StoreId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.Price,
             this.Condition,
             this.GameId,
-            this.StoreId});
+            this.StoreId,
+            this.Quantity});
             this.uxResults.Location = new System.Drawing.Point(9, 11);
             this.uxResults.Margin = new System.Windows.Forms.Padding(2);
             this.uxResults.Name = "uxResults";
@@ -114,6 +116,13 @@
             this.StoreId.ReadOnly = true;
             this.StoreId.Visible = false;
             // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.Visible = false;
+            // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,5 +148,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Condition;
         private System.Windows.Forms.DataGridViewTextBoxColumn GameId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StoreId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }
