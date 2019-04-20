@@ -130,6 +130,7 @@
             this.ClientSize = new System.Drawing.Size(600, 398);
             this.Controls.Add(this.uxResults);
             this.Controls.Add(this.btnAddToReceipt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchResults";
             this.Text = "Search Results";
