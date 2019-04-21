@@ -44,7 +44,7 @@ namespace Game_Project_Application
 
                 using (var connection = new SqlConnection(connectionString))
                 {
-                    using (var command = new SqlCommand("GameStore.CreateSuctomer", connection))
+                    using (var command = new SqlCommand("GameStore.CreateCustomer", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("First", c.First);
