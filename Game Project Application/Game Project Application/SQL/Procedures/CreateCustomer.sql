@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.CreateSuctomer
+﻿CREATE OR ALTER PROCEDURE GameStore.CreateCustomer
 	@FirstName NVARCHAR(20),
 	@LastName NVARCHAR(20),
 	@Email NVARCHAR(64),

@@ -59,6 +59,7 @@ namespace Game_Project_Application
                         if (k != 0)
                         {
                             MessageBox.Show("Added to our system!");
+                        }
                     }
                 }
             }

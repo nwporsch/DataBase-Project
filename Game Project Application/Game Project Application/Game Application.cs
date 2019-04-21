@@ -295,8 +295,16 @@ namespace Game_Project_Application
         {
             ArrayList list = new ArrayList();
 
-            foreach (string[] game in uxReceipt.Rows)
+            foreach (DataGridViewRow r in uxReceipt.Rows)
             {
+
+                string[] game = new string[r.Cells.Count];
+
+                for (int i = 0; i < r.Cells.Count; i++)
+                {
+                    game[i] = r.Cells[i].Value.ToString();
+                }
+
                 string title = game[0];
                 int gameId = Convert.ToInt32(game[4]);
                 int storeId = Convert.ToInt32(game[5]);
@@ -305,13 +313,12 @@ namespace Game_Project_Application
                 list.Add(orderLine);
             }
             customerWindow = new CustomerInput();
+            customerWindow.Show();
             //Customer customer = new Customer();
             Order order = new Order(list);
 
-            searchWindow.Close();
             uxReceipt.Rows.Clear();
 
-            MessageBox.Show("Thank you for you patronage, please come again.");
         }
 
         private void uxEmployeeView_Click(object sender, EventArgs e)

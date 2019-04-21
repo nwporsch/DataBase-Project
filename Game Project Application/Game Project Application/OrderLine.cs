@@ -14,11 +14,11 @@ namespace Game_Project_Application
         {   
             get
             {
-                return this.Title;
+                return this.title;
             }
             set
             {
-                this.Title = value;
+                this.title = value;
             }
         }
         private int quantity;
