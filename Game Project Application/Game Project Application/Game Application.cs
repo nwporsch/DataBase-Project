@@ -35,28 +35,86 @@ namespace Game_Project_Application
         public bool AddToTempQuantitites(string[] s)
         {
             bool removeFromGameList = false;
+            bool inList = false;
 
             foreach (string[] item in temporaryQuantitiesFromDatabase){
-                if(item[5] == s[5] && s[4] ==s[4] && s[3] == s[3])
+                if(item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
                 {
-                    int temp = Convert.ToInt32(s[6]);
+                    inList = true;
+                    int temp = Convert.ToInt32(item[6]);
                     temp++;
-                    s[6] = temp.ToString();
-
-                    if(item[6] == s[6])
+                    item[6] = temp.ToString();
+                    int remaining = Convert.ToInt32(s[6]) - temp;
+                    if(remaining == 0)
                     {
                         removeFromGameList = true;
                     }
                 }
-                else
+            }
+
+            if (!inList)
+            {
+                if(s[6].Equals("1"))
                 {
-                    s[6] = "1";
-                    temporaryQuantitiesFromDatabase.Add(s);
+                    removeFromGameList = true;
+                }
+                string[] temp = s;
+                temp[6] = "1";
+                temporaryQuantitiesFromDatabase.Add(temp);
+            }
+
+            return removeFromGameList;
+        }
+
+        public bool RemoveReceiptQuantitiesFromSearch(string[] s)
+        {
+            bool removeFromGameList = false;
+
+            foreach (string[] item in temporaryQuantitiesFromDatabase)
+            {
+                if (item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
+                {
+                    int temp = Convert.ToInt32(item[6]);
+                    if(temp > 0)
+                    {
+                        temp--;
+                    }
+                    
+                    item[6] = temp.ToString();
+
+                    if (temp == 0)
+                    {
+                        removeFromGameList = true;
+                    }
                 }
             }
 
             return removeFromGameList;
         }
+
+        public void AddReceiptQuantitiesFromSearch(string[] s)
+        {
+            bool isAdded = false;
+            int index = 0;
+            foreach (string[] item in temporaryQuantitiesFromDatabase)
+            {
+                if (item[5].Equals(s[5]) && item[4].Equals(s[4]) && item[3].Equals(s[3]) && !isAdded)
+                {
+                    int temp = Convert.ToInt32(item[6]);
+                    temp--;
+                    item[6] = temp.ToString();
+                    isAdded = true;
+                    index = temporaryQuantitiesFromDatabase.IndexOf(item);
+                    if (temp <= 0)
+                    {
+                        temporaryQuantitiesFromDatabase.RemoveAt(index);
+                    }
+                    
+
+                }
+            }
+        }
+
 
         /// <summary>
         /// Connects to the database and querys using the given input paramaters then opens a window to display the query results
@@ -213,6 +271,14 @@ namespace Game_Project_Application
                 {
                     int selected = uxReceipt.CurrentCell.RowIndex;
                     uxReceipt.Rows.RemoveAt(selected);
+
+                    string[] item = new string[r.Cells.Count];
+
+                    for (int i = 0; i < r.Cells.Count; i++)
+                    {
+                        item[i] = r.Cells[i].Value.ToString();
+                    }
+                    AddReceiptQuantitiesFromSearch(item);
                 }
 
             }

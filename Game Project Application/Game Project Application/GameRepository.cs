@@ -47,7 +47,7 @@ namespace Game_Project_Application
                     {
                         string condition;
 
-                        if (reader.GetBoolean(reader.GetOrdinal("IsUsed")) == true) {
+                        if (reader.GetBoolean(reader.GetOrdinal("Condition")) == true) {
                             condition = "Used";
                         }
                         else

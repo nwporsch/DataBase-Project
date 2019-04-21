@@ -35,14 +35,15 @@ namespace Game_Project_Application
             InitializeComponent();
             foreach (Game ga in lg)
             {
-                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString() };
-                this.uxResults.Rows.Add(s);
-            }
-        }
+                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString(), ga.Quantity.ToString() };
+                bool allAreInReceipt = sa.RemoveReceiptQuantitiesFromSearch(s);
 
-        public void hideButton()
-        {
-            btnAddToReceipt.Hide();
+                if (!allAreInReceipt)
+                {
+                    this.uxResults.Rows.Add(s);
+                }
+                
+            }
         }
 
         private void btnAddToReceipt_Click(object sender, EventArgs e)
