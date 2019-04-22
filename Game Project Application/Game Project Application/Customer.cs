@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
-    class Customer
+    public class Customer
     {
         private string first;
         public string First
@@ -80,6 +80,22 @@ namespace Game_Project_Application
                 this.state = value;
             }
         }
+
+        private int customerId;
+
+        public int CustomerId
+        {
+            get
+            {
+                return this.customerId;
+            }
+
+            set
+            {
+                this.customerId = value;
+            }
+        }
+
 
         public Customer(string first, string last, string email, string address, string city, string state)
         {

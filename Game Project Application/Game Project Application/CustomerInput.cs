@@ -13,21 +13,13 @@ namespace Game_Project_Application
 {
     public partial class CustomerInput : Form
     {
-        private int customerId;
-        public int CustomerId
-        {
-            get
-            {
-                return this.customerId;
-            }
-            set
-            {
-                this.customerId = value;
-            }
-        }
-        public CustomerInput()
+
+        private GameApplication ga;
+
+        public CustomerInput(GameApplication ga)
         {
             InitializeComponent();
+            this.ga = ga;
         }
 
         private void btnInput_Click(object sender, EventArgs e)
@@ -38,6 +30,7 @@ namespace Game_Project_Application
             string address;
             string city;
             string state;
+            bool foundCustomerId = false;
             Customer c;
             if (uxEmail.Text == "")
             {
@@ -67,22 +60,47 @@ namespace Game_Project_Application
                         command.Parameters.AddWithValue("State", c.State);
                         connection.Open();
 
-                        int k = command.ExecuteNonQuery();
-                        if (k != 0)
+                        try
                         {
-                            MessageBox.Show("Added to our system!");
+                            int k = command.ExecuteNonQuery();
+                            if (k != 0)
+                            {
+                                MessageBox.Show("Added to our system!");
+                            }
                         }
+                        catch(Exception)
+                        {
+                            getCustomer(c);
+                            foundCustomerId = true;
+                        }
+
+                        if (!foundCustomerId)
+                        {
+                            getCustomer(c);
+                        }
+
+                        connection.Close();
                     }
 
-                    using (var command = new SqlCommand("GameStore.GetCustomerId", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("Email", c.Email);
-                        connection.Open();
+                    
+                }
+            }
+        }
 
-                        var k = command.ExecuteReader();
-                        this.CustomerId = k.GetInt32(k.GetOrdinal("CustomerId"));
-                    }
+        private void getCustomer(Customer c)
+        {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("GameStore.GetCustomerId", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("Email", c.Email);
+                    connection.Open();
+
+                    var k = command.ExecuteReader();
+                    c.CustomerId = k.GetInt32(k.GetOrdinal("CustomerId"));
+                    ga.Customer = c;
                 }
             }
         }

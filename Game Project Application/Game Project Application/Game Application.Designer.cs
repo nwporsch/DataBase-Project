@@ -1,6 +1,6 @@
 ﻿namespace Game_Project_Application
 {
-    partial class StoreApplication
+    partial class GameApplication
     {
         /// <summary>
         /// Required designer variable.

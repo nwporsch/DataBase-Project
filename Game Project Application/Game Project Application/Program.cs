@@ -16,7 +16,7 @@ namespace Game_Project_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StoreApplication());
+            Application.Run(new GameApplication());
         }
     }
 }

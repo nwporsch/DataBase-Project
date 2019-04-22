@@ -110,7 +110,6 @@ U:\Data Bases\Project\Game Project Application\Game Project Application\bin\Debu
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.CustomerInput.resources
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
-U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.ReceiptSearchResults.resources
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
@@ -199,3 +198,4 @@ C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Pr
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
+U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.GameApplication.resources

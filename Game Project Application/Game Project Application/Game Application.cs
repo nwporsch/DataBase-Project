@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
-    public partial class StoreApplication : Form
+    public partial class GameApplication : Form
     {
 
         private SearchResults searchWindow;
@@ -21,7 +21,7 @@ namespace Game_Project_Application
         private Customer customer;
         private List<string[]> reservedItems;
 
-        public StoreApplication()
+        public GameApplication()
         {
             InitializeComponent();
             reservedItems = new List<string[]>();
@@ -37,15 +37,15 @@ namespace Game_Project_Application
             bool removeFromGameList = false;
             bool inList = false;
 
-            foreach (string[] item in reservedItems){
-                if(item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
+            foreach (string[] item in reservedItems) {
+                if (item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
                 {
                     inList = true;
                     int temp = Convert.ToInt32(item[6]);
                     temp++;
                     item[6] = temp.ToString();
                     int remaining = Convert.ToInt32(s[6]) - temp;
-                    if(remaining == 0)
+                    if (remaining == 0)
                     {
                         removeFromGameList = true;
                     }
@@ -54,7 +54,7 @@ namespace Game_Project_Application
 
             if (!inList)
             {
-                if(s[6].Equals("1"))
+                if (s[6].Equals("1"))
                 {
                     removeFromGameList = true;
                 }
@@ -103,12 +103,23 @@ namespace Game_Project_Application
                         reservedItems.RemoveAt(index);
                         break;
                     }
-                    
+
 
                 }
             }
         }
 
+        public Customer Customer
+        {
+            get
+            {
+                return this.customer;
+            }
+            set
+            {
+                this.customer = value;
+            }
+        }
 
         /// <summary>
         /// Connects to the database and querys using the given input paramaters then opens a window to display the query results
@@ -307,15 +318,13 @@ namespace Game_Project_Application
                 OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
                 list.Add(orderLine);
             }
-            customerWindow = new CustomerInput();
+            customerWindow = new CustomerInput(this);
             customerWindow.Show();
-            customerId = customerWindow.CustomerId;
-            //Customer customer = new Customer();
             Order order = new Order(list);
 
             uxReceipt.Rows.Clear();
-
         }
+
 
         private void uxEmployeeView_Click(object sender, EventArgs e)
         {

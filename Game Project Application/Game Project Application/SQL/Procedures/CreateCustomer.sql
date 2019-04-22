@@ -7,7 +7,11 @@
 	@State NVARCHAR(20)
 AS
 
-INSERT GameStore.Customers(FirstName, LastName, Email, Address, City, State)
-VALUES (@FirstName, @LastName, @Email, @Address, @City, @State);
+INSERT INTO GameStore.Customers(FirstName, LastName, Email, Address, City, State)
+	VALUES (@FirstName, @LastName, @Email, @Address, @City, @State)
+WHERE(@Email = @Email);
 
+SELECT C.CustomerId
+FROM GameStore.Customers C
+WHERE C.Email = @Email
 GO

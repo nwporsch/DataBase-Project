@@ -50,7 +50,7 @@
             this.uxEmailLabel.Location = new System.Drawing.Point(17, 74);
             this.uxEmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxEmailLabel.Name = "uxEmailLabel";
-            this.uxEmailLabel.Size = new System.Drawing.Size(52, 20);
+            this.uxEmailLabel.Size = new System.Drawing.Size(66, 25);
             this.uxEmailLabel.TabIndex = 55;
             this.uxEmailLabel.Text = "Email:";
             // 
@@ -61,7 +61,7 @@
             this.uxLastNameLabel.Location = new System.Drawing.Point(17, 44);
             this.uxLastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxLastNameLabel.Name = "uxLastNameLabel";
-            this.uxLastNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxLastNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxLastNameLabel.TabIndex = 54;
             this.uxLastNameLabel.Text = "Last Name:";
             // 
@@ -72,7 +72,7 @@
             this.uxFirstNameLabel.Location = new System.Drawing.Point(17, 14);
             this.uxFirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxFirstNameLabel.Name = "uxFirstNameLabel";
-            this.uxFirstNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxFirstNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxFirstNameLabel.TabIndex = 53;
             this.uxFirstNameLabel.Text = "First Name:";
             // 
@@ -83,7 +83,7 @@
             this.uxAddressLabel.Location = new System.Drawing.Point(17, 104);
             this.uxAddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxAddressLabel.Name = "uxAddressLabel";
-            this.uxAddressLabel.Size = new System.Drawing.Size(72, 20);
+            this.uxAddressLabel.Size = new System.Drawing.Size(91, 25);
             this.uxAddressLabel.TabIndex = 52;
             this.uxAddressLabel.Text = "Address:";
             // 
@@ -93,8 +93,8 @@
             this.uxEmail.Location = new System.Drawing.Point(122, 71);
             this.uxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.uxEmail.Name = "uxEmail";
-            this.uxEmail.Size = new System.Drawing.Size(354, 26);
-            this.uxEmail.TabIndex = 51;
+            this.uxEmail.Size = new System.Drawing.Size(354, 30);
+            this.uxEmail.TabIndex = 2;
             // 
             // uxLastName
             // 
@@ -102,8 +102,8 @@
             this.uxLastName.Location = new System.Drawing.Point(122, 41);
             this.uxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.uxLastName.Name = "uxLastName";
-            this.uxLastName.Size = new System.Drawing.Size(354, 26);
-            this.uxLastName.TabIndex = 50;
+            this.uxLastName.Size = new System.Drawing.Size(354, 30);
+            this.uxLastName.TabIndex = 1;
             // 
             // uxFirstName
             // 
@@ -111,8 +111,8 @@
             this.uxFirstName.Location = new System.Drawing.Point(122, 11);
             this.uxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.uxFirstName.Name = "uxFirstName";
-            this.uxFirstName.Size = new System.Drawing.Size(354, 26);
-            this.uxFirstName.TabIndex = 49;
+            this.uxFirstName.Size = new System.Drawing.Size(354, 30);
+            this.uxFirstName.TabIndex = 0;
             // 
             // uxAddress
             // 
@@ -120,8 +120,8 @@
             this.uxAddress.Location = new System.Drawing.Point(122, 101);
             this.uxAddress.Margin = new System.Windows.Forms.Padding(2);
             this.uxAddress.Name = "uxAddress";
-            this.uxAddress.Size = new System.Drawing.Size(354, 26);
-            this.uxAddress.TabIndex = 48;
+            this.uxAddress.Size = new System.Drawing.Size(354, 30);
+            this.uxAddress.TabIndex = 3;
             // 
             // uxCity
             // 
@@ -129,8 +129,8 @@
             this.uxCity.Location = new System.Drawing.Point(122, 131);
             this.uxCity.Margin = new System.Windows.Forms.Padding(2);
             this.uxCity.Name = "uxCity";
-            this.uxCity.Size = new System.Drawing.Size(354, 26);
-            this.uxCity.TabIndex = 56;
+            this.uxCity.Size = new System.Drawing.Size(354, 30);
+            this.uxCity.TabIndex = 4;
             // 
             // uxState
             // 
@@ -138,8 +138,8 @@
             this.uxState.Location = new System.Drawing.Point(122, 161);
             this.uxState.Margin = new System.Windows.Forms.Padding(2);
             this.uxState.Name = "uxState";
-            this.uxState.Size = new System.Drawing.Size(354, 26);
-            this.uxState.TabIndex = 57;
+            this.uxState.Size = new System.Drawing.Size(354, 30);
+            this.uxState.TabIndex = 5;
             // 
             // uxCityLabel
             // 
@@ -148,7 +148,7 @@
             this.uxCityLabel.Location = new System.Drawing.Point(17, 134);
             this.uxCityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxCityLabel.Name = "uxCityLabel";
-            this.uxCityLabel.Size = new System.Drawing.Size(39, 20);
+            this.uxCityLabel.Size = new System.Drawing.Size(52, 25);
             this.uxCityLabel.TabIndex = 58;
             this.uxCityLabel.Text = "City:";
             // 
@@ -159,7 +159,7 @@
             this.uxStateLabel.Location = new System.Drawing.Point(17, 164);
             this.uxStateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxStateLabel.Name = "uxStateLabel";
-            this.uxStateLabel.Size = new System.Drawing.Size(52, 20);
+            this.uxStateLabel.Size = new System.Drawing.Size(64, 25);
             this.uxStateLabel.TabIndex = 59;
             this.uxStateLabel.Text = "State:";
             // 
@@ -170,7 +170,7 @@
             this.btnInput.Margin = new System.Windows.Forms.Padding(2);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(455, 28);
-            this.btnInput.TabIndex = 60;
+            this.btnInput.TabIndex = 6;
             this.btnInput.Text = "Input Customer Information";
             this.btnInput.UseVisualStyleBackColor = true;
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
