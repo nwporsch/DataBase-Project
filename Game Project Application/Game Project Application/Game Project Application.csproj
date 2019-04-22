@@ -166,6 +166,7 @@
     <Content Include="SQL\Procedures\CreateGame.sql" />
     <Content Include="SQL\Procedures\CreateOrder.sql" />
     <Content Include="SQL\Procedures\CreateOrderLines.sql" />
+    <Content Include="SQL\Procedures\GetStoreInfo.sql" />
     <Content Include="SQL\Procedures\GetCustomerId.sql" />
     <Content Include="SQL\Procedures\GetOrderId.sql" />
     <Content Include="SQL\Procedures\RetrieveOrders.sql" />
