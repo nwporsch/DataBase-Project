@@ -84,7 +84,7 @@ namespace Game_Project_Application
                     command.CommandType = CommandType.StoredProcedure;
                     //OrderId GameId Quantity Unit Price
                     command.Parameters.AddWithValue("OrderId", orderId);
-                    command.Parameters.AddWithValue("GameId", gameId);
+                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
                     command.Parameters.AddWithValue("Quantity", quantity);
                     command.Parameters.AddWithValue("UnitPrice", price);
                     connection.Open();
