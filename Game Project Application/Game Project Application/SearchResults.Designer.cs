@@ -37,6 +37,7 @@
             this.GameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StoreId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.btnAddToReceipt.Location = new System.Drawing.Point(9, 343);
             this.btnAddToReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToReceipt.Name = "btnAddToReceipt";
-            this.btnAddToReceipt.Size = new System.Drawing.Size(582, 44);
+            this.btnAddToReceipt.Size = new System.Drawing.Size(682, 44);
             this.btnAddToReceipt.TabIndex = 22;
             this.btnAddToReceipt.Text = "Add to Receipt";
             this.btnAddToReceipt.UseVisualStyleBackColor = true;
@@ -65,7 +66,8 @@
             this.Condition,
             this.GameId,
             this.StoreId,
-            this.Quantity});
+            this.Quantity,
+            this.Platform});
             this.uxResults.Location = new System.Drawing.Point(9, 11);
             this.uxResults.Margin = new System.Windows.Forms.Padding(2);
             this.uxResults.Name = "uxResults";
@@ -73,7 +75,7 @@
             this.uxResults.RowTemplate.Height = 24;
             this.uxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uxResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uxResults.Size = new System.Drawing.Size(582, 328);
+            this.uxResults.Size = new System.Drawing.Size(682, 328);
             this.uxResults.TabIndex = 23;
             // 
             // Title
@@ -123,11 +125,17 @@
             this.Quantity.ReadOnly = true;
             this.Quantity.Visible = false;
             // 
+            // Platform
+            // 
+            this.Platform.HeaderText = "Platform";
+            this.Platform.Name = "Platform";
+            this.Platform.ReadOnly = true;
+            // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 398);
+            this.ClientSize = new System.Drawing.Size(702, 398);
             this.Controls.Add(this.uxResults);
             this.Controls.Add(this.btnAddToReceipt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -150,5 +158,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GameId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StoreId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Platform;
     }
 }

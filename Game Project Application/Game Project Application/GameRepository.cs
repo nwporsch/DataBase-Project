@@ -50,6 +50,7 @@ namespace Game_Project_Application
                     command.Parameters.AddWithValue("MaxPrice", sc.MaxPrice);
                     command.Parameters.AddWithValue("StoreId", sc.StoreId);
                     command.Parameters.AddWithValue("IsUsed", condition);
+                    command.Parameters.AddWithValue("Platform", sc.Platform);
                     connection.Open();
 
                     var reader = command.ExecuteReader();
@@ -61,16 +62,17 @@ namespace Game_Project_Application
      
 
                         if (reader.GetBoolean(reader.GetOrdinal("Condition")) == true) {
-                            condition = "Used";
+                            condition = "used";
                         }
                         else
                         {
-                            condition = "New";
+                            condition = "new";
                         }
 
                         gameList.Add(new Game(
                            reader.GetString(reader.GetOrdinal("Title")),
                            reader.GetString(reader.GetOrdinal("GenreName")),
+                           reader.GetString(reader.GetOrdinal("PlatformName")),
                            reader.GetDecimal(reader.GetOrdinal("UnitPrice")).ToString(),
                            reader.GetInt32(reader.GetOrdinal("Quantity")),
                            condition,

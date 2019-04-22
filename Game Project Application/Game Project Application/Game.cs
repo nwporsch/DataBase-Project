@@ -56,6 +56,21 @@ namespace Game_Project_Application
                 this.isUsed = value;
             }
         }
+
+        private string platform;
+
+        public string Platform
+        {
+            get
+            {
+                return this.platform;
+            }
+            set
+            {
+                this.platform = value;
+            }
+        }
+
         private int storeId;
         public int StoreId
         {
@@ -96,7 +111,7 @@ namespace Game_Project_Application
         /// <summary>
         /// This constructor is used when the data from the sql database is pulled down for a search
         /// </summary>
-        public Game(string title, string genre, string price, int quantity, string isUsed, int storeId, int gameId)
+        public Game(string title, string genre, string platform, string price, int quantity, string isUsed, int storeId, int gameId)
         {
             this.Title = title;
             this.Genre = genre;
@@ -105,6 +120,7 @@ namespace Game_Project_Application
             this.IsUsed = isUsed;
             this.StoreId = storeId;
             this.GameId = gameId;
+            this.Platform = platform;
         }
 
         /// <summary>

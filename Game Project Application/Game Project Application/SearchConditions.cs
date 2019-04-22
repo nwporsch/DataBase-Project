@@ -20,6 +20,20 @@ namespace Game_Project_Application
                 this.title = value;
             }
         }
+        private string platform;
+
+        public string Platform
+        {
+            get
+            {
+                return this.platform;
+            }
+            set
+            {
+                this.platform = value;
+            }
+        }
+
         private string genre;
         public string Genre
         {
@@ -131,14 +145,15 @@ namespace Game_Project_Application
             }
         }
 
-        public SearchConditions(string title, string genre, double minPrice, double maxPrice, int isUsed, int storeId)
+        public SearchConditions(string title, string genre, string platform, double minPrice, double maxPrice, int isUsed, int storeId)
         {
-            this.title = title;
-            this.genre = genre;
+            this.title = title.ToLower();
+            this.genre = genre.ToLower();
             this.minPrice = minPrice;
             this.maxPrice = maxPrice;
             this.isUsed = isUsed;
             this.storeId = storeId;
+            this.platform = platform.ToLower();
         }
 
 

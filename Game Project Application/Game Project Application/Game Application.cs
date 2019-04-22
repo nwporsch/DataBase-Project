@@ -39,7 +39,7 @@ namespace Game_Project_Application
             bool inList = false;
 
             foreach (string[] item in reservedItems) {
-                if (item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
+                if (item[5].Equals(s[5]) && item[4].Equals(s[4]) && item[3].Equals(s[3]) && item[3].Equals(s[3]))
                 {
                     inList = true;
                     int temp = Convert.ToInt32(item[6]);
@@ -129,6 +129,7 @@ namespace Game_Project_Application
         {
             string title;
             string genre;
+            string platform;
             double minPrice;
             double maxPrice;
             int isUsed;
@@ -160,6 +161,15 @@ namespace Game_Project_Application
                 else
                 {
                     genre = uxGenre.Text;
+                }
+
+                if (uxPlatform.Text == "")
+                {
+                    platform = "*";
+                }
+                else
+                {
+                    platform = uxPlatform.Text;
                 }
 
                 if (uxPriceRange.SelectedIndex == 0)
@@ -226,7 +236,7 @@ namespace Game_Project_Application
                     isUsed = 1;
                 }
 
-                sc = new SearchConditions(title, genre, minPrice, maxPrice, isUsed, storeId);
+                sc = new SearchConditions(title, genre, platform, minPrice, maxPrice, isUsed, storeId);
                 searchWindow = new SearchResults(this, sc);
                 searchWindow.ShowDialog();
             }

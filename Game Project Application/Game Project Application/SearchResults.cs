@@ -35,7 +35,7 @@ namespace Game_Project_Application
             InitializeComponent();
             foreach (Game ga in lg)
             {
-                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString(), ga.Quantity.ToString() };
+                string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString(), ga.Quantity.ToString(), ga.Platform.ToString() };
                 bool allAreInReceipt = sa.RemoveFromSearch(s);
 
                 if (!allAreInReceipt)
