@@ -4,15 +4,16 @@
 @MinPrice DECIMAL(4,2),
 @MaxPrice DECIMAL(4,2),
 @StoreId INT,
-@IsUsed BIT
+@IsUsed NVARCHAR(128)
 
 AS
 
-SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition
+SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition, GE.GenreName
 FROM GameStore.GamePlatform GP
 INNER JOIN GameStore.GameStoreInfo GSI ON GSI.GamePlatformId = GP.GamePlatformId
 INNER JOIN GameStore.Games G ON G.GameId = GP.GameId
 INNER JOIN GameStore.Conditions C ON C.ConditionId = GSI.ConditionId
+INNER JOIN GameStore.Genres GE ON GE.GenreId = G.GenreId
 WHERE GSI.StoreId = @StoreId
 AND G.Title = CASE @Title
 				WHEN N'*'
@@ -21,7 +22,21 @@ AND G.Title = CASE @Title
 				ELSE
 					@Title
 				END
-GROUP BY GSI.StoreId, GP.GameId, GSI.UnitPrice, G.Title, GSI.Quantity, C.Condition
+AND GE.GenreName = CASE @Genre
+				WHEN N'*'
+				THEN
+					GE.GenreName
+				ELSE
+					@Genre
+				END
+AND C.Description = CASE @IsUsed
+				WHEN N'*'
+				THEN
+					C.Description
+				ELSE
+					@IsUsed
+				END
+GROUP BY GSI.StoreId, GP.GameId, GSI.UnitPrice, G.Title, GSI.Quantity, C.Condition, GE.GenreName
 HAVING GSI.UnitPrice >=
 		CASE @MinPrice
 				WHEN -1

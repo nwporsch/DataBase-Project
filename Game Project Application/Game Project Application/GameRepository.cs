@@ -22,13 +22,26 @@ namespace Game_Project_Application
         public List<Game> RetrieveGames(SearchConditions sc)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-
+            string condition = "";
             using (var connection = new SqlConnection(connectionString))
             {
                 using (var command = new SqlCommand("GameStore.RetrieveGames", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
+                    
+                    if (sc.IsUsed == 0)
+                    {
+                        condition = "New";
+                    }
+                    else if(sc.IsUsed == 1)
+                    {
+                        condition = "Used";
+                    }
+                    else
+                    {
+                        condition = "*";
+                    }
 
 
                     command.Parameters.AddWithValue("Title", sc.Title);
@@ -36,7 +49,7 @@ namespace Game_Project_Application
                     command.Parameters.AddWithValue("MinPrice", sc.MinPrice);
                     command.Parameters.AddWithValue("MaxPrice", sc.MaxPrice);
                     command.Parameters.AddWithValue("StoreId", sc.StoreId);
-                    command.Parameters.AddWithValue("IsUsed", sc.IsUsed);
+                    command.Parameters.AddWithValue("IsUsed", condition);
                     connection.Open();
 
                     var reader = command.ExecuteReader();
@@ -45,7 +58,7 @@ namespace Game_Project_Application
 
                     while (reader.Read())
                     {
-                        string condition;
+     
 
                         if (reader.GetBoolean(reader.GetOrdinal("Condition")) == true) {
                             condition = "Used";
@@ -57,7 +70,7 @@ namespace Game_Project_Application
 
                         gameList.Add(new Game(
                            reader.GetString(reader.GetOrdinal("Title")),
-                           "GENRE",
+                           reader.GetString(reader.GetOrdinal("GenreName")),
                            reader.GetDecimal(reader.GetOrdinal("UnitPrice")).ToString(),
                            reader.GetInt32(reader.GetOrdinal("Quantity")),
                            condition,
