@@ -13,6 +13,18 @@ namespace Game_Project_Application
 {
     public partial class CustomerInput : Form
     {
+        private int customerId;
+        public int CustomerId
+        {
+            get
+            {
+                return this.customerId;
+            }
+            set
+            {
+                this.customerId = value;
+            }
+        }
         public CustomerInput()
         {
             InitializeComponent();
@@ -47,8 +59,8 @@ namespace Game_Project_Application
                     using (var command = new SqlCommand("GameStore.CreateCustomer", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("First", c.First);
-                        command.Parameters.AddWithValue("Last", c.Last);
+                        command.Parameters.AddWithValue("FirstName", c.First);
+                        command.Parameters.AddWithValue("LastName", c.Last);
                         command.Parameters.AddWithValue("Email", c.Email);
                         command.Parameters.AddWithValue("Address", c.Address);
                         command.Parameters.AddWithValue("City", c.City);
@@ -60,6 +72,16 @@ namespace Game_Project_Application
                         {
                             MessageBox.Show("Added to our system!");
                         }
+                    }
+
+                    using (var command = new SqlCommand("GameStore.GetCustomerId", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("Email", c.Email);
+                        connection.Open();
+
+                        var k = command.ExecuteReader();
+                        this.CustomerId = k.GetInt32(k.GetOrdinal("CustomerId"));
                     }
                 }
             }

@@ -294,7 +294,7 @@ namespace Game_Project_Application
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
             ArrayList list = new ArrayList();
-
+            int customerId;
             foreach (DataGridViewRow r in uxReceipt.Rows)
             {
 
@@ -314,6 +314,7 @@ namespace Game_Project_Application
             }
             customerWindow = new CustomerInput();
             customerWindow.Show();
+            customerId = customerWindow.CustomerId;
             //Customer customer = new Customer();
             Order order = new Order(list);
 
