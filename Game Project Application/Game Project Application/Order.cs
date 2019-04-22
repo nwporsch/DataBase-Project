@@ -139,10 +139,20 @@ namespace Game_Project_Application
                     connection.Open();
                     
                     int k = command.ExecuteNonQuery();
-                    
+
                     connection.Close();
+                }
 
+                using (var command = new SqlCommand("GameStore.GetOrderId", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("CustomerId", c.CustomerId);
+                    connection.Open();
 
+                    var k = command.ExecuteReader();
+                    k.Read();
+                    int orderId = k.GetInt32(k.GetOrdinal("OrderId"));
+                    k.Close();
                 }
             }
 

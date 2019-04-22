@@ -1,12 +1,11 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.CreateCustomer
-	@FirstName NVARCHAR(20),
-	@LastName NVARCHAR(20),
-	@Email NVARCHAR(64),
-	@Address NVARCHAR(64),
-	@City NVARCHAR(64),
-	@State NVARCHAR(20)
+﻿CREATE OR ALTER PROCEDURE GameStore.GetOrderId
+	@CustomerId INT
 AS
 
-INSERT INTO GameStore.Customers(FirstName, LastName, Email, Address, City, State)
-	VALUES (@FirstName, @LastName, @Email, @Address, @City, @State)
+SELECT O.OrderId
+FROM GameStore.Orders O
+	LEFT JOIN GameStore.OrderLines OL ON O.OrderId = OL.OrderId
+WHERE O.CustomerId = @CustomerId
+GROUP BY O.OrderId
+HAVING COUNT(OL.OrderId) = 0
 GO

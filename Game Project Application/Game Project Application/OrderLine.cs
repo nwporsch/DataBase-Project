@@ -78,7 +78,7 @@ namespace Game_Project_Application
 
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("GameStore.CreateOrdersLines", connection))
+                using (var command = new SqlCommand("GameStore.CreateOrderLines", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     //OrderId GameId Quantity Unit Price
