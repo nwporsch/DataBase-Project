@@ -98,6 +98,12 @@
     <Compile Include="SearchResults.Designer.cs">
       <DependentUpon>SearchResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoreView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreView.Designer.cs">
+      <DependentUpon>StoreView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomerInput.resx">
       <DependentUpon>CustomerInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreView.resx">
+      <DependentUpon>StoreView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

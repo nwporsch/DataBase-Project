@@ -53,6 +53,7 @@
             this.uxMenuStrip = new System.Windows.Forms.MenuStrip();
             this.uxView = new System.Windows.Forms.ToolStripMenuItem();
             this.uxEmployeeView = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.uxReceipt)).BeginInit();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -307,7 +308,8 @@
             // uxView
             // 
             this.uxView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxEmployeeView});
+            this.uxEmployeeView,
+            this.storeViewToolStripMenuItem});
             this.uxView.Name = "uxView";
             this.uxView.Size = new System.Drawing.Size(44, 20);
             this.uxView.Text = "View";
@@ -319,7 +321,13 @@
             this.uxEmployeeView.Text = "Employee View";
             this.uxEmployeeView.Click += new System.EventHandler(this.uxEmployeeView_Click);
             // 
-            // StoreApplication
+            // storeViewToolStripMenuItem
+            // 
+            this.storeViewToolStripMenuItem.Name = "storeViewToolStripMenuItem";
+            this.storeViewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.storeViewToolStripMenuItem.Text = "Store View";
+            // 
+            // GameApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,7 +351,7 @@
             this.Controls.Add(this.uxTitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "StoreApplication";
+            this.Name = "GameApplication";
             this.Text = "Store Application";
             this.Load += new System.EventHandler(this.uxStoreApplication_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uxReceipt)).EndInit();
@@ -381,6 +389,7 @@
         private System.Windows.Forms.MenuStrip uxMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem uxView;
         private System.Windows.Forms.ToolStripMenuItem uxEmployeeView;
+        private System.Windows.Forms.ToolStripMenuItem storeViewToolStripMenuItem;
     }
 }
 
