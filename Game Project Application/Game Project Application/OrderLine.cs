@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +69,30 @@ namespace Game_Project_Application
             set
             {
                 this.storeId = value;
+            }
+        }
+
+        public void SendToDatabase(int orderId)
+        {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("GameStore.CreateOrdersLines", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    //OrderId GameId Quantity Unit Price
+                    command.Parameters.AddWithValue("OrderId", orderId);
+                    command.Parameters.AddWithValue("GameId", gameId);
+                    command.Parameters.AddWithValue("Quantity", quantity);
+                    command.Parameters.AddWithValue("UnitPrice", price);
+                    connection.Open();
+
+                    int k = command.ExecuteNonQuery();
+                    connection.Close();
+
+
+                }
             }
         }
 

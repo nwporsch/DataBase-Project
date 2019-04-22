@@ -63,6 +63,7 @@ namespace Game_Project_Application
                         try
                         {
                             int k = command.ExecuteNonQuery();
+                            connection.Close();
                             if (k != 0)
                             {
                                 MessageBox.Show("Added to our system!");
@@ -79,10 +80,12 @@ namespace Game_Project_Application
                             getCustomer(c);
                         }
 
-                        connection.Close();
+                        
                     }
 
-                    
+                    this.Close();
+                    ga.CreateOrder();
+
                 }
             }
         }
@@ -99,7 +102,10 @@ namespace Game_Project_Application
                     connection.Open();
 
                     var k = command.ExecuteReader();
-                    c.CustomerId = k.GetInt32(k.GetOrdinal("CustomerId"));
+                    k.Read();
+                    int cid = k.GetInt32(k.GetOrdinal("CustomerId"));
+                    k.Close();
+                    c.CustomerId = cid;
                     ga.Customer = c;
                 }
             }

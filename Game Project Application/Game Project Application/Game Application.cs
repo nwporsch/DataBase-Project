@@ -20,6 +20,7 @@ namespace Game_Project_Application
         private CustomerInput customerWindow;
         private Customer customer;
         private List<string[]> reservedItems;
+        private ArrayList orderList;
 
         public GameApplication()
         {
@@ -299,8 +300,7 @@ namespace Game_Project_Application
         /// </summary>
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
-            ArrayList list = new ArrayList();
-            int customerId;
+            orderList = new ArrayList();
             foreach (DataGridViewRow r in uxReceipt.Rows)
             {
 
@@ -316,13 +316,18 @@ namespace Game_Project_Application
                 int storeId = Convert.ToInt32(game[5]);
                 double price = Convert.ToDouble(game[2]);
                 OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
-                list.Add(orderLine);
+                orderList.Add(orderLine);
             }
             customerWindow = new CustomerInput(this);
             customerWindow.Show();
-            Order order = new Order(list);
+        }
+
+        public void CreateOrder()
+        {
+            Order order = new Order(customer, orderList);
 
             uxReceipt.Rows.Clear();
+
         }
 
 

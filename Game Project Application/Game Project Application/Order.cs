@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -121,12 +123,32 @@ namespace Game_Project_Application
         }
 
         //This constructor is used to make a full order given a list of Order Lines
-        public Order(ArrayList orderList)
+        public Order(Customer c, ArrayList orderList)
         {
+            this.CustomerID = c.CustomerId;
             this.OrderList = orderList;
-            total = 0;
-            foreach(OrderLine orderLine in orderList)
+
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+
+            using (var connection = new SqlConnection(connectionString))
             {
+                using (var command = new SqlCommand("GameStore.CreateOrder", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("CustomerId", this.CustomerID);
+                    connection.Open();
+                    
+                    int k = command.ExecuteNonQuery();
+                    
+                    connection.Close();
+
+
+                }
+            }
+
+            foreach (OrderLine orderLine in orderList)
+            {
+                orderLine.SendToDatabase(orderId);
                 total += orderLine.Quantity * orderLine.Price;
             }
         }
