@@ -36,7 +36,7 @@ namespace Game_Project_Application
             foreach (Game ga in lg)
             {
                 string[] s = { ga.Title, ga.Genre, ga.Price.ToString(), ga.IsUsed, ga.StoreId.ToString(), ga.GameId.ToString(), ga.Quantity.ToString() };
-                bool allAreInReceipt = sa.RemoveReceiptQuantitiesFromSearch(s);
+                bool allAreInReceipt = sa.RemoveFromSearch(s);
 
                 if (!allAreInReceipt)
                 {
@@ -60,7 +60,7 @@ namespace Game_Project_Application
                         item[i] = r.Cells[i].Value.ToString();
                     }
 
-                    bool toRemoveRow = sa.AddToTempQuantitites(item);
+                    bool toRemoveRow = sa.AddReserve(item);
 
                     if(toRemoveRow == true)
                     {

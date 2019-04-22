@@ -19,12 +19,12 @@ namespace Game_Project_Application
         private EmployeeView receiptLookup;
         private CustomerInput customerWindow;
         private Customer customer;
-        private List<string[]> temporaryQuantitiesFromDatabase;
+        private List<string[]> reservedItems;
 
         public StoreApplication()
         {
             InitializeComponent();
-            temporaryQuantitiesFromDatabase = new List<string[]>();
+            reservedItems = new List<string[]>();
         }
 
         public void AddItemToReceipt(string[] s)
@@ -32,12 +32,12 @@ namespace Game_Project_Application
             uxReceipt.Rows.Add(s);
         }
 
-        public bool AddToTempQuantitites(string[] s)
+        public bool AddReserve(string[] s)
         {
             bool removeFromGameList = false;
             bool inList = false;
 
-            foreach (string[] item in temporaryQuantitiesFromDatabase){
+            foreach (string[] item in reservedItems){
                 if(item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
                 {
                     inList = true;
@@ -60,29 +60,22 @@ namespace Game_Project_Application
                 }
                 string[] temp = s;
                 temp[6] = "1";
-                temporaryQuantitiesFromDatabase.Add(temp);
+                reservedItems.Add(temp);
             }
 
             return removeFromGameList;
         }
 
-        public bool RemoveReceiptQuantitiesFromSearch(string[] s)
+        public bool RemoveFromSearch(string[] s)
         {
             bool removeFromGameList = false;
 
-            foreach (string[] item in temporaryQuantitiesFromDatabase)
+            foreach (string[] item in reservedItems)
             {
                 if (item[5].Equals(s[5]) && s[4].Equals(s[4]) && s[3].Equals(s[3]))
                 {
-                    int temp = Convert.ToInt32(item[6]);
-                    if(temp > 0)
-                    {
-                        temp--;
-                    }
-                    
-                    item[6] = temp.ToString();
 
-                    if (temp == 0)
+                    if (item[6].Equals(s[6]))
                     {
                         removeFromGameList = true;
                     }
@@ -92,11 +85,11 @@ namespace Game_Project_Application
             return removeFromGameList;
         }
 
-        public void AddReceiptQuantitiesFromSearch(string[] s)
+        public void RemoveReserve(string[] s)
         {
             bool isAdded = false;
             int index = 0;
-            foreach (string[] item in temporaryQuantitiesFromDatabase)
+            foreach (string[] item in reservedItems)
             {
                 if (item[5].Equals(s[5]) && item[4].Equals(s[4]) && item[3].Equals(s[3]) && !isAdded)
                 {
@@ -104,10 +97,11 @@ namespace Game_Project_Application
                     temp--;
                     item[6] = temp.ToString();
                     isAdded = true;
-                    index = temporaryQuantitiesFromDatabase.IndexOf(item);
+                    index = reservedItems.IndexOf(item);
                     if (temp <= 0)
                     {
-                        temporaryQuantitiesFromDatabase.RemoveAt(index);
+                        reservedItems.RemoveAt(index);
+                        break;
                     }
                     
 
@@ -270,15 +264,16 @@ namespace Game_Project_Application
                 foreach (DataGridViewRow r in uxReceipt.SelectedRows)
                 {
                     int selected = uxReceipt.CurrentCell.RowIndex;
-                    uxReceipt.Rows.RemoveAt(selected);
-
                     string[] item = new string[r.Cells.Count];
-
                     for (int i = 0; i < r.Cells.Count; i++)
                     {
                         item[i] = r.Cells[i].Value.ToString();
                     }
-                    AddReceiptQuantitiesFromSearch(item);
+
+                    RemoveReserve(item);
+                    uxReceipt.Rows.RemoveAt(selected);
+
+                   
                 }
 
             }
