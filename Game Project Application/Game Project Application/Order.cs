@@ -127,7 +127,6 @@ namespace Game_Project_Application
         {
             this.CustomerID = c.CustomerId;
             this.OrderList = orderList;
-
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
 
             using (var connection = new SqlConnection(connectionString))
@@ -151,7 +150,7 @@ namespace Game_Project_Application
 
                     var k = command.ExecuteReader();
                     k.Read();
-                    int orderId = k.GetInt32(k.GetOrdinal("OrderId"));
+                    orderId = k.GetInt32(k.GetOrdinal("OrderId"));
                     k.Close();
                 }
             }

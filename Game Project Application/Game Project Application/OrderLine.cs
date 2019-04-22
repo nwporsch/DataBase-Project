@@ -11,6 +11,7 @@ namespace Game_Project_Application
     public class OrderLine
     {
         private int orderLineId;
+
         private string title;
         public string Title
         {   
