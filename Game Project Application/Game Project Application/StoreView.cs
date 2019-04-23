@@ -40,6 +40,11 @@ namespace Game_Project_Application
                            "Weekend Hours: " + output[2] + "\n" +
                            "Number of Games in Store: " + output[3] + "\n" +
                            "Total Sales: " + output[4] + "\n";
+                if(output[4].Length == 0)
+                {
+                    s = "Please enter a correct store Id.";
+                }
+            
                 MessageBox.Show(s);
             }
             else
