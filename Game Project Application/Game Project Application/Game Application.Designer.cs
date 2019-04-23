@@ -45,10 +45,6 @@ namespace Game_Project_Application
             this.uxCondition = new System.Windows.Forms.ComboBox();
             this.btnFinishTransaction = new System.Windows.Forms.Button();
             this.uxReceipt = new System.Windows.Forms.DataGridView();
-            this.uxMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.uxView = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEmployeeView = new System.Windows.Forms.ToolStripMenuItem();
-            this.storeViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +53,10 @@ namespace Game_Project_Application
             this.StoreId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uxMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.uxView = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxEmployeeView = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.uxReceipt)).BeginInit();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -261,39 +261,6 @@ namespace Game_Project_Application
             this.uxReceipt.Size = new System.Drawing.Size(530, 143);
             this.uxReceipt.TabIndex = 21;
             // 
-            // uxMenuStrip
-            // 
-            this.uxMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.uxMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxView});
-            this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuStrip.Name = "uxMenuStrip";
-            this.uxMenuStrip.Size = new System.Drawing.Size(561, 28);
-            this.uxMenuStrip.TabIndex = 42;
-            this.uxMenuStrip.Text = "Views";
-            // 
-            // uxView
-            // 
-            this.uxView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxEmployeeView,
-            this.storeViewToolStripMenuItem});
-            this.uxView.Name = "uxView";
-            this.uxView.Size = new System.Drawing.Size(53, 24);
-            this.uxView.Text = "View";
-            // 
-            // uxEmployeeView
-            // 
-            this.uxEmployeeView.Name = "uxEmployeeView";
-            this.uxEmployeeView.Size = new System.Drawing.Size(186, 26);
-            this.uxEmployeeView.Text = "Employee View";
-            this.uxEmployeeView.Click += new System.EventHandler(this.uxEmployeeView_Click);
-            // 
-            // storeViewToolStripMenuItem
-            // 
-            this.storeViewToolStripMenuItem.Name = "storeViewToolStripMenuItem";
-            this.storeViewToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
-            this.storeViewToolStripMenuItem.Text = "Store View";
-            // 
             // Title
             // 
             this.Title.HeaderText = "Title";
@@ -345,6 +312,40 @@ namespace Game_Project_Application
             this.Platform.HeaderText = "Platform";
             this.Platform.Name = "Platform";
             this.Platform.ReadOnly = true;
+            // 
+            // uxMenuStrip
+            // 
+            this.uxMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.uxMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uxView});
+            this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.uxMenuStrip.Name = "uxMenuStrip";
+            this.uxMenuStrip.Size = new System.Drawing.Size(561, 28);
+            this.uxMenuStrip.TabIndex = 42;
+            this.uxMenuStrip.Text = "Views";
+            // 
+            // uxView
+            // 
+            this.uxView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uxEmployeeView,
+            this.storeViewToolStripMenuItem});
+            this.uxView.Name = "uxView";
+            this.uxView.Size = new System.Drawing.Size(53, 24);
+            this.uxView.Text = "View";
+            // 
+            // uxEmployeeView
+            // 
+            this.uxEmployeeView.Name = "uxEmployeeView";
+            this.uxEmployeeView.Size = new System.Drawing.Size(216, 26);
+            this.uxEmployeeView.Text = "Employee View";
+            this.uxEmployeeView.Click += new System.EventHandler(this.uxEmployeeView_Click);
+            // 
+            // storeViewToolStripMenuItem
+            // 
+            this.storeViewToolStripMenuItem.Name = "storeViewToolStripMenuItem";
+            this.storeViewToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.storeViewToolStripMenuItem.Text = "Store View";
+            this.storeViewToolStripMenuItem.Click += new System.EventHandler(this.storeViewToolStripMenuItem_Click);
             // 
             // GameApplication
             // 

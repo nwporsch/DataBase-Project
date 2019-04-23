@@ -37,10 +37,9 @@ namespace Game_Project_Application
 
                 string s = "Location: " +  output[0] + "\n" +
                            "Weekday Hours: " + output[1] + "\n" +
-                           "Saturday Hours: " + output[2] + "\n" +
-                           "Sunday Hours: " + output[3] + "\n" +
-                           "Number of Games in Store: " + output[4] + "\n" +
-                           "Total Sales: " + output[5] + "\n";
+                           "Weekend Hours: " + output[2] + "\n" +
+                           "Number of Games in Store: " + output[3] + "\n" +
+                           "Total Sales: " + output[4] + "\n";
                 MessageBox.Show(s);
             }
             else
@@ -68,12 +67,12 @@ namespace Game_Project_Application
                     string city ="";
                     string state ="";
                     string weekdayHours = "";
-                    string saturdayHours = "";
-                    string sundayHours = "";
+                    string weekendHours = "";
                     string numOfGames = "";
                     string totalSales = "";
                     int hours;
                     int minute;
+                    string time = "";
                     string m;
 
                     while (k.Read())
@@ -86,10 +85,30 @@ namespace Game_Project_Application
                         if(k.GetString(k.GetOrdinal("Description")).Equals("Monday to Friday Hours"))
                         {
 
-                            hours = k.GetInt32(k.GetOrdinal("StartHour"));
-                            minute = k.GetInt32(k.GetOrdinal("StartMinute"));
-                            
-                            if(minute < 10)
+                            Time t = k.GetDataTypeName(k.GetOrdinal("StartingTime"));
+                            string h = time.Substring(0, 2);
+
+                            if (h[0].Equals('0'))
+                            {
+                                hours = Convert.ToInt32(h[1]);
+                            }
+                            else
+                            {
+                                hours = Convert.ToInt32(h);
+                            }
+
+                            m = time.Substring(4, 2);
+
+                            if (m[0].Equals('0'))
+                            {
+                                minute = Convert.ToInt32(m[1]);
+                            }
+                            else
+                            {
+                                minute = Convert.ToInt32(m);
+                            }
+
+                            if (minute < 10)
                             {
                                 m = "0" + minute.ToString();
                             }
@@ -110,10 +129,30 @@ namespace Game_Project_Application
                             }
 
                         }
-                        else if(k.GetString(k.GetOrdinal("Description")).Equals("Saturday Hours"))
+                        else if(k.GetString(k.GetOrdinal("Description")).Equals("Weekend Hours"))
                         {
-                            hours = k.GetInt32(k.GetOrdinal("StartHour"));
-                            minute = k.GetInt32(k.GetOrdinal("StartMinute"));
+                            time = k.GetString(k.GetOrdinal("StartingTime"));
+                            string h = time.Substring(0, 2);
+
+                            if (h[0].Equals('0'))
+                            {
+                                hours = Convert.ToInt32(h[1]);
+                            }
+                            else
+                            {
+                                hours = Convert.ToInt32(h);
+                            }
+
+                            m = time.Substring(4, 2);
+
+                            if (m[0].Equals('0'))
+                            {
+                                minute = Convert.ToInt32(m[1]);
+                            }
+                            else
+                            {
+                                minute = Convert.ToInt32(m);
+                            }
 
                             if (minute < 10)
                             {
@@ -127,37 +166,12 @@ namespace Game_Project_Application
                             if (hours < 12)
                             {
 
-                                saturdayHours = hours.ToString() + ":" + m + " AM";
+                                weekendHours = hours.ToString() + ":" + m + " AM";
                             }
                             else
                             {
 
-                                saturdayHours = (hours % 12).ToString() + ":" + m + " PM";
-                            }
-                        }
-                        else if(k.GetString(k.GetOrdinal("Description")).Equals("Sunday Hours"))
-                        {
-                            hours = k.GetInt32(k.GetOrdinal("StartHour"));
-                            minute = k.GetInt32(k.GetOrdinal("StartMinute"));
-
-                            if (minute < 10)
-                            {
-                                m = "0" + minute.ToString();
-                            }
-                            else
-                            {
-                                m = minute.ToString();
-                            }
-
-                            if (hours < 12)
-                            {
-
-                                sundayHours = hours.ToString() + ":" + m + " AM";
-                            }
-                            else
-                            {
-
-                                sundayHours = (hours % 12).ToString() + ":" + m + " PM";
+                                weekendHours = (hours % 12).ToString() + ":" + m + " PM";
                             }
                         }
 
@@ -172,7 +186,7 @@ namespace Game_Project_Application
                     
                     k.Close();
 
-                    string[] output = { location, weekdayHours, saturdayHours, sundayHours, numOfGames, totalSales };
+                    string[] output = { location, weekdayHours, weekendHours, numOfGames, totalSales };
                     return output;
                 }
             }

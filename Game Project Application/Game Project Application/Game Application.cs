@@ -14,7 +14,7 @@ namespace Game_Project_Application
 {
     public partial class GameApplication : Form
     {
-
+        private StoreView storeView;
         private SearchResults searchWindow;
         private EmployeeView receiptLookup;
         private CustomerInput customerWindow;
@@ -346,6 +346,12 @@ namespace Game_Project_Application
         {
             receiptLookup = new EmployeeView();
             receiptLookup.ShowDialog();
+        }
+
+        private void storeViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            storeView = new StoreView();
+            storeView.ShowDialog();
         }
     }
 
