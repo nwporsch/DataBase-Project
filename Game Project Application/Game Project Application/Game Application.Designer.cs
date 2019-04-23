@@ -164,6 +164,7 @@ namespace Game_Project_Application
             this.uxStoreId.Name = "uxStoreId";
             this.uxStoreId.Size = new System.Drawing.Size(453, 30);
             this.uxStoreId.TabIndex = 15;
+            this.uxStoreId.TextChanged += new System.EventHandler(this.uxStoreId_TextChanged);
             // 
             // uxStoreIdLabel
             // 
@@ -336,14 +337,14 @@ namespace Game_Project_Application
             // uxEmployeeView
             // 
             this.uxEmployeeView.Name = "uxEmployeeView";
-            this.uxEmployeeView.Size = new System.Drawing.Size(216, 26);
+            this.uxEmployeeView.Size = new System.Drawing.Size(186, 26);
             this.uxEmployeeView.Text = "Employee View";
             this.uxEmployeeView.Click += new System.EventHandler(this.uxEmployeeView_Click);
             // 
             // storeViewToolStripMenuItem
             // 
             this.storeViewToolStripMenuItem.Name = "storeViewToolStripMenuItem";
-            this.storeViewToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.storeViewToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.storeViewToolStripMenuItem.Text = "Store View";
             this.storeViewToolStripMenuItem.Click += new System.EventHandler(this.storeViewToolStripMenuItem_Click);
             // 

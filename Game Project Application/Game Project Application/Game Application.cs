@@ -360,6 +360,40 @@ namespace Game_Project_Application
             storeView = new StoreView();
             storeView.ShowDialog();
         }
+
+        private void uxStoreId_TextChanged(object sender, EventArgs e)
+        {
+            int index = uxStoreId.SelectionStart;
+            string text = uxStoreId.Text;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if(text[i]< '0' || text[i] > '9')
+                {
+                    if(i == 0)
+                    {
+                        text = text.Substring(1, text.Length - 1);
+                    }
+                    else if( i == text.Length - 1)
+                    {
+                        text = text.Substring(0, text.Length - 1);
+                    }
+                    else
+                    {
+                        text = text.Substring(0, i) + text.Substring(i + 1, text.Length - i - 1);
+                    }
+                    uxStoreId.Text = text;
+                    if (index > 0)
+                    {
+                        uxStoreId.SelectionStart = index - 1;
+                    }
+                    else
+                    {
+                        uxStoreId.SelectionStart = index;
+                    }
+                }
+            }
+            
+        }
     }
 
 }

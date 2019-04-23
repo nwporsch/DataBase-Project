@@ -42,7 +42,7 @@
             this.uxReceiptIdLabel.Location = new System.Drawing.Point(11, 19);
             this.uxReceiptIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxReceiptIdLabel.Name = "uxReceiptIdLabel";
-            this.uxReceiptIdLabel.Size = new System.Drawing.Size(73, 20);
+            this.uxReceiptIdLabel.Size = new System.Drawing.Size(89, 25);
             this.uxReceiptIdLabel.TabIndex = 44;
             this.uxReceiptIdLabel.Text = "Store ID:";
             // 
@@ -52,8 +52,9 @@
             this.uxStoreId.Location = new System.Drawing.Point(102, 16);
             this.uxStoreId.Margin = new System.Windows.Forms.Padding(2);
             this.uxStoreId.Name = "uxStoreId";
-            this.uxStoreId.Size = new System.Drawing.Size(354, 26);
+            this.uxStoreId.Size = new System.Drawing.Size(354, 30);
             this.uxStoreId.TabIndex = 43;
+            this.uxStoreId.TextChanged += new System.EventHandler(this.uxStoreId_TextChanged);
             // 
             // btnFinish
             // 
