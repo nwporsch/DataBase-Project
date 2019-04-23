@@ -1,27 +1,26 @@
 ﻿CREATE OR ALTER PROCEDURE GameStore.CreateOrderLines
-	@OrderId AS INT,
-	@GameStoreInfoId AS INT,
-	@Quantity AS INT,
-	@UnitPrice AS DECIMAL(4,2)
+	@OrderId INT,
+	@GameStoreInfoId INT,
+	@Quantity INT,
+	@UnitPrice DECIMAL(4,2)
 AS
 
+WITH SourceCTE (OrderId, GameStoreInfoId, Quantity, UnitPrice) AS
+(
+	SELECT V.OrderId, V.GameStoreInfoId, V.Quantity, V.UnitPrice 
+	FROM 
+	(
+		VALUES (@OrderId,@GameStoreInfoId,@Quantity,@UnitPrice)
+	) V (OrderId,GameStoreInfoId,Quantity,UnitPrice)
+) 
+
 MERGE GameStore.OrderLines OL
-	USING(
-		SELECT T.OrderId, T.GameStoreInfoId, T.Quantity, T.UnitPrice
-		FROM(
-			VALUES (@OrderId,@GameStoreInfoId,@Quantity,@UnitPrice)
-			)
-		T(OrderId, GameStoreInfoId, Quantity, UnitPrice)
-		)TH(OrderId,GameStoreInfoId, Quantity, UnitPrice) ON EXISTS (SELECT * 
-																	 FROM GameStore.OrderLines OL
-																		
-																	WHERE OL.OrderId = @OrderId
-																	AND OL.GameStoreInfoId = @GameStoreInfoId
-																	)
+USING SourceCTE S ON S.OrderId = OL.OrderId
+	AND S.GameStoreInfoId = OL.GameStoreInfoId
 WHEN MATCHED THEN
 	UPDATE
 	SET
-		Quantity = OL.Quantity + TH.Quantity
-WHEN NOT MATCHED AND EXISTS (SELECT * FROM GameStore.Orders O WHERE O.OrderId = @OrderId) THEN
-	INSERT (OrderId,GameStoreInfoId,Quantity,UnitPrice)
-		VALUES(TH.OrderId,TH.GameStoreInfoId,TH.Quantity,TH.UnitPrice);
+		Quantity = OL.Quantity + S.Quantity
+WHEN NOT MATCHED THEN
+	INSERT (OrderId,GameStoreInfoId,UnitPrice,Quantity)
+		VALUES(@OrderId,@GameStoreInfoId,@UnitPrice,@Quantity);
