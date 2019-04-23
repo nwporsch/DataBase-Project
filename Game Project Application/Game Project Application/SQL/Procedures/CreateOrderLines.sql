@@ -7,16 +7,21 @@ AS
 
 MERGE GameStore.OrderLines OL
 	USING(
-		SELECT T.OrderId, T.GameStoreInfoId, T.Quantity, T.UnitPrice 
+		SELECT T.OrderId, T.GameStoreInfoId, T.Quantity, T.UnitPrice
 		FROM(
 			VALUES (@OrderId,@GameStoreInfoId,@Quantity,@UnitPrice)
 			)
-		 T (OrderId,GameStoreInfoId,Quantity,UnitPrice)
-	)TH(OrderId,GameStoreInfoId,Quantity,UnitPrice) ON TH.OrderId = OL.OrderId
+		T(OrderId, GameStoreInfoId, Quantity, UnitPrice)
+		)TH(OrderId,GameStoreInfoId, Quantity, UnitPrice) ON EXISTS (SELECT * 
+																	 FROM GameStore.OrderLines OL
+																		
+																	WHERE OL.OrderId = @OrderId
+																	AND OL.GameStoreInfoId = @GameStoreInfoId
+																	)
 WHEN MATCHED THEN
 	UPDATE
 	SET
 		Quantity = OL.Quantity + TH.Quantity
-WHEN NOT MATCHED THEN
-	INSERT (OrderId,GameStoreInfoId,UnitPrice,Quantity)
-		VALUES(@OrderId,@GameStoreInfoId,@UnitPrice,@Quantity);
+WHEN NOT MATCHED AND EXISTS (SELECT * FROM GameStore.Orders O WHERE O.OrderId = @OrderId) THEN
+	INSERT (OrderId,GameStoreInfoId,Quantity,UnitPrice)
+		VALUES(TH.OrderId,TH.GameStoreInfoId,TH.Quantity,TH.UnitPrice);

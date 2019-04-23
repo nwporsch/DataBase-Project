@@ -1,4 +1,5 @@
-﻿namespace Game_Project_Application
+﻿//GameStore App designer
+namespace Game_Project_Application
 {
     partial class GameApplication
     {
@@ -54,6 +55,7 @@
             this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StoreId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxReceipt)).BeginInit();
             this.uxMenuStrip.SuspendLayout();
@@ -248,6 +250,7 @@
             this.Condition,
             this.GameId,
             this.StoreId,
+            this.Quantity,
             this.Platform});
             this.uxReceipt.Location = new System.Drawing.Point(15, 263);
             this.uxReceipt.Margin = new System.Windows.Forms.Padding(2);
@@ -330,6 +333,13 @@
             this.StoreId.ReadOnly = true;
             this.StoreId.Visible = false;
             // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.Visible = false;
+            // 
             // Platform
             // 
             this.Platform.HeaderText = "Platform";
@@ -399,6 +409,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Condition;
         private System.Windows.Forms.DataGridViewTextBoxColumn GameId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StoreId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Platform;
     }
 }
