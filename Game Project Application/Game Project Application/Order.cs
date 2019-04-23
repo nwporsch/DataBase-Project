@@ -22,6 +22,10 @@ namespace Game_Project_Application
             set
             {
                 this.orderList = value;
+                foreach (OrderLine ol in orderList)
+                {
+                    ol.OrderID = orderId;
+                }
             }
         }
         private int orderId;
@@ -157,7 +161,7 @@ namespace Game_Project_Application
 
             foreach (OrderLine orderLine in orderList)
             {
-                orderLine.SendToDatabase(orderId);
+                orderLine.SendToDatabase();
                 total += orderLine.Quantity * orderLine.Price;
             }
         }

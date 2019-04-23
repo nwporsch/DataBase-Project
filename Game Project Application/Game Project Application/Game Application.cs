@@ -311,26 +311,33 @@ namespace Game_Project_Application
         /// </summary>
         private void btnFinishTransaction_Click(object sender, EventArgs e)
         {
-            orderList = new ArrayList();
-            foreach (DataGridViewRow r in uxReceipt.Rows)
+            if (uxReceipt.RowCount == 0)
             {
-
-                string[] game = new string[r.Cells.Count];
-
-                for (int i = 0; i < r.Cells.Count; i++)
-                {
-                    game[i] = r.Cells[i].Value.ToString();
-                }
-
-                string title = game[0];
-                int gameId = Convert.ToInt32(game[4]);
-                int storeId = Convert.ToInt32(game[5]);
-                double price = Convert.ToDouble(game[2]);
-                OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
-                orderList.Add(orderLine);
+                MessageBox.Show("Please add items to receipt before ending transaction.");
             }
-            customerWindow = new CustomerInput(this);
-            customerWindow.Show();
+            else
+            {
+                orderList = new ArrayList();
+                foreach (DataGridViewRow r in uxReceipt.Rows)
+                {
+
+                    string[] game = new string[r.Cells.Count];
+
+                    for (int i = 0; i < r.Cells.Count; i++)
+                    {
+                        game[i] = r.Cells[i].Value.ToString();
+                    }
+
+                    string title = game[0];
+                    int gameId = Convert.ToInt32(game[4]);
+                    int storeId = Convert.ToInt32(game[5]);
+                    double price = Convert.ToDouble(game[2]);
+                    OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
+                    orderList.Add(orderLine);
+                }
+                customerWindow = new CustomerInput(this);
+                customerWindow.Show();
+            }
         }
 
         public void CreateOrder()
