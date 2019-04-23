@@ -40,6 +40,9 @@
             // 
             // uxResults
             // 
+            this.uxResults.AllowUserToAddRows = false;
+            this.uxResults.AllowUserToDeleteRows = false;
+            this.uxResults.AllowUserToOrderColumns = true;
             this.uxResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uxResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ReceiptId,
@@ -50,6 +53,7 @@
             this.Total});
             this.uxResults.Location = new System.Drawing.Point(12, 12);
             this.uxResults.Name = "uxResults";
+            this.uxResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uxResults.Size = new System.Drawing.Size(559, 432);
             this.uxResults.TabIndex = 0;
             // 
