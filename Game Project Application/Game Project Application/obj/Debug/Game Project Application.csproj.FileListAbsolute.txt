@@ -122,7 +122,6 @@ C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project A
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.CustomerInput.resources
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
-U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.ReceiptSearchResults.resources
 U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
@@ -239,3 +238,5 @@ C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Pr
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
+U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.GameApplication.resources
+U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreView.resources
