@@ -136,12 +136,34 @@ namespace Game_Project_Application
         }
 
         /// <summary>
+        /// The identifier for the order connected to this orderline
+        /// </summary>
+        private int orderId;
+
+        /// <summary>
+        /// getter and setter functions for orderId
+        /// </summary>
+        public int OrderID
+        {
+            get
+            {
+                return this.orderId;
+            }
+            set
+            {
+                this.orderId = value;
+            }
+        }
+
+        /// <summary>
         /// When given an orderId the orderline will then be sent to the database to be added to the system.
         /// </summary>
         /// <param name="orderId">The identifier of the order for the specific orderline</param>
-        public void SendToDatabase(int orderId)
+        public void SendToDatabase()
         {
+
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+            GetOrderLineId();
 
             using (var connection = new SqlConnection(connectionString))
             {
@@ -150,6 +172,7 @@ namespace Game_Project_Application
                     command.CommandType = CommandType.StoredProcedure;
                     //OrderId GameId Quantity Unit Price
                     command.Parameters.AddWithValue("OrderId", orderId);
+                    command.Parameters.AddWithValue("OrderLineId", orderLineId);
                     command.Parameters.AddWithValue("GameStoreInfoId", gameId);
                     command.Parameters.AddWithValue("Quantity", quantity);
                     command.Parameters.AddWithValue("UnitPrice", price);
@@ -162,6 +185,39 @@ namespace Game_Project_Application
                 }
             }
         }
+
+        public void GetOrderLineId()
+        {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("GameStore.GetOrderLineId", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    //OrderId GameId Quantity Unit Price
+                    command.Parameters.AddWithValue("OrderId", orderId);
+                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        orderLineId = reader.GetInt32(reader.GetOrdinal("OrderLineId"));
+                    }
+                    else
+                    {
+                        orderLineId = -1;
+                    }
+
+                    connection.Close();
+
+
+                }
+            }
+        }
+
 
         /// <summary>
         /// The constructor for an orderline object
