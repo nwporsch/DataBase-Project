@@ -4,7 +4,6 @@
 	@LastName NVARCHAR(64)
 AS
 
-
-SELECT IIF( C.Email = @Email AND C.FirstName = @FirstName AND C.LastName = @LastName, C.CustomerId, -1) AS CustomerId
+SELECT IIF(C.FirstName = @FirstName AND C.LastName = @LastName, C.CustomerId, -1) AS CustomerId
 FROM GameStore.Customers C
-GO
+WHERE C.Email = @Email
