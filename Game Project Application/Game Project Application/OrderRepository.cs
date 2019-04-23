@@ -36,8 +36,8 @@ namespace Game_Project_Application
                     {
                         orderList.Add(new Order(
                            reader.GetInt32(reader.GetOrdinal("OrderId")),
-                           reader.GetString(reader.GetOrdinal("First")),
-                           reader.GetString(reader.GetOrdinal("Last")),
+                           reader.GetString(reader.GetOrdinal("FirstName")),
+                           reader.GetString(reader.GetOrdinal("LastName")),
                            reader.GetString(reader.GetOrdinal("Email")),
                            reader.GetInt32(reader.GetOrdinal("Count")),
                            Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("Total")))));

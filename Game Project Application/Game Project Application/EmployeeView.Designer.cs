@@ -47,7 +47,7 @@
             this.uxEmailLabel.Location = new System.Drawing.Point(19, 104);
             this.uxEmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxEmailLabel.Name = "uxEmailLabel";
-            this.uxEmailLabel.Size = new System.Drawing.Size(52, 20);
+            this.uxEmailLabel.Size = new System.Drawing.Size(66, 25);
             this.uxEmailLabel.TabIndex = 47;
             this.uxEmailLabel.Text = "Email:";
             // 
@@ -58,7 +58,7 @@
             this.uxLastNameLabel.Location = new System.Drawing.Point(19, 74);
             this.uxLastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxLastNameLabel.Name = "uxLastNameLabel";
-            this.uxLastNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxLastNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxLastNameLabel.TabIndex = 46;
             this.uxLastNameLabel.Text = "Last Name:";
             // 
@@ -69,7 +69,7 @@
             this.uxFirstNameLabel.Location = new System.Drawing.Point(19, 44);
             this.uxFirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxFirstNameLabel.Name = "uxFirstNameLabel";
-            this.uxFirstNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxFirstNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxFirstNameLabel.TabIndex = 43;
             this.uxFirstNameLabel.Text = "First Name:";
             // 
@@ -80,7 +80,7 @@
             this.uxReceiptIdLabel.Location = new System.Drawing.Point(19, 14);
             this.uxReceiptIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxReceiptIdLabel.Name = "uxReceiptIdLabel";
-            this.uxReceiptIdLabel.Size = new System.Drawing.Size(89, 20);
+            this.uxReceiptIdLabel.Size = new System.Drawing.Size(107, 25);
             this.uxReceiptIdLabel.TabIndex = 42;
             this.uxReceiptIdLabel.Text = "Receipt ID:";
             // 
@@ -90,7 +90,7 @@
             this.uxEmail.Location = new System.Drawing.Point(124, 101);
             this.uxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.uxEmail.Name = "uxEmail";
-            this.uxEmail.Size = new System.Drawing.Size(354, 26);
+            this.uxEmail.Size = new System.Drawing.Size(354, 30);
             this.uxEmail.TabIndex = 38;
             // 
             // uxLastName
@@ -99,7 +99,7 @@
             this.uxLastName.Location = new System.Drawing.Point(124, 71);
             this.uxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.uxLastName.Name = "uxLastName";
-            this.uxLastName.Size = new System.Drawing.Size(354, 26);
+            this.uxLastName.Size = new System.Drawing.Size(354, 30);
             this.uxLastName.TabIndex = 37;
             // 
             // uxFirstName
@@ -108,7 +108,7 @@
             this.uxFirstName.Location = new System.Drawing.Point(124, 41);
             this.uxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.uxFirstName.Name = "uxFirstName";
-            this.uxFirstName.Size = new System.Drawing.Size(354, 26);
+            this.uxFirstName.Size = new System.Drawing.Size(354, 30);
             this.uxFirstName.TabIndex = 36;
             // 
             // uxReceiptId
@@ -117,8 +117,9 @@
             this.uxReceiptId.Location = new System.Drawing.Point(124, 11);
             this.uxReceiptId.Margin = new System.Windows.Forms.Padding(2);
             this.uxReceiptId.Name = "uxReceiptId";
-            this.uxReceiptId.Size = new System.Drawing.Size(354, 26);
+            this.uxReceiptId.Size = new System.Drawing.Size(354, 30);
             this.uxReceiptId.TabIndex = 35;
+            this.uxReceiptId.TextChanged += new System.EventHandler(this.uxReceiptId_TextChanged);
             // 
             // btnFindReceipt
             // 

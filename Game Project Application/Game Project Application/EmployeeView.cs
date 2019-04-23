@@ -70,5 +70,38 @@ namespace Game_Project_Application
         {
             this.Close();
         }
+
+        private void uxReceiptId_TextChanged(object sender, EventArgs e)
+        {
+            int index = uxReceiptId.SelectionStart;
+            string text = uxReceiptId.Text;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] < '0' || text[i] > '9')
+                {
+                    if (i == 0)
+                    {
+                        text = text.Substring(1, text.Length - 1);
+                    }
+                    else if (i == text.Length - 1)
+                    {
+                        text = text.Substring(0, text.Length - 1);
+                    }
+                    else
+                    {
+                        text = text.Substring(0, i) + text.Substring(i + 1, text.Length - i - 1);
+                    }
+                    uxReceiptId.Text = text;
+                    if (index > 0)
+                    {
+                        uxReceiptId.SelectionStart = index - 1;
+                    }
+                    else
+                    {
+                        uxReceiptId.SelectionStart = index;
+                    }
+                }
+            }
+        }
     }
 }
