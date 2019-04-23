@@ -1,8 +1,10 @@
 ﻿CREATE OR ALTER PROCEDURE GameStore.GetCustomerId
-	@Email NVARCHAR(64)
+	@Email NVARCHAR(64),
+	@FirstName NVARCHAR(64),
+	@LastName NVARCHAR(64)
 AS
 
-SELECT C.CustomerId
+
+SELECT IIF( C.Email = @Email AND C.FirstName = @FirstName AND C.LastName = @LastName, C.CustomerId, -1) AS CustomerId
 FROM GameStore.Customers C
-WHERE C.Email = @Email
 GO

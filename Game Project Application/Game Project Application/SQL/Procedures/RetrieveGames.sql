@@ -10,7 +10,7 @@
 
 AS
 
-SELECT GP.GameId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition, GE.GenreName, P.PlatformName
+SELECT GSI.GameStoreInfoId, GSI.StoreId, G.Title, GSI.UnitPrice, GSI.Quantity, C.Condition, GE.GenreName, P.PlatformName
 FROM GameStore.GamePlatform GP
 INNER JOIN GameStore.GameStoreInfo GSI ON GSI.GamePlatformId = GP.GamePlatformId
 INNER JOIN GameStore.Games G ON G.GameId = GP.GameId
@@ -46,7 +46,7 @@ AND LOWER(P.PlatformName) = CASE @Platform
 				ELSE
 					@Platform
 				END
-GROUP BY GSI.StoreId, GP.GameId, GSI.UnitPrice, G.Title, GSI.Quantity, C.Condition, GE.GenreName, P.PlatformName
+GROUP BY GSI.StoreId, GSI.GameStoreInfoId, GSI.UnitPrice, G.Title, GSI.Quantity, C.Condition, GE.GenreName, P.PlatformName
 HAVING GSI.UnitPrice >=
 		CASE @MinPrice
 				WHEN -1
