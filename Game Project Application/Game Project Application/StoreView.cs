@@ -11,18 +11,31 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// The StoreView provides information on a store when given the storeId.  Information provided is the sales of the store,
+    /// hours, number of games in inventory, and location.
+    /// </summary>
     public partial class StoreView : Form
     {
+        /// <summary>
+        /// Constructor for StoreView and starts to form.
+        /// </summary>
         public StoreView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Closes the form when the user clicks the Finish Button.
+        /// </summary>
         private void btnFinish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Provides the user with information on the store such as the hours, location, number of games in inventory, and total sales.
+        /// </summary>
         private void btnStoreInfo_Click(object sender, EventArgs e)
         {
             if(uxStoreId.Text != "")
@@ -54,6 +67,11 @@ namespace Game_Project_Application
 
         }
 
+        /// <summary>
+        /// When given a storeId the method queries the database for the hours, location, number of games in inventory, and total sales.
+        /// </summary>
+        /// <param name="id">Store Id</param>
+        /// <returns>A string array with all the data on the given store</returns>
         private string[] getStoreInfo(int id)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";

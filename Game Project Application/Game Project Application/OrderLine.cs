@@ -8,11 +8,40 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// Represents an object or series of the same object purchased by a customer in a given order.
+    /// </summary>
     public class OrderLine
     {
+
+        /// <summary>
+        /// The identifier for the Orderline Object
+        /// </summary>
         private int orderLineId;
 
+        /// <summary>
+        /// The getter and setter functions to access the orderLineId
+        /// </summary>
+        public int OrderLineId
+        {
+            get
+            {
+                return this.orderLineId;
+            }
+            set
+            {
+                this.orderLineId = value;
+            }
+        }
+
+        /// <summary>
+        /// The title of the game being purchased
+        /// </summary>
         private string title;
+
+        /// <summary>
+        /// The getter and setter functions to access the title
+        /// </summary>
         public string Title
         {   
             get
@@ -24,7 +53,15 @@ namespace Game_Project_Application
                 this.title = value;
             }
         }
+
+        /// <summary>
+        /// The number of the specific game the customer purchased.
+        /// </summary>
         private int quantity;
+
+        /// <summary>
+        /// The getter and setter functions to access the quantity
+        /// </summary>
         public int Quantity
         {
             get
@@ -36,7 +73,15 @@ namespace Game_Project_Application
                 this.quantity = value;
             }
         }
+
+        /// <summary>
+        /// The Unit price of the item being ordered by the customer
+        /// </summary>
         private double price;
+
+        /// <summary>
+        /// The getter and setter functions to access the price
+        /// </summary>
         public double Price
         {
             get
@@ -48,7 +93,16 @@ namespace Game_Project_Application
                 this.price = value;
             }
         }
+
+
+        /// <summary>
+        /// The identifier of the game object to this specific orderLine
+        /// </summary>
         private int gameId;
+
+        /// <summary>
+        /// The getter and setter functions to access the gameId
+        /// </summary>
         public int GameID
         {
             get
@@ -60,7 +114,15 @@ namespace Game_Project_Application
                 this.gameId = value;
             }
         }
+
+        /// <summary>
+        /// The identifier for the store where the customer purchased his order
+        /// </summary>
         private int storeId;
+
+        /// <summary>
+        /// getter and setter functions for storeId
+        /// </summary>
         public int StoreID
         {
             get
@@ -73,6 +135,10 @@ namespace Game_Project_Application
             }
         }
 
+        /// <summary>
+        /// When given an orderId the orderline will then be sent to the database to be added to the system.
+        /// </summary>
+        /// <param name="orderId">The identifier of the order for the specific orderline</param>
         public void SendToDatabase(int orderId)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
@@ -97,6 +163,14 @@ namespace Game_Project_Application
             }
         }
 
+        /// <summary>
+        /// The constructor for an orderline object
+        /// </summary>
+        /// <param name="title">The title of the game being purchased</param>
+        /// <param name="quantity">How many of the specific game are being purchased</param>
+        /// <param name="price">The unit price of the game</param>
+        /// <param name="gameId">The gameId of the game being purchased</param>
+        /// <param name="storeId">The storeId for where the game was purchased</param>
         //This constructor is given all the information need for one purchase made of a certain game
         public OrderLine(string title, int quantity, double price, int gameId, int storeId)
         {

@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// GameRepository retrieves a list of games based off given conditions from the database.
+    /// </summary>
     class GameRepository : IGameRepository
     {
-        public Game CreateGame(int storeId, string gameTitle, decimal UnitPrice, bool isUsed, int quantity)
-        {
-            throw new NotImplementedException();
-        }
-        public List<Game> GetGame()
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// When provided a SearchConditions object the method may query the database for any game with the given search conditions.
+        /// </summary>
+        /// <param name="sc">Search Condition Object which holds the conditions from the user for search games.</param>
+        /// <returns>A list of games that match the criteria given by the Search Conditions object</returns>
         public List<Game> RetrieveGames(SearchConditions sc)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
