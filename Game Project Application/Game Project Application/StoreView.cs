@@ -72,8 +72,8 @@ namespace Game_Project_Application
                     string totalSales = "";
                     int hours;
                     int minute;
-                    string time = "";
-                    string m;
+                    string m = "";
+                    TimeSpan time;
 
                     while (k.Read())
                     {
@@ -85,28 +85,9 @@ namespace Game_Project_Application
                         if(k.GetString(k.GetOrdinal("Description")).Equals("Monday to Friday Hours"))
                         {
 
-                            Time t = k.GetDataTypeName(k.GetOrdinal("StartingTime"));
-                            string h = time.Substring(0, 2);
-
-                            if (h[0].Equals('0'))
-                            {
-                                hours = Convert.ToInt32(h[1]);
-                            }
-                            else
-                            {
-                                hours = Convert.ToInt32(h);
-                            }
-
-                            m = time.Substring(4, 2);
-
-                            if (m[0].Equals('0'))
-                            {
-                                minute = Convert.ToInt32(m[1]);
-                            }
-                            else
-                            {
-                                minute = Convert.ToInt32(m);
-                            }
+                            time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
+                            hours = Convert.ToInt32(time.TotalHours);
+                            minute = ( hours * 60) - Convert.ToInt32(time.TotalMinutes);
 
                             if (minute < 10)
                             {
@@ -117,42 +98,24 @@ namespace Game_Project_Application
                                 m = minute.ToString();
                             }
 
-                            if(hours < 12)
+                            if (hours < 12)
                             {
                                 
-                                weekdayHours = hours.ToString() + ":" + m + " AM";
+
+                                weekdayHours = hours.ToString() + ":" + m.ToString() + " AM";
                             }
                             else
                             {
                                 
-                                weekdayHours = (hours % 12).ToString() + ":" + m + " PM";
+                                weekdayHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
                             }
 
                         }
                         else if(k.GetString(k.GetOrdinal("Description")).Equals("Weekend Hours"))
                         {
-                            time = k.GetString(k.GetOrdinal("StartingTime"));
-                            string h = time.Substring(0, 2);
-
-                            if (h[0].Equals('0'))
-                            {
-                                hours = Convert.ToInt32(h[1]);
-                            }
-                            else
-                            {
-                                hours = Convert.ToInt32(h);
-                            }
-
-                            m = time.Substring(4, 2);
-
-                            if (m[0].Equals('0'))
-                            {
-                                minute = Convert.ToInt32(m[1]);
-                            }
-                            else
-                            {
-                                minute = Convert.ToInt32(m);
-                            }
+                            time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
+                            hours = Convert.ToInt32(time.TotalHours);
+                            minute = (hours * 60) - Convert.ToInt32(time.TotalMinutes);
 
                             if (minute < 10)
                             {
@@ -166,18 +129,18 @@ namespace Game_Project_Application
                             if (hours < 12)
                             {
 
-                                weekendHours = hours.ToString() + ":" + m + " AM";
+                                weekendHours = hours.ToString() + ":" + m.ToString() + " AM";
                             }
                             else
                             {
 
-                                weekendHours = (hours % 12).ToString() + ":" + m + " PM";
+                                weekendHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
                             }
                         }
 
 
-                        numOfGames = k.GetInt32(k.GetOrdinal("NumGames")).ToString();
-                        totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                        numOfGames = k.GetInt32(k.GetOrdinal("GameCount")).ToString();
+                        totalSales = "$" + k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
 
                     }
 
