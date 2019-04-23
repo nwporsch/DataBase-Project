@@ -77,7 +77,7 @@ namespace Game_Project_Application
                            reader.GetInt32(reader.GetOrdinal("Quantity")),
                            condition,
                            reader.GetInt32(reader.GetOrdinal("storeId")),
-                           reader.GetInt32(reader.GetOrdinal("gameId"))));
+                           reader.GetInt32(reader.GetOrdinal("GameStoreInfoId"))));
                     }
 
                     return gameList;

@@ -31,6 +31,7 @@ namespace Game_Project_Application
             string city;
             string state;
             bool foundCustomerId = false;
+            bool legitCustomer = false;
             Customer c;
             if (uxEmail.Text == "")
             {
@@ -71,26 +72,30 @@ namespace Game_Project_Application
                         }
                         catch(Exception)
                         {
-                            getCustomer(c);
+                            legitCustomer = getCustomer(c);
                             foundCustomerId = true;
                         }
 
                         if (!foundCustomerId)
                         {
-                            getCustomer(c);
+                            legitCustomer = getCustomer(c);
                         }
 
                         
                     }
 
                     this.Close();
-                    ga.CreateOrder();
+                    if (legitCustomer)
+                    {
+                        ga.CreateOrder();
+                    }
+                    
 
                 }
             }
         }
 
-        private void getCustomer(Customer c)
+        private bool getCustomer(Customer c)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
             using (var connection = new SqlConnection(connectionString))
@@ -99,6 +104,8 @@ namespace Game_Project_Application
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("Email", c.Email);
+                    command.Parameters.AddWithValue("FirstName", c.First);
+                    command.Parameters.AddWithValue("LastName", c.Last);
                     connection.Open();
 
                     var k = command.ExecuteReader();
@@ -106,7 +113,18 @@ namespace Game_Project_Application
                     int cid = k.GetInt32(k.GetOrdinal("CustomerId"));
                     k.Close();
                     c.CustomerId = cid;
-                    ga.Customer = c;
+
+                    if(c.CustomerId > 0)
+                    {
+                        ga.Customer = c;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email already exists with a different user.");
+                        this.Close();
+                        return false;
+                    }
                 }
             }
         }
