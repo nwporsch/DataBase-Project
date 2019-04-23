@@ -192,6 +192,7 @@ namespace Game_Project_Application
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("StoreId", storeId);
+                    command.Parameters.AddWithValue("Month", month);
                     connection.Open();
 
                     var k = command.ExecuteReader();
