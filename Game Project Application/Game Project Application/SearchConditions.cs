@@ -246,10 +246,10 @@ namespace Game_Project_Application
         /// <summary>
         /// This constructor is used to hold the criteria for finding running total
         /// </summary>
-        /// <param name="customerId">The cu</param>
-        /// <param name="first"></param>
-        /// <param name="last"></param>
-        /// <param name="email"></param>
+        /// <param name="customerId">The customer id related to the orders being searched for</param>
+        /// <param name="first">The first name of the customer related to the orders being searched for</param>
+        /// <param name="last">The last name of the customer related to the orders being searched for</param>
+        /// <param name="email">The email of the customer related to the orders being searched for</param>
         public SearchConditions(int customerId, string first, string last, string email)
         {
             this.CustomerId = customerId;

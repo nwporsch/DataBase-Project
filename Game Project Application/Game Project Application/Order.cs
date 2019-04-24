@@ -12,9 +12,13 @@ namespace Game_Project_Application
     public class Order
     {
         /// <summary>
-        /// Order OrderList
+        /// Holds a list of order objects
         /// </summary>
         private ArrayList orderList;
+
+        /// <summary>
+        /// When an orderLine is added to the orderList their orderId's are set to this object's orderId
+        /// </summary>
         public ArrayList OrderList
         {
             get
@@ -31,9 +35,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order OrderID
+        ///The identifier of the order object
         /// </summary>
         private int orderId;
+
+        /// <summary>
+        /// The getter and setter functions for the orderId
+        /// </summary>
         public int OrderID
         {
             get
@@ -46,9 +54,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order CustomerID
+        /// The customerId related to this order object
         /// </summary>
         private int customerId;
+
+        /// <summary>
+        /// Getter and setters for customerIds
+        /// </summary>
         public int CustomerID
         {
             get
@@ -61,9 +73,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order RunningTotal
+        /// The running total based off all the orderLines in the order
         /// </summary>
         private double runningTotal;
+
+        /// <summary>
+        /// Getter and Setter for runningtotal
+        /// </summary>
         public double RunningTotal
         {
             get

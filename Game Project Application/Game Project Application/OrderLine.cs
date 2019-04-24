@@ -189,6 +189,10 @@ namespace Game_Project_Application
             UpdateQuantities();
         }
 
+
+        /// <summary>
+        /// Updates the quantities in the database by decreasing a store's quantity once the Order is being processed.
+        /// </summary>
         private void UpdateQuantities()
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
