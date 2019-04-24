@@ -179,6 +179,7 @@ namespace Game_Project_Application
                     connection.Open();
 
                     int k = command.ExecuteNonQuery();
+                    
                     connection.Close();
 
 
@@ -204,7 +205,7 @@ namespace Game_Project_Application
 
                     var reader = command.ExecuteReader();
 
-                    if (reader.HasRows)
+                    if (reader.Read())
                     {
                         orderLineId = reader.GetInt32(reader.GetOrdinal("OrderLineId"));
                     }
