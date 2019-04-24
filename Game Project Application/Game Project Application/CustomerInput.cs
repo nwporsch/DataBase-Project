@@ -22,6 +22,7 @@ namespace Game_Project_Application
             this.ga = ga;
         }
 
+        //Handles a click event on the Input button, takes given input and creates a new Customer
         private void btnInput_Click(object sender, EventArgs e)
         {
             string first;
@@ -94,7 +95,7 @@ namespace Game_Project_Application
                 }
             }
         }
-
+        //Establishes a connection to the database and adds a new customer to the database then returns true, if there is a duplicate email then it fails and returns false
         private bool getCustomer(Customer c)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";

@@ -13,6 +13,11 @@ namespace Game_Project_Application
     public partial class ReceiptSearchResults : Form
     {
         private EmployeeView ev;
+        /// <summary>
+        /// Creates the ReceiptSearchResults Window using the Results of a given search
+        /// </summary>
+        /// <param name="ev"></param>
+        /// <param name="o"></param>
         public ReceiptSearchResults(EmployeeView ev, SearchConditions o)
         {
             this.ev = ev;

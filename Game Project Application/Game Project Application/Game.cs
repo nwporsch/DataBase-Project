@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// Object referring to a specific Game and its attributes
+    /// </summary>
     public class Game
     {
+        /// <summary>
+        /// Game Title
+        /// </summary>
         private string title;
         public string Title
         {
@@ -20,6 +26,9 @@ namespace Game_Project_Application
                 this.title = value;
             }
         }
+        /// <summary>
+        /// Game Genre
+        /// </summary>
         private string genre;
         public string Genre
         {
@@ -32,6 +41,9 @@ namespace Game_Project_Application
                 this.genre = value;
             }
         }
+        /// <summary>
+        /// Game Price
+        /// </summary>
         private string price;
         public string Price
         {
@@ -44,6 +56,9 @@ namespace Game_Project_Application
                 this.price = value;
             }
         }
+        /// <summary>
+        /// Game Condition (new or used)
+        /// </summary>
         private string isUsed;
         public string IsUsed
         {
@@ -56,9 +71,10 @@ namespace Game_Project_Application
                 this.isUsed = value;
             }
         }
-
+        /// <summary>
+        /// Game Platform
+        /// </summary>
         private string platform;
-
         public string Platform
         {
             get
@@ -70,7 +86,9 @@ namespace Game_Project_Application
                 this.platform = value;
             }
         }
-
+        /// <summary>
+        /// Game StoreId
+        /// </summary>
         private int storeId;
         public int StoreId
         {
@@ -83,6 +101,9 @@ namespace Game_Project_Application
                 this.storeId = value;
             }
         }
+        /// <summary>
+        /// Game GameId
+        /// </summary>
         private int gameId;
         public int GameId
         {
@@ -95,6 +116,9 @@ namespace Game_Project_Application
                 this.gameId = value;
             }
         }
+        /// <summary>
+        /// Game Quantity
+        /// </summary>
         private int quantity;
         public int Quantity
         {

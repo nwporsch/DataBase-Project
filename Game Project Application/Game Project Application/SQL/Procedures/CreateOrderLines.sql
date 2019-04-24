@@ -26,3 +26,9 @@ WHEN MATCHED THEN
 WHEN NOT MATCHED AND EXISTS (SELECT * FROM GameStore.OrderLines L WHERE L.OrderId = S.OrderId) THEN
 	INSERT (OrderId,GameStoreInfoId,UnitPrice,Quantity)
 		VALUES(@OrderId,@GameStoreInfoId,@UnitPrice,@Quantity);
+
+
+/*SELECT *
+FROM GameStore.Customers C
+INNER JOIN GameStore.Orders O ON O.CustomerId = C.CustomerId
+INNER JOIN GameStore.OrderLines OL ON OL.OrderId = O.OrderId*/

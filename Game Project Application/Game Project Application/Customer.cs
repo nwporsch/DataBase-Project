@@ -8,6 +8,7 @@ namespace Game_Project_Application
 {
     public class Customer
     {
+        //Customer First Name
         private string first;
         public string First
         {
@@ -20,6 +21,7 @@ namespace Game_Project_Application
                 this.first = value;
             }
         }
+        //Customer Last Name
         private string last;
         public string Last
         {
@@ -32,6 +34,7 @@ namespace Game_Project_Application
                 this.last = value;
             }
         }
+        //Customer Email
         private string email;
         public string Email
         {
@@ -44,6 +47,7 @@ namespace Game_Project_Application
                 this.email = value;
             }
         }
+        //Customer Address
         private string address;
         public string Address
         {
@@ -56,6 +60,7 @@ namespace Game_Project_Application
                 this.address = value;
             }
         }
+        //Customer City
         private string city;
         public string City
         {
@@ -68,6 +73,7 @@ namespace Game_Project_Application
                 this.city = value;
             }
         }
+        //Customer State
         private string state;
         public string State
         {
@@ -80,9 +86,8 @@ namespace Game_Project_Application
                 this.state = value;
             }
         }
-
+        //Customer ID
         private int customerId;
-
         public int CustomerId
         {
             get
@@ -96,7 +101,7 @@ namespace Game_Project_Application
             }
         }
 
-
+        //Customer Constructor
         public Customer(string first, string last, string email, string address, string city, string state)
         {
             this.First = first;
