@@ -28,7 +28,7 @@ namespace Game_Project_Application
             SearchConditions c;
             if (uxCustomerId.Text == "")
             {
-                MessageBox.Show("Please enter a Receipt Id.");
+                MessageBox.Show("Please enter a Customer Id.");
             }
             else
             {
