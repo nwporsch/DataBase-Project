@@ -1,4 +1,4 @@
-﻿R ALTER PROCEDURE GameStore.UpdateStoreQuantities
+﻿CREATE OR ALTER PROCEDURE GameStore.UpdateStoreQuantities
 	@OrderLineId INT,
 	@GameStoreInfoId INT,
 	@Quantity INT
