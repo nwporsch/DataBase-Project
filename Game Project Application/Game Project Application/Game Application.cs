@@ -329,8 +329,8 @@ namespace Game_Project_Application
                     }
 
                     string title = game[0];
-                    int gameId = Convert.ToInt32(game[4]);
-                    int storeId = Convert.ToInt32(game[5]);
+                    int gameId = Convert.ToInt32(game[5]);
+                    int storeId = Convert.ToInt32(game[4]);
                     double price = Convert.ToDouble(game[2]);
                     OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
                     orderList.Add(orderLine);

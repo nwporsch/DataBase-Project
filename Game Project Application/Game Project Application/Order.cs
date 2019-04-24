@@ -173,6 +173,7 @@ namespace Game_Project_Application
 
             foreach (OrderLine orderLine in orderList)
             {
+                orderLine.OrderID = orderId;
                 orderLine.SendToDatabase();
                 total += orderLine.Quantity * orderLine.Price;
             }
