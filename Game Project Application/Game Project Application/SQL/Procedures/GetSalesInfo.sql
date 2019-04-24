@@ -1,5 +1,4 @@
 ﻿CREATE OR ALTER PROCEDURE GameStore.GetSalesInfo
-	@Month INT,
 	@StoreId INT
 AS
 
@@ -13,15 +12,19 @@ WITH SalesTotalCte(StoreID, OrderYear, OrderMonth, Sales, OrderCount) AS
 		FROM GameStore.Orders O
 			INNER JOIN GameStore.OrderLines OL ON OL.OrderId = O.OrderId
 			INNER JOIN GameStore.Stores S ON S.StoreId = @StoreId
-		WHERE S.StoreId = @StoreId AND (MONTH(O.DatePlaced) = @Month OR YEAR(O.DatePlaced) = @Month)
+		WHERE S.StoreId = @StoreId
 		GROUP BY S.StoreId, MONTH(O.DatePlaced), YEAR(O.DatePlaced)
 	)
 SELECT S.StoreId, OT.OrderYear, OT.OrderMonth, OT.Sales,
 	OT.OrderCount,
 	SUM(OT.Sales) OVER(
-		PARTITION BY OT.StoreId
+		PARTITION BY OT.StoreId, OT.OrderYear
 		ORDER BY OT.StoreId ASC
-		ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS Total
+		ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS YearlySales,
+	SUM(OT.OrderCount) OVER(
+		PARTITION BY OT.StoreID, OT.OrderYear
+		ORDER BY OT.StoreId ASC
+		ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS YearlyOrders
 FROM SalesTotalCte OT
 	INNER JOIN GameStore.Stores S ON S.StoreId = OT.StoreId
 ORDER BY S.StoreId, OT.OrderYear ASC, OT.OrderMonth ASC
