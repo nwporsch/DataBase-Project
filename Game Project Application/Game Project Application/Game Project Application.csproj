@@ -194,6 +194,7 @@
     <Content Include="SQL\Tables\GameStore.Orders.sql" />
     <Content Include="SQL\Tables\GameStore.Platforms.sql" />
     <Content Include="SQL\Tables\GameStore.Stores.sql" />
+    <Content Include="SQL\UpdateStoreQuantities.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
