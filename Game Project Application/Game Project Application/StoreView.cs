@@ -205,94 +205,94 @@ namespace Game_Project_Application
                         switch (month)
                         {
                             case 1:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("1"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("1"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 2:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("2"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("2"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 3:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("3"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("3"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 4:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("4"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("4"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 5:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("5"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("5"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 6:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("6"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("6"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 7:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("7"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("7"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 8:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("8"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("8"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 9:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("9"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("9"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 10:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("10"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("10"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 11:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("11"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("11"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             case 12:
-                                if (k.GetString(k.GetOrdinal("Month")).Equals("12"))
+                                if (k.GetString(k.GetOrdinal("OrderMonth")).Equals("12"))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                             default:
-                                if (k.GetString(k.GetOrdinal("Year")).Equals(month.ToString()))
+                                if (k.GetString(k.GetOrdinal("OrderYear")).Equals(month.ToString()))
                                 {
-                                    orders = k.GetInt32(k.GetOrdinal("Orders")).ToString();
-                                    totalSales = k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                                    orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                    totalSales = k.GetDecimal(k.GetOrdinal("Total")).ToString();
                                 }
                                 break;
                         }
