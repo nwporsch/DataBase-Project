@@ -16,13 +16,13 @@ namespace Game_Project_Application
 
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("GameStore.RetrieveOrders", connection))
+                using (var command = new SqlCommand("GameStore.RetrieveCustomerOrders", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
 
 
-                    command.Parameters.AddWithValue("OrderId", sc.OrderId);
+                    command.Parameters.AddWithValue("CustomerId", sc.CustomerId);
                     command.Parameters.AddWithValue("First", sc.First);
                     command.Parameters.AddWithValue("Last", sc.Last);
                     command.Parameters.AddWithValue("Email", sc.Email);
@@ -35,12 +35,13 @@ namespace Game_Project_Application
                     while (reader.Read())
                     {
                         orderList.Add(new Order(
-                           reader.GetInt32(reader.GetOrdinal("OrderId")),
-                           reader.GetString(reader.GetOrdinal("FirstName")),
-                           reader.GetString(reader.GetOrdinal("LastName")),
-                           reader.GetString(reader.GetOrdinal("Email")),
-                           reader.GetInt32(reader.GetOrdinal("Count")),
-                           Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("Total")))));
+                            reader.GetInt32(reader.GetOrdinal("CustomerId")),
+                            reader.GetInt32(reader.GetOrdinal("OrderId")),
+                            reader.GetString(reader.GetOrdinal("FirstName")),
+                            reader.GetString(reader.GetOrdinal("LastName")),
+                            reader.GetString(reader.GetOrdinal("Email")),
+                            Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("RunningTotal"))),
+                            Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("OrderTotal")))));
                     }
                     
                     return orderList;

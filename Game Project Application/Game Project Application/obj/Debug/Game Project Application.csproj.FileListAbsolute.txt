@@ -160,7 +160,6 @@ U:\Database Team Project Repository\Game Project Application\Game Project Applic
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csprojAssemblyReference.cache
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.CustomerInput.resources
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.EmployeeView.resources
-C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.Properties.Resources.resources
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.ReceiptSearchResults.resources
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
@@ -239,3 +238,5 @@ C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Pr
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.GameApplication.resources
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreView.resources

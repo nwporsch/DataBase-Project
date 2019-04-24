@@ -171,7 +171,7 @@
     <Content Include="SQL\Procedures\GetStoreInfo.sql" />
     <Content Include="SQL\Procedures\GetCustomerId.sql" />
     <Content Include="SQL\Procedures\GetOrderId.sql" />
-    <Content Include="SQL\Procedures\RetrieveOrders.sql" />
+    <Content Include="SQL\Procedures\RetrieveCustomerOrders.sql" />
     <Content Include="SQL\Procedures\RetrieveGames.sql" />
     <Content Include="SQL\Schema\GameStore.sql" />
     <Content Include="SQL\Setup Script.sql" />

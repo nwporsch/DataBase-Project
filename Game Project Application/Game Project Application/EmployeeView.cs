@@ -24,15 +24,15 @@ namespace Game_Project_Application
             string first;
             string last;
             string email;
-            int receiptId;
-            SearchConditions o;
-            if (uxReceiptId.Text == "")
+            int customerId;
+            SearchConditions c;
+            if (uxCustomerId.Text == "")
             {
                 MessageBox.Show("Please enter a Receipt Id.");
             }
             else
             {
-                receiptId = Convert.ToInt32(uxReceiptId.Text);
+                customerId = Convert.ToInt32(uxCustomerId.Text);
 
                 if (uxEmail.Text == "")
                 {
@@ -60,8 +60,8 @@ namespace Game_Project_Application
                 {
                     first = uxFirstName.Text;
                 }
-                o = new SearchConditions(receiptId, first, last, email);
-                searchWindow = new ReceiptSearchResults(this, o);
+                c = new SearchConditions(customerId, first, last, email);
+                searchWindow = new ReceiptSearchResults(this, c);
                 searchWindow.ShowDialog();
             }
         }
@@ -73,8 +73,8 @@ namespace Game_Project_Application
 
         private void uxReceiptId_TextChanged(object sender, EventArgs e)
         {
-            int index = uxReceiptId.SelectionStart;
-            string text = uxReceiptId.Text;
+            int index = uxCustomerId.SelectionStart;
+            string text = uxCustomerId.Text;
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] < '0' || text[i] > '9')
@@ -91,14 +91,14 @@ namespace Game_Project_Application
                     {
                         text = text.Substring(0, i) + text.Substring(i + 1, text.Length - i - 1);
                     }
-                    uxReceiptId.Text = text;
+                    uxCustomerId.Text = text;
                     if (index > 0)
                     {
-                        uxReceiptId.SelectionStart = index - 1;
+                        uxCustomerId.SelectionStart = index - 1;
                     }
                     else
                     {
-                        uxReceiptId.SelectionStart = index;
+                        uxCustomerId.SelectionStart = index;
                     }
                 }
             }

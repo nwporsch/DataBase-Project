@@ -96,16 +96,16 @@ namespace Game_Project_Application
                 this.storeId = value;
             }
         }
-        private int orderId;
-        public int OrderId
+        private int customerId;
+        public int CustomerId
         {
             get
             {
-                return this.orderId;
+                return this.customerId;
             }
             set
             {
-                this.orderId = value;
+                this.customerId = value;
             }
         }
         private string first;
@@ -158,9 +158,9 @@ namespace Game_Project_Application
 
 
         //return customer information from a given order
-        public SearchConditions(int orderId, string first, string last, string email)
+        public SearchConditions(int customerId, string first, string last, string email)
         {
-            this.OrderId = orderId;
+            this.CustomerId = customerId;
             this.First = first;
             this.Last = last;
             this.Email = email;

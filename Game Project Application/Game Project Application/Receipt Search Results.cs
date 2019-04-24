@@ -23,7 +23,7 @@ namespace Game_Project_Application
             InitializeComponent();
             foreach (Order order in lo)
             {
-                string[] s = { order.OrderID.ToString(), order.First, order.Last, order.Email, order.Count.ToString(), order.Total.ToString() };
+                string[] s = { order.CustomerID.ToString(), order.OrderID.ToString(), order.First, order.Last, order.Email, order.RunningTotal.ToString(), order.Total.ToString() };
                 this.uxResults.Rows.Add(s);
             }
         }

@@ -52,6 +52,18 @@ namespace Game_Project_Application
                 this.customerId = value;
             }
         }
+        private double runningTotal;
+        public double RunningTotal
+        {
+            get
+            {
+                return this.runningTotal;
+            }
+            set
+            {
+                this.runningTotal = value;
+            }
+        }
         private double total;
         public double Total
         {
@@ -167,13 +179,14 @@ namespace Game_Project_Application
         }
 
         //an order joined with other info, to be displayed
-        public Order(int orderId, string first, string last, string email, int count, double total)
+        public Order(int customerId, int orderId, string first, string last, string email, double runningTotal, double total)
         {
+            this.CustomerID = customerId;
             this.OrderID = orderId;
             this.First = first;
             this.Last = last;
             this.Email = email;
-            this.Count = count;
+            this.RunningTotal = runningTotal;
             this.Total = total;
         }
     }
