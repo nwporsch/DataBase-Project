@@ -185,7 +185,35 @@ namespace Game_Project_Application
 
                 }
             }
+
+            UpdateQuantities();
         }
+
+        private void UpdateQuantities()
+        {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
+            GetOrderLineId();
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("GameStore.UpdateStoreQuantities", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("OrderLineId", orderLineId);
+                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
+                    command.Parameters.AddWithValue("Quantity", quantity);
+                    connection.Open();
+
+                    int k = command.ExecuteNonQuery();
+                    
+                    connection.Close();
+
+
+                }
+            }
+        }
+
+
         /// <summary>
         /// Establishes a connection to the database then gets an OrderLine
         /// </summary>
