@@ -140,6 +140,7 @@
             this.Controls.Add(this.btnAddToReceipt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "SearchResults";
             this.Text = "Search Results";
             this.Load += new System.EventHandler(this.SearchResults_Load);

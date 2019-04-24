@@ -47,7 +47,7 @@
             this.uxEmailLabel.Location = new System.Drawing.Point(19, 104);
             this.uxEmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxEmailLabel.Name = "uxEmailLabel";
-            this.uxEmailLabel.Size = new System.Drawing.Size(52, 20);
+            this.uxEmailLabel.Size = new System.Drawing.Size(66, 25);
             this.uxEmailLabel.TabIndex = 47;
             this.uxEmailLabel.Text = "Email:";
             // 
@@ -58,7 +58,7 @@
             this.uxLastNameLabel.Location = new System.Drawing.Point(19, 74);
             this.uxLastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxLastNameLabel.Name = "uxLastNameLabel";
-            this.uxLastNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxLastNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxLastNameLabel.TabIndex = 46;
             this.uxLastNameLabel.Text = "Last Name:";
             // 
@@ -69,7 +69,7 @@
             this.uxFirstNameLabel.Location = new System.Drawing.Point(19, 44);
             this.uxFirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxFirstNameLabel.Name = "uxFirstNameLabel";
-            this.uxFirstNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.uxFirstNameLabel.Size = new System.Drawing.Size(112, 25);
             this.uxFirstNameLabel.TabIndex = 43;
             this.uxFirstNameLabel.Text = "First Name:";
             // 
@@ -80,7 +80,7 @@
             this.uxCustomerIdLabel.Location = new System.Drawing.Point(19, 14);
             this.uxCustomerIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uxCustomerIdLabel.Name = "uxCustomerIdLabel";
-            this.uxCustomerIdLabel.Size = new System.Drawing.Size(103, 20);
+            this.uxCustomerIdLabel.Size = new System.Drawing.Size(127, 25);
             this.uxCustomerIdLabel.TabIndex = 42;
             this.uxCustomerIdLabel.Text = "Customer ID:";
             // 
@@ -90,7 +90,7 @@
             this.uxEmail.Location = new System.Drawing.Point(124, 101);
             this.uxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.uxEmail.Name = "uxEmail";
-            this.uxEmail.Size = new System.Drawing.Size(354, 26);
+            this.uxEmail.Size = new System.Drawing.Size(354, 30);
             this.uxEmail.TabIndex = 38;
             // 
             // uxLastName
@@ -99,7 +99,7 @@
             this.uxLastName.Location = new System.Drawing.Point(124, 71);
             this.uxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.uxLastName.Name = "uxLastName";
-            this.uxLastName.Size = new System.Drawing.Size(354, 26);
+            this.uxLastName.Size = new System.Drawing.Size(354, 30);
             this.uxLastName.TabIndex = 37;
             // 
             // uxFirstName
@@ -108,7 +108,7 @@
             this.uxFirstName.Location = new System.Drawing.Point(124, 41);
             this.uxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.uxFirstName.Name = "uxFirstName";
-            this.uxFirstName.Size = new System.Drawing.Size(354, 26);
+            this.uxFirstName.Size = new System.Drawing.Size(354, 30);
             this.uxFirstName.TabIndex = 36;
             // 
             // uxCustomerId
@@ -117,7 +117,7 @@
             this.uxCustomerId.Location = new System.Drawing.Point(124, 11);
             this.uxCustomerId.Margin = new System.Windows.Forms.Padding(2);
             this.uxCustomerId.Name = "uxCustomerId";
-            this.uxCustomerId.Size = new System.Drawing.Size(354, 26);
+            this.uxCustomerId.Size = new System.Drawing.Size(354, 30);
             this.uxCustomerId.TabIndex = 35;
             this.uxCustomerId.TextChanged += new System.EventHandler(this.uxReceiptId_TextChanged);
             // 
@@ -160,6 +160,8 @@
             this.Controls.Add(this.uxLastName);
             this.Controls.Add(this.uxFirstName);
             this.Controls.Add(this.uxCustomerId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EmployeeView";
             this.Text = "EmployeeView";
             this.ResumeLayout(false);

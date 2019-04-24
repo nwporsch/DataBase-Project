@@ -90,7 +90,8 @@ namespace Game_Project_Application
                     {
                         ga.CreateOrder();
                     }
-                    
+
+                    ga.EnableTransactionButton();
 
                 }
             }

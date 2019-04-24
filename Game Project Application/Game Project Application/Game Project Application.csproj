@@ -91,6 +91,12 @@
     <Compile Include="Receipt Search Results.Designer.cs">
       <DependentUpon>Receipt Search Results.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesInformation.Designer.cs">
+      <DependentUpon>SalesInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchConditions.cs" />
     <Compile Include="SearchResults.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,9 @@
     </Compile>
     <EmbeddedResource Include="Receipt Search Results.resx">
       <DependentUpon>Receipt Search Results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesInformation.resx">
+      <DependentUpon>SalesInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>

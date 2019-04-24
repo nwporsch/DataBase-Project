@@ -102,6 +102,8 @@
             this.Controls.Add(this.btnStoreInfo);
             this.Controls.Add(this.uxReceiptIdLabel);
             this.Controls.Add(this.uxStoreId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StoreView";
             this.Text = "StoreView";
             this.ResumeLayout(false);

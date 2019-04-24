@@ -58,7 +58,7 @@
             this.uxResults.Location = new System.Drawing.Point(12, 12);
             this.uxResults.Name = "uxResults";
             this.uxResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uxResults.Size = new System.Drawing.Size(777, 432);
+            this.uxResults.Size = new System.Drawing.Size(795, 432);
             this.uxResults.TabIndex = 0;
             // 
             // CustomerId
@@ -106,8 +106,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 456);
+            this.ClientSize = new System.Drawing.Size(818, 456);
             this.Controls.Add(this.uxResults);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ReceiptSearchResults";
             this.Text = "Receipt Search Results";
             ((System.ComponentModel.ISupportInitialize)(this.uxResults)).EndInit();

@@ -251,9 +251,11 @@ namespace Game_Project_Application
                     isUsed = 1;
                 }
 
+                btnFind.Enabled = false;
                 sc = new SearchConditions(title, genre, platform, minPrice, maxPrice, isUsed, storeId);
                 searchWindow = new SearchResults(this, sc);
                 searchWindow.ShowDialog();
+                btnFind.Enabled = true;
             }
         }
 
@@ -348,6 +350,8 @@ namespace Game_Project_Application
                     OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
                     orderList.Add(orderLine);
                 }
+
+                btnFinishTransaction.Enabled = false;
                 customerWindow = new CustomerInput(this);
                 customerWindow.Show();
             }
@@ -369,8 +373,10 @@ namespace Game_Project_Application
         /// <param name="e"></param>
         private void uxEmployeeView_Click(object sender, EventArgs e)
         {
+            uxEmployeeView.Enabled = false;
             receiptLookup = new EmployeeView();
             receiptLookup.ShowDialog();
+            uxEmployeeView.Enabled = true;
         }
         /// <summary>
         /// Opens the StoreView Window
@@ -379,9 +385,17 @@ namespace Game_Project_Application
         /// <param name="e"></param>
         private void storeViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            storeViewToolStripMenuItem.Enabled = false;
             storeView = new StoreView();
             storeView.ShowDialog();
+            storeViewToolStripMenuItem.Enabled = true;
         }
+
+        public void EnableTransactionButton()
+        {
+            btnFinishTransaction.Enabled = true;
+        }
+
         /// <summary>
         /// 
         /// </summary>

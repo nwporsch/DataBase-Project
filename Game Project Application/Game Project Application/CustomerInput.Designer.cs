@@ -193,6 +193,8 @@
             this.Controls.Add(this.uxLastName);
             this.Controls.Add(this.uxFirstName);
             this.Controls.Add(this.uxAddress);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CustomerInput";
             this.Text = "Customer Input";
             this.ResumeLayout(false);
