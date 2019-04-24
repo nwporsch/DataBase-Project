@@ -11,18 +11,31 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// Creates a customer when given values from the user
+    /// </summary>
     public partial class CustomerInput : Form
     {
-
+        /// <summary>
+        /// The GameApplication object that called this object
+        /// </summary>
         private GameApplication ga;
 
+        /// <summary>
+        /// The constructor of the CustomerInput object
+        /// </summary>
+        /// <param name="ga">The GameApplication object that called this object.</param>
         public CustomerInput(GameApplication ga)
         {
             InitializeComponent();
             this.ga = ga;
         }
 
-        //Handles a click event on the Input button, takes given input and creates a new Customer
+        /// <summary>
+        /// When this button is clicked all the values in the textField will be used to creat a new customer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInput_Click(object sender, EventArgs e)
         {
             string first;
@@ -96,7 +109,11 @@ namespace Game_Project_Application
                 }
             }
         }
-        //Establishes a connection to the database and adds a new customer to the database then returns true, if there is a duplicate email then it fails and returns false
+
+        /// <summary>
+        /// Establishes a connection to the database and adds a new customer to the database.
+        /// <param name="c">The Customer Object to be added to the database.</param>
+        /// <returns>A boolean turns true, if there is a duplicate email then it fails and if returns false then the new user is added and their order is processed.</returns>
         private bool getCustomer(Customer c)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
