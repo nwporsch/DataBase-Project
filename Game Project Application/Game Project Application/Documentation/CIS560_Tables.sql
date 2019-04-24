@@ -110,7 +110,7 @@ BEGIN
    (
       OrderId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	  CustomerId INT FOREIGN KEY REFERENCES GameStore.Customers(CustomerId) NOT NULL,
-	  DatePlaced DATETIMEOFFSET NOT NULL
+	  DatePlaced DATE NOT NULL
    );
 END;
 
@@ -123,6 +123,8 @@ BEGIN
 	  GameStoreInfoId INT FOREIGN KEY REFERENCES GameStore.GameStoreInfo(GameStoreInfoId) NOT NULL,
 	  Quantity INT CHECK(Quantity >= 0) NOT NULL,
 	  UnitPrice DECIMAL(4,2) CHECK(UnitPrice > 0) NOT NULL
+
+	  UNIQUE(OrderId, GameStoreInfoId)
    );
 END;
 
