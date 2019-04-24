@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// OrderRepository retrieves a list of orders based off given conditions from the database.
+    /// </summary>
     class OrderRepository : IOrderRepository
     {
+        /// <summary>
+        /// When provided a SearchConditions object, the method may query the database for any order with the given search conditions.
+        /// </summary>
+        /// <param name="sc">Search Condition Object which holds the conditions from the user for searching orders.</param>
+        /// <returns>A list of orders that match the criteria given by the Search Conditions object</returns>
         public List<Order> RetrieveOrders(SearchConditions sc)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";

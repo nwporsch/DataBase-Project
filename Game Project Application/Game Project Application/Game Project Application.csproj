@@ -78,7 +78,6 @@
     <Compile Include="GameRepository.cs" />
     <Compile Include="IGameRepository.cs" />
     <Compile Include="IOrderRepository.cs" />
-    <Compile Include="IOrdersInterface.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderLine.cs" />
     <Compile Include="OrderRepository.cs" />
@@ -181,6 +180,7 @@
     <Content Include="SQL\Procedures\GetOrderId.sql" />
     <Content Include="SQL\Procedures\RetrieveCustomerOrders.sql" />
     <Content Include="SQL\Procedures\RetrieveGames.sql" />
+    <Content Include="SQL\Procedures\UpdateStoreQuantities.sql" />
     <Content Include="SQL\Schema\GameStore.sql" />
     <Content Include="SQL\Setup Script.sql" />
     <Content Include="SQL\Tables\DropTables.sql" />
