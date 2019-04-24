@@ -11,7 +11,9 @@ namespace Game_Project_Application
 {
     public class Order
     {
-
+        /// <summary>
+        /// Order OrderList
+        /// </summary>
         private ArrayList orderList;
         public ArrayList OrderList
         {
@@ -28,6 +30,9 @@ namespace Game_Project_Application
                 }
             }
         }
+        /// <summary>
+        /// Order OrderID
+        /// </summary>
         private int orderId;
         public int OrderID
         {
@@ -40,6 +45,9 @@ namespace Game_Project_Application
                 this.orderId = value;
             }
         }
+        /// <summary>
+        /// Order CustomerID
+        /// </summary>
         private int customerId;
         public int CustomerID
         {
@@ -52,6 +60,9 @@ namespace Game_Project_Application
                 this.customerId = value;
             }
         }
+        /// <summary>
+        /// Order RunningTotal
+        /// </summary>
         private double runningTotal;
         public double RunningTotal
         {
@@ -64,6 +75,9 @@ namespace Game_Project_Application
                 this.runningTotal = value;
             }
         }
+        /// <summary>
+        /// Order Total
+        /// </summary>
         private double total;
         public double Total
         {
@@ -76,6 +90,9 @@ namespace Game_Project_Application
                 this.total = value;
             }
         }
+        /// <summary>
+        /// Order First Name
+        /// </summary>
         private string first;
         public string First
         {
@@ -88,6 +105,9 @@ namespace Game_Project_Application
                 this.first = value;
             }
         }
+        /// <summary>
+        /// Order Last Name
+        /// </summary>
         private string last;
         public string Last
         {
@@ -100,6 +120,9 @@ namespace Game_Project_Application
                 this.last = value;
             }
         }
+        /// <summary>
+        /// Order Email
+        /// </summary>
         private string email;
         public string Email
         {
@@ -112,6 +135,9 @@ namespace Game_Project_Application
                 this.email = value;
             }
         }
+        /// <summary>
+        /// Order Quantity
+        /// </summary>
         private int quantity;
         public int Quantity
         {
@@ -124,7 +150,9 @@ namespace Game_Project_Application
                 this.quantity = value;
             }
         }
-
+        /// <summary>
+        /// Order Count
+        /// </summary>
         private int count;
         public int Count
         {
@@ -138,7 +166,11 @@ namespace Game_Project_Application
             }
         }
 
-        //This constructor is used to make a full order given a list of Order Lines
+        /// <summary>
+        /// This constructor is used to make a full order given a list of Order Lines
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="orderList"></param>
         public Order(Customer c, ArrayList orderList)
         {
             this.CustomerID = c.CustomerId;
@@ -178,7 +210,16 @@ namespace Game_Project_Application
             }
         }
 
-        //an order joined with other info, to be displayed
+        /// <summary>
+        /// an order joined with other info, to be displayed
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="first"></param>
+        /// <param name="last"></param>
+        /// <param name="email"></param>
+        /// <param name="runningTotal"></param>
+        /// <param name="total"></param>
         public Order(int customerId, int orderId, string first, string last, string email, double runningTotal, double total)
         {
             this.CustomerID = customerId;

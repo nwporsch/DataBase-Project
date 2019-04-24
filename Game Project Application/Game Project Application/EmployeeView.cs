@@ -18,7 +18,7 @@ namespace Game_Project_Application
         {
             InitializeComponent();
         }
-
+        //Handles a click event on the Find Receipt Button, Takes given input and creates a new SearchConditions then opens a window that displays the customer that was searched for
         private void btnFindReceipt_Click(object sender, EventArgs e)
         {
             string first;
@@ -65,12 +65,12 @@ namespace Game_Project_Application
                 searchWindow.ShowDialog();
             }
         }
-
+        //Closes the Window
         private void btnFinish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Handles a TextChange Event on the ReceiptId text box
         private void uxReceiptId_TextChanged(object sender, EventArgs e)
         {
             int index = uxCustomerId.SelectionStart;

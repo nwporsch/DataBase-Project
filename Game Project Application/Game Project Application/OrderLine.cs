@@ -185,7 +185,9 @@ namespace Game_Project_Application
                 }
             }
         }
-
+        /// <summary>
+        /// Establishes a connection to the database then gets an OrderLine
+        /// </summary>
         public void GetOrderLineId()
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
@@ -217,7 +219,6 @@ namespace Game_Project_Application
                 }
             }
         }
-
 
         /// <summary>
         /// The constructor for an orderline object

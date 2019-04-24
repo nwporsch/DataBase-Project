@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// Object representing input search conditions when making queries to the database
+    /// </summary>
     public class SearchConditions
     {
+        /// <summary>
+        /// SearchConditions Title
+        /// </summary>
         private string title;
         public string Title
         {
@@ -20,8 +26,10 @@ namespace Game_Project_Application
                 this.title = value;
             }
         }
+        /// <summary>
+        /// SearchConditions Platform
+        /// </summary>
         private string platform;
-
         public string Platform
         {
             get
@@ -33,7 +41,9 @@ namespace Game_Project_Application
                 this.platform = value;
             }
         }
-
+        /// <summary>
+        /// SearchConditions Genre
+        /// </summary>
         private string genre;
         public string Genre
         {
@@ -46,6 +56,9 @@ namespace Game_Project_Application
                 this.genre = value;
             }
         }
+        /// <summary>
+        /// SearchConditions Minimum Price
+        /// </summary>
         private double minPrice;
         public double MinPrice
         {
@@ -58,7 +71,9 @@ namespace Game_Project_Application
                 this.minPrice = value;
             }
         }
-
+        /// <summary>
+        /// SearchConditions Maximum Price
+        /// </summary>
         private double maxPrice;
         public double MaxPrice
         {
@@ -71,7 +86,9 @@ namespace Game_Project_Application
                 this.maxPrice = value;
             }
         }
-
+        /// <summary>
+        /// SearchConditions Game Condition (new, used)
+        /// </summary>
         private int isUsed;
         public int IsUsed
         {
@@ -84,6 +101,9 @@ namespace Game_Project_Application
                 this.isUsed = value;
             }
         }
+        /// <summary>
+        /// SearchConditions StoreID
+        /// </summary>
         private int storeId;
         public int StoreId
         {
@@ -96,6 +116,9 @@ namespace Game_Project_Application
                 this.storeId = value;
             }
         }
+        /// <summary>
+        /// SearchConditions CustomerID
+        /// </summary>
         private int customerId;
         public int CustomerId
         {
@@ -108,6 +131,9 @@ namespace Game_Project_Application
                 this.customerId = value;
             }
         }
+        /// <summary>
+        /// SearchConditions First Name
+        /// </summary>
         private string first;
         public string First
         {
@@ -120,6 +146,9 @@ namespace Game_Project_Application
                 this.first = value;
             }
         }
+        /// <summary>
+        /// SearchConditions Last Name
+        /// </summary>
         private string last;
         public string Last
         {
@@ -132,6 +161,9 @@ namespace Game_Project_Application
                 this.last = value;
             }
         }
+        /// <summary>
+        /// SearchConditions Email
+        /// </summary>
         private string email;
         public string Email
         {
@@ -144,7 +176,16 @@ namespace Game_Project_Application
                 this.email = value;
             }
         }
-
+        /// <summary>
+        /// Constructor for a SearchConditions that wishes to return a game
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="genre"></param>
+        /// <param name="platform"></param>
+        /// <param name="minPrice"></param>
+        /// <param name="maxPrice"></param>
+        /// <param name="isUsed"></param>
+        /// <param name="storeId"></param>
         public SearchConditions(string title, string genre, string platform, double minPrice, double maxPrice, int isUsed, int storeId)
         {
             this.title = title.ToLower();
@@ -155,9 +196,13 @@ namespace Game_Project_Application
             this.storeId = storeId;
             this.platform = platform.ToLower();
         }
-
-
-        //return customer information from a given order
+        /// <summary>
+        /// Constructor for a SearchConditions that wishes to return an order
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <param name="first"></param>
+        /// <param name="last"></param>
+        /// <param name="email"></param>
         public SearchConditions(int customerId, string first, string last, string email)
         {
             this.CustomerId = customerId;

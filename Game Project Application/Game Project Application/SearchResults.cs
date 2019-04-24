@@ -45,7 +45,11 @@ namespace Game_Project_Application
                 
             }
         }
-
+        /// <summary>
+        /// Handles a click event on the Add To Receipt button, Adds a selected game from the list to the receipt in the GameApplication window and removes the selected game from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddToReceipt_Click(object sender, EventArgs e)
         {
             if (uxResults.SelectedRows.Count > 0)

@@ -27,12 +27,19 @@ namespace Game_Project_Application
             InitializeComponent();
             reservedItems = new List<string[]>();
         }
-
+        /// <summary>
+        /// Adds a list of given items to the Receipt text box
+        /// </summary>
+        /// <param name="s"></param>
         public void AddItemToReceipt(string[] s)
         {
             uxReceipt.Rows.Add(s);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public bool AddReserve(string[] s)
         {
             bool removeFromGameList = false;
@@ -67,7 +74,11 @@ namespace Game_Project_Application
 
             return removeFromGameList;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public bool RemoveFromSearch(string[] s)
         {
             bool removeFromGameList = false;
@@ -86,7 +97,10 @@ namespace Game_Project_Application
 
             return removeFromGameList;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
         public void RemoveReserve(string[] s)
         {
             bool isAdded = false;
@@ -278,7 +292,7 @@ namespace Game_Project_Application
         }
 
         /// <summary>
-        /// Removes a selected game from the receipt
+        /// Handles a click event on the Remove Button, Removes a selected game from the receipt
         /// </summary>
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -295,7 +309,6 @@ namespace Game_Project_Application
 
                     RemoveReserve(item);
                     uxReceipt.Rows.RemoveAt(selected);
-
 
                 }
 
@@ -339,7 +352,9 @@ namespace Game_Project_Application
                 customerWindow.Show();
             }
         }
-
+        /// <summary>
+        /// Creates an Order
+        /// </summary>
         public void CreateOrder()
         {
             Order order = new Order(customer, orderList);
@@ -347,20 +362,31 @@ namespace Game_Project_Application
             uxReceipt.Rows.Clear();
 
         }
-
-
+        /// <summary>
+        /// Opens the EmployeeView Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxEmployeeView_Click(object sender, EventArgs e)
         {
             receiptLookup = new EmployeeView();
             receiptLookup.ShowDialog();
         }
-
+        /// <summary>
+        /// Opens the StoreView Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void storeViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             storeView = new StoreView();
             storeView.ShowDialog();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxStoreId_TextChanged(object sender, EventArgs e)
         {
             int index = uxStoreId.SelectionStart;
