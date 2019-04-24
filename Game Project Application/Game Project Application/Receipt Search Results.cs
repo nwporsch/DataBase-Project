@@ -14,7 +14,8 @@ namespace Game_Project_Application
     {
         private EmployeeView ev;
         /// <summary>
-        /// Creates the ReceiptSearchResults Window using the Results of a given search
+        /// Calls a method in OrderRepository to retrieve orders and their total/running total for a customer,
+        /// whose information is passed by the user in EmployeeView.
         /// </summary>
         /// <param name="ev"></param>
         /// <param name="o"></param>

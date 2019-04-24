@@ -284,3 +284,4 @@ U:\Data Bases\Project 2 Version\Game Project Application\Game Project Applicatio
 U:\Data Bases\Project 2 Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
 U:\Data Bases\Project 2 Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 U:\Data Bases\Project 2 Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
+C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SalesInformation.resources
