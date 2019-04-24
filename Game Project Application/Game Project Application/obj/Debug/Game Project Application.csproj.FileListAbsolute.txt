@@ -243,3 +243,4 @@ C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Pr
 C:\Users\schilmjr\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreView.resources
 C:\Users\nwporsch\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SalesInformation.resources
 U:\Data Bases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SalesInformation.resources
+U:\Database Team Project Repository\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SalesInformation.resources

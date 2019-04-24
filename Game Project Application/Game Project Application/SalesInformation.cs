@@ -14,7 +14,6 @@ namespace Game_Project_Application
         {
             this.storeId = storeId;
             InitializeComponent();
-            GetSales();
         }
 
         /// <summary>
@@ -22,7 +21,7 @@ namespace Game_Project_Application
         /// </summary>
         /// <param name="storeId"></param>
         /// <returns></returns>
-        private string[] getSalesInfo(int storeId, int i)
+        private string[] getSalesInfo(int storeId, int i, int year)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
             using (var connection = new SqlConnection(connectionString))
@@ -41,15 +40,17 @@ namespace Game_Project_Application
 
                     while (k.Read())
                     {
-                        if (k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(i))
+                        if (k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(i) && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
                         {
                             orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
                             totalSales = k.GetDecimal(k.GetOrdinal("Sales")).ToString();
+                            break;
                         }
-                        else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(12))
+                        else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(12) && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
                         {
                             orders = k.GetInt32(k.GetOrdinal("YearlyOrders")).ToString();
                             totalSales = k.GetDecimal(k.GetOrdinal("YearlySales")).ToString();
+                            break;
                         }
                     }
 
@@ -65,68 +66,71 @@ namespace Game_Project_Application
         private void GetSales()
         {
             StringBuilder s = new StringBuilder();
-
+            
             string[] output;
+            int year = Convert.ToInt32(uxYearText.Text);
 
             for (int i = 1; i <= 12; i++)
             {
-                output = getSalesInfo(storeId, i);
+                output = getSalesInfo(storeId, i, year);
                 switch (i)
                 {
                     case 1:
+                        s.Append("Year: " + year + "\r\n\r\n");
+                     
                         s.Append("Month: January\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 2:
                         s.Append("Month: February\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 3:
                         s.Append("Month: March\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 4:
                         s.Append("Month: April\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 5:
                         s.Append("Month: May\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 6:
                         s.Append("Month: June\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 7:
                         s.Append("Month: July\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 8:
                         s.Append("Month: August\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 9:
                         s.Append("Month: September\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 10:
                         s.Append("Month: October\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 11:
                         s.Append("Month: November\r\n" +
                                  "Monthly Orders: " + output[0] + "\r\n" +
-                                 "Monthly Sales:  " + output[1] + "\r\n");
+                                 "Monthly Sales:  " + output[1] + "\r\n\r\n");
                         break;
                     case 12:
                         s.Append("Month: December\r\n" +
@@ -137,16 +141,21 @@ namespace Game_Project_Application
 
             }
 
-            output = getSalesInfo(storeId, 0);
-            s.Append("Yearly Orders: " + output[0] + "\r\n" +
-                     "Yearly Sales:  " + output[1]);
+            output = getSalesInfo(storeId, 0, year);
+            s.Append(year + " Yearly Orders: " + output[0] + "\r\n" +
+                     year + " Yearly Sales:  " + output[1]);
 
             this.uxSalesText.Text = s.ToString();
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void uxbtnSearch_Click(object sender, EventArgs e)
+        {
+            GetSales();
         }
     }
 
