@@ -60,6 +60,8 @@
             this.ClientSize = new System.Drawing.Size(814, 517);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.uxSalesText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SalesInformation";
             this.Text = "SalesInformation";
             this.ResumeLayout(false);

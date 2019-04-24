@@ -372,6 +372,7 @@ namespace Game_Project_Application
             this.Controls.Add(this.uxTitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "GameApplication";
             this.Text = "Store Application";
             this.Load += new System.EventHandler(this.uxStoreApplication_Load);
