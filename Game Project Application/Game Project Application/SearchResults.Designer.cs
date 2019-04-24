@@ -143,7 +143,6 @@
             this.MaximizeBox = false;
             this.Name = "SearchResults";
             this.Text = "Search Results";
-            this.Load += new System.EventHandler(this.SearchResults_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uxResults)).EndInit();
             this.ResumeLayout(false);
 

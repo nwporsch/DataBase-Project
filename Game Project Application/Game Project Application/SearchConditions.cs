@@ -12,9 +12,13 @@ namespace Game_Project_Application
     public class SearchConditions
     {
         /// <summary>
-        /// SearchConditions Title
+        /// The title provided by the user to search for.
         /// </summary>
         private string title;
+
+        /// <summary>
+        /// Getter and setter for title variable
+        /// </summary>
         public string Title
         {
             get
@@ -27,9 +31,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Platform
+        /// The platform provided by the user to search for.
         /// </summary>
         private string platform;
+
+        /// <summary>
+        /// Getter and setters for the platform variable
+        /// </summary>
         public string Platform
         {
             get
@@ -42,9 +50,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Genre
+        /// The genre provided by the user to search for.
         /// </summary>
         private string genre;
+
+        /// <summary>
+        /// Getter and setters for the genre variable
+        /// </summary>
         public string Genre
         {
             get
@@ -57,9 +69,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Minimum Price
+        /// The minimum price provided by the user to search for.
         /// </summary>
         private double minPrice;
+
+        /// <summary>
+        /// Getter and setters for the minPrice
+        /// </summary>
         public double MinPrice
         {
             get
@@ -72,9 +88,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Maximum Price
+        /// The Max Price provided by the user to search for.
         /// </summary>
         private double maxPrice;
+
+        /// <summary>
+        /// Getter and Setter for the maxPrice
+        /// </summary>
         public double MaxPrice
         {
             get
@@ -87,9 +107,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Game Condition (new, used)
+        /// The condition of the game provided by the user to search for.
         /// </summary>
         private int isUsed;
+
+        /// <summary>
+        /// Getter and Setters for isUsed
+        /// </summary>
         public int IsUsed
         {
             get
@@ -102,9 +126,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions StoreID
+        /// The identifier of the store for where to search for the games
         /// </summary>
         private int storeId;
+
+        /// <summary>
+        /// Getter and setters for storeId
+        /// </summary>
         public int StoreId
         {
             get
@@ -117,9 +145,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions CustomerID
+        /// The customerId that is to be used as a search condition to find receipts.
         /// </summary>
         private int customerId;
+
+        /// <summary>
+        /// Getter and setters for customerId
+        /// </summary>
         public int CustomerId
         {
             get
@@ -132,9 +164,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions First Name
+        /// The first name of the customer to search for when looking for receipts
         /// </summary>
         private string first;
+
+        /// <summary>
+        /// Getter and Setters first
+        /// </summary>
         public string First
         {
             get
@@ -147,9 +183,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// SearchConditions Last Name
+        ///  The last name of the customer to search for when looking for receipts
         /// </summary>
         private string last;
+
+        /// <summary>
+        /// Getter and setters for last
+        /// </summary>
         public string Last
         {
             get
@@ -161,10 +201,15 @@ namespace Game_Project_Application
                 this.last = value;
             }
         }
+
         /// <summary>
-        /// SearchConditions Email
+        ///The email of the customer to search for when looking for receipts
         /// </summary>
         private string email;
+
+        /// <summary>
+        /// Getter and setters for the email
+        /// </summary>
         public string Email
         {
             get
@@ -176,16 +221,18 @@ namespace Game_Project_Application
                 this.email = value;
             }
         }
+
+
         /// <summary>
-        /// Constructor for a SearchConditions that wishes to return a game
+        /// This constructor is used to hold the criteria for finding games based off the criteria
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="genre"></param>
-        /// <param name="platform"></param>
-        /// <param name="minPrice"></param>
-        /// <param name="maxPrice"></param>
-        /// <param name="isUsed"></param>
-        /// <param name="storeId"></param>
+        /// <param name="title">Game of the title to be searched for</param>
+        /// <param name="genre">Genre to be searched for</param>
+        /// <param name="platform">The platform to be searched for</param>
+        /// <param name="minPrice">The minimum price to be searched for</param>
+        /// <param name="maxPrice">The maximum price to be searched for</param>
+        /// <param name="isUsed">The condition of the game to be searched for</param>
+        /// <param name="storeId">The storeId for where to search for the games</param>
         public SearchConditions(string title, string genre, string platform, double minPrice, double maxPrice, int isUsed, int storeId)
         {
             this.title = title.ToLower();
@@ -197,9 +244,9 @@ namespace Game_Project_Application
             this.platform = platform.ToLower();
         }
         /// <summary>
-        /// Constructor for a SearchConditions that wishes to return an order
+        /// This constructor is used to hold the criteria for finding running total
         /// </summary>
-        /// <param name="customerId"></param>
+        /// <param name="customerId">The cu</param>
         /// <param name="first"></param>
         /// <param name="last"></param>
         /// <param name="email"></param>

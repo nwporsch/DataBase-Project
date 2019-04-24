@@ -175,7 +175,11 @@ namespace Game_Project_Application
         }
 
 
-
+        /// <summary>
+        /// The Sales button creates a new form that displays the Month to Date sales and Year to Date Sales of the given store based off it's store id.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSales_Click(object sender, EventArgs e)
         {
             if (uxStoreId.Text != "")
@@ -192,6 +196,11 @@ namespace Game_Project_Application
             }
         }
 
+        /// <summary>
+        /// This method prevents the users from adding invalid characters in the storeId text box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxStoreId_TextChanged(object sender, EventArgs e)
         {
             int index = uxStoreId.SelectionStart;

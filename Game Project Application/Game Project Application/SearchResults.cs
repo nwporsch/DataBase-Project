@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// The SearchResults accesses the database and returns all the games based off the given criteria from the SearchCondtions variable in the constructor.
+    /// </summary>
     public partial class SearchResults : Form
     {
         /// <summary>
@@ -52,6 +55,7 @@ namespace Game_Project_Application
         /// <param name="e"></param>
         private void btnAddToReceipt_Click(object sender, EventArgs e)
         {
+            //Finds all the rows seleccted by the user.
             if (uxResults.SelectedRows.Count > 0)
             {
                 List<int> rowsToRemove = new List<int>();
@@ -64,6 +68,8 @@ namespace Game_Project_Application
                         item[i] = r.Cells[i].Value.ToString();
                     }
 
+                    //The selected row's values are sent to a reservedList in the Game Application. Where if the number of quantity in the reserved list for the given item
+                    //are greater than or equal to the quantity of the item in the search results the item is removed from the search results.
                     bool toRemoveRow = sa.AddReserve(item);
 
                     if(toRemoveRow == true)
@@ -85,11 +91,6 @@ namespace Game_Project_Application
                 MessageBox.Show("Please select an item.");
             }
             
-        }
-
-        private void SearchResults_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
