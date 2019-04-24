@@ -14,32 +14,37 @@ AS(
 	INNER JOIN GameStore.OrderLines OL ON OL.OrderId = O.OrderId
 	GROUP BY O.OrderId, O.CustomerId)
 SELECT OT.CustomerId, OT.OrderId, C.FirstName, C.LastName, C.Email, 
-	SUM(OT.OrderTotal) OVER(PARTITION BY OT.CustomerID ORDER BY OT.OrderID ASC ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS RunningTotal,
+	SUM(OT.OrderTotal) OVER(PARTITION BY OT.CustomerID ORDER BY OT.OrderID ASC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS RunningTotal,
 	OT.OrderTotal
 FROM OrderTotalCte OT
 INNER JOIN GameStore.Customers C ON C.CustomerId = OT.CustomerId
-INNER JOIN GameStore.OrderLines OL ON OL.OrderId = OT.OrderId
-WHERE OT.CustomerId = @CustomerId AND
-LOWER(C.FirstName) = CASE @First
+WHERE OT.CustomerId = CASE @CustomerId
+				WHEN -1
+				THEN
+					OT.CustomerId
+				ELSE
+					@CustomerId
+				END
+AND LOWER(C.FirstName) = CASE @First
 				WHEN N'*'
 				THEN
-					C.FirstName
+					LOWER(C.FirstName)
 				ELSE
-					@First
+					LOWER(@First)
 				END
 AND LOWER(C.LastName) = CASE @Last
 				WHEN N'*'
 				THEN
-					C.LastName
+					LOWER(C.LastName)
 				ELSE
-					@Last
+					LOWER(@Last)
 				END
 AND LOWER(C.Email) = CASE @Email
 				WHEN N'*'
 				THEN
-					C.Email
+					LOWER(C.Email)
 				ELSE
-					@Email
+					LOWER(@Email)
 				END
-ORDER BY OT.CustomerId ASC, OT.OrderId ASC, OL.OrderLineId ASC, C.LastName ASC, C.FirstName ASC
+ORDER BY OT.CustomerId ASC, OT.OrderId ASC, C.LastName ASC, C.FirstName ASC
 GO

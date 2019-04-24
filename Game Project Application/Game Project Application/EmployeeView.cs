@@ -42,42 +42,41 @@ namespace Game_Project_Application
             SearchConditions c;
             if (uxCustomerId.Text == "")
             {
-                MessageBox.Show("Please enter a Customer Id.");
+                customerId = -1;
             }
             else
             {
                 customerId = Convert.ToInt32(uxCustomerId.Text);
-
-                if (uxEmail.Text == "")
-                {
-                    email = "*";
-                }
-                else
-                {
-                    email = uxEmail.Text;
-                }
-
-                if (uxLastName.Text == "")
-                {
-                    last = "*";
-                }
-                else
-                {
-                    last = uxLastName.Text;
-                }
-
-                if (uxFirstName.Text == "")
-                {
-                    first = "*";
-                }
-                else
-                {
-                    first = uxFirstName.Text;
-                }
-                c = new SearchConditions(customerId, first, last, email);
-                searchWindow = new ReceiptSearchResults(this, c);
-                searchWindow.ShowDialog();
             }
+            if (uxEmail.Text == "")
+            {
+                email = "*";
+            }
+            else
+            {
+                email = uxEmail.Text;
+            }
+
+            if (uxLastName.Text == "")
+            {
+                last = "*";
+            }
+            else
+            {
+                last = uxLastName.Text;
+            }
+
+            if (uxFirstName.Text == "")
+            {
+                first = "*";
+            }
+            else
+            {
+                first = uxFirstName.Text;
+            }
+            c = new SearchConditions(customerId, first, last, email);
+            searchWindow = new ReceiptSearchResults(this, c);
+            searchWindow.ShowDialog();
         }
 
 

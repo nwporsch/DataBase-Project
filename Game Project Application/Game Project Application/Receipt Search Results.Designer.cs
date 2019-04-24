@@ -34,7 +34,6 @@
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GameCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RunningTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxResults)).BeginInit();
@@ -52,13 +51,12 @@
             this.FirstName,
             this.LastName,
             this.Email,
-            this.GameCount,
             this.RunningTotal,
             this.Total});
             this.uxResults.Location = new System.Drawing.Point(12, 12);
             this.uxResults.Name = "uxResults";
             this.uxResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uxResults.Size = new System.Drawing.Size(795, 432);
+            this.uxResults.Size = new System.Drawing.Size(694, 432);
             this.uxResults.TabIndex = 0;
             // 
             // CustomerId
@@ -87,11 +85,6 @@
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
-            // GameCount
-            // 
-            this.GameCount.HeaderText = "Games Purchased";
-            this.GameCount.Name = "GameCount";
-            // 
             // RunningTotal
             // 
             this.RunningTotal.HeaderText = "Running Total";
@@ -106,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 456);
+            this.ClientSize = new System.Drawing.Size(716, 456);
             this.Controls.Add(this.uxResults);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -125,7 +118,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GameCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn RunningTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
