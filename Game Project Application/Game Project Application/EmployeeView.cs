@@ -10,15 +10,29 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
+    /// <summary>
+    /// EmployeeView allows an employee to look for receipts for a customer based
+    /// off of their customerId, First Name, Last Name, and Email.
+    /// </summary>
     public partial class EmployeeView : Form
     {
-
+        /// <summary>
+        /// A receiptSearchResults associated with the employeeView object for more information go to ReceiptSearchResults.cs
+        /// </summary>
         private ReceiptSearchResults searchWindow;
+
+        /// <summary>
+        /// Constructor for the EmployeeView object.
+        /// </summary>
         public EmployeeView()
         {
             InitializeComponent();
         }
-        //Handles a click event on the Find Receipt Button, Takes given input and creates a new SearchConditions then opens a window that displays the customer that was searched for
+        /// <summary>
+        /// Handles a click event on the Find Receipt Button, Takes given input and creates a new SearchConditions then opens a window that displays the customer that was searched for
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFindReceipt_Click(object sender, EventArgs e)
         {
             string first;
@@ -65,12 +79,24 @@ namespace Game_Project_Application
                 searchWindow.ShowDialog();
             }
         }
-        //Closes the Window
+
+
+        /// <summary>
+        /// Closes the Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFinish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //Handles a TextChange Event on the ReceiptId text box
+
+
+        /// <summary>
+        /// Makes sure only numerical values are allowed in uxReceiptId texbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxReceiptId_TextChanged(object sender, EventArgs e)
         {
             int index = uxCustomerId.SelectionStart;

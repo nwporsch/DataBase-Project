@@ -12,9 +12,13 @@ namespace Game_Project_Application
     public class Game
     {
         /// <summary>
-        /// Game Title
+        /// The title of the game
         /// </summary>
         private string title;
+
+        /// <summary>
+        /// Getter and Setters for title
+        /// </summary>
         public string Title
         {
             get
@@ -27,9 +31,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Game Genre
+        /// The Genre of the game
         /// </summary>
         private string genre;
+
+        /// <summary>
+        /// Getter and Setters for genre
+        /// </summary>
         public string Genre
         {
             get
@@ -41,10 +49,15 @@ namespace Game_Project_Application
                 this.genre = value;
             }
         }
+
         /// <summary>
-        /// Game Price
+        /// The price of the game
         /// </summary>
         private string price;
+
+        /// <summary>
+        /// Getter and Setter for price
+        /// </summary>
         public string Price
         {
             get
@@ -56,10 +69,15 @@ namespace Game_Project_Application
                 this.price = value;
             }
         }
+
         /// <summary>
-        /// Game Condition (new or used)
+        /// The condition of the game. The game can either be new or used.
         /// </summary>
         private string isUsed;
+
+        /// <summary>
+        /// Getter and Setters for isUsed
+        /// </summary>
         public string IsUsed
         {
             get
@@ -71,10 +89,15 @@ namespace Game_Project_Application
                 this.isUsed = value;
             }
         }
+
         /// <summary>
-        /// Game Platform
+        /// The platform for the game
         /// </summary>
         private string platform;
+
+        /// <summary>
+        /// Getter and Setters for platform
+        /// </summary>
         public string Platform
         {
             get
@@ -86,10 +109,15 @@ namespace Game_Project_Application
                 this.platform = value;
             }
         }
+
         /// <summary>
-        /// Game StoreId
+        /// The storeId that holds this store
         /// </summary>
         private int storeId;
+
+        /// <summary>
+        /// Getter and setters for StoreId
+        /// </summary>
         public int StoreId
         {
             get
@@ -101,10 +129,15 @@ namespace Game_Project_Application
                 this.storeId = value;
             }
         }
+
         /// <summary>
-        /// Game GameId
+        /// The identifier for the game in the database
         /// </summary>
         private int gameId;
+
+        /// <summary>
+        /// Getter and setter for gameId
+        /// </summary>
         public int GameId
         {
             get
@@ -116,10 +149,15 @@ namespace Game_Project_Application
                 this.gameId = value;
             }
         }
+
         /// <summary>
-        /// Game Quantity
+        /// The quantity of this game stored in the database.
         /// </summary>
         private int quantity;
+
+        /// <summary>
+        /// Getter and Setter of quantity
+        /// </summary>
         public int Quantity
         {
             get

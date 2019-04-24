@@ -92,9 +92,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order Total
+        /// The sum total of all the orderLines added together
         /// </summary>
         private double total;
+
+        /// <summary>
+        /// Getter and Setters
+        /// </summary>
         public double Total
         {
             get
@@ -107,9 +111,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order First Name
+        /// The Firstname of the customer associated with this order
         /// </summary>
         private string first;
+        
+        /// <summary>
+        /// Getter and Setters to the firstname
+        /// </summary>
         public string First
         {
             get
@@ -121,10 +129,15 @@ namespace Game_Project_Application
                 this.first = value;
             }
         }
+
         /// <summary>
-        /// Order Last Name
+        /// The Lastname of the customer associated with this order
         /// </summary>
         private string last;
+
+        /// <summary>
+        /// Getter and Setters to the last variable
+        /// </summary>
         public string Last
         {
             get
@@ -137,9 +150,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order Email
+        /// Email of the customer associated with this order
         /// </summary>
         private string email;
+
+        /// <summary>
+        /// Getter and Setter for email
+        /// </summary>
         public string Email
         {
             get
@@ -152,9 +169,13 @@ namespace Game_Project_Application
             }
         }
         /// <summary>
-        /// Order Quantity
+        /// The total number of items purchased in this order
         /// </summary>
         private int quantity;
+
+        /// <summary>
+        /// Getter and Setter for quantity
+        /// </summary>
         public int Quantity
         {
             get
@@ -166,10 +187,15 @@ namespace Game_Project_Application
                 this.quantity = value;
             }
         }
+
         /// <summary>
-        /// Order Count
+        /// The number of orderLines in the order.
         /// </summary>
         private int count;
+
+        /// <summary>
+        /// Getter and Setters for count
+        /// </summary>
         public int Count
         {
             get
@@ -228,15 +254,15 @@ namespace Game_Project_Application
         }
 
         /// <summary>
-        /// an order joined with other info, to be displayed
+        /// A constructor for the order object if given all the information
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="first"></param>
-        /// <param name="last"></param>
-        /// <param name="email"></param>
-        /// <param name="runningTotal"></param>
-        /// <param name="total"></param>
+        /// <param name="customerId">The customerId connected to this customer</param>
+        /// <param name="orderId">The orderId associated with this order</param>
+        /// <param name="first">The first name of the customer associated with this order</param>
+        /// <param name="last">The last name of the customer associated with this order</param>
+        /// <param name="email">The email of the customer associated with this order</param>
+        /// <param name="runningTotal">The runningTotal of the order </param>
+        /// <param name="total">The total slaes of the Order</param>
         public Order(int customerId, int orderId, string first, string last, string email, double runningTotal, double total)
         {
             this.CustomerID = customerId;

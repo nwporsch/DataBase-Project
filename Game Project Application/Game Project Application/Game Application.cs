@@ -12,34 +12,76 @@ using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
+
+    /// <summary>
+    /// The main application and allows the user to put in many search conditions to find games or change to different store views in the application
+    /// </summary>
     public partial class GameApplication : Form
     {
-        private StoreView storeView;
-        private SearchResults searchWindow;
-        private EmployeeView receiptLookup;
-        private CustomerInput customerWindow;
-        private Customer customer;
-        private List<string[]> reservedItems;
-        private ArrayList orderList;
 
+        /// <summary>
+        /// The storeView object associated with this GameApplicaiton Object.  For more information please go to StoreView.cs
+        /// </summary>
+        private StoreView storeView;
+
+        /// <summary>
+        /// The SearchResults object associated with this GameApplicaiton Object.  For more information please go to SearchResults.cs
+        /// </summary>
+        private SearchResults searchWindow;
+
+        /// <summary>
+        /// /// <summary>
+        /// The EmployeeView object associated with this GameApplicaiton Object.  For more information please go to EmployeeView.cs
+        /// </summary>
+        /// </summary>
+        private EmployeeView receiptLookup;
+
+        /// <summary>
+        /// /// <summary>
+        /// The CustomerInput object associated with this GameApplicaiton Object.  For more information please go to CustomerInput.cs
+        /// </summary>
+        /// </summary>
+        private CustomerInput customerWindow;
+
+        /// <summary>
+        /// The Customer object associated with this GameApplicaiton Object.  For more information please go to Customer.cs
+        /// </summary>
+        private Customer customer;
+
+        /// <summary>
+        /// A list of the reserved games stored temporarily until the order has been processed.
+        /// </summary>
+        private List<string[]> reservedItems;
+
+        /// <summary>
+        /// Holds a list of the OrderLines temporarily until the transaction has been processed.
+        /// </summary>
+        /// 
+        private ArrayList orderLineList;
+
+        /// <summary>
+        /// Constructor for the GameApplication and the reservedItem list in constructed.
+        /// </summary>
         public GameApplication()
         {
             InitializeComponent();
             reservedItems = new List<string[]>();
         }
+
         /// <summary>
         /// Adds a list of given items to the Receipt text box
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="s">A string representing the game to be added to the receipt</param>
         public void AddItemToReceipt(string[] s)
         {
             uxReceipt.Rows.Add(s);
         }
+ 
         /// <summary>
-        /// 
+        /// Removes the game from the reservedList and adds it back to the searchConditions list
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s">A string array that represents a game</param>
+        /// <returns>A boolean that tells if the item should be added to the searchConditions list</returns>
         public bool AddReserve(string[] s)
         {
             bool removeFromGameList = false;
@@ -74,11 +116,12 @@ namespace Game_Project_Application
 
             return removeFromGameList;
         }
+
         /// <summary>
-        /// 
+        /// Adds an item to the reservedList
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s">A string representing the game to be added to the reserve</param>
+        /// <returns>A boolean that tells the SearchConditions object to the remove the game from the searchConditions list</returns>
         public bool RemoveFromSearch(string[] s)
         {
             bool removeFromGameList = false;
@@ -97,10 +140,11 @@ namespace Game_Project_Application
 
             return removeFromGameList;
         }
+
         /// <summary>
-        /// 
+        /// Removes the given game from the reserved list
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="s">A string array that represents a game.</param>
         public void RemoveReserve(string[] s)
         {
             bool isAdded = false;
@@ -125,6 +169,9 @@ namespace Game_Project_Application
             }
         }
 
+        /// <summary>
+        /// Getter and Setters for customer
+        /// </summary>
         public Customer Customer
         {
             get
@@ -332,7 +379,7 @@ namespace Game_Project_Application
             }
             else
             {
-                orderList = new ArrayList();
+                orderLineList = new ArrayList();
                 foreach (DataGridViewRow r in uxReceipt.Rows)
                 {
 
@@ -348,7 +395,7 @@ namespace Game_Project_Application
                     int storeId = Convert.ToInt32(game[4]);
                     double price = Convert.ToDouble(game[2]);
                     OrderLine orderLine = new OrderLine(title, 1, price, gameId, storeId);
-                    orderList.Add(orderLine);
+                    orderLineList.Add(orderLine);
                 }
 
                 btnFinishTransaction.Enabled = false;
@@ -356,16 +403,18 @@ namespace Game_Project_Application
                 customerWindow.Show();
             }
         }
+
         /// <summary>
         /// Creates an Order
         /// </summary>
         public void CreateOrder()
         {
-            Order order = new Order(customer, orderList);
+            Order order = new Order(customer, orderLineList);
 
             uxReceipt.Rows.Clear();
 
         }
+
         /// <summary>
         /// Opens the EmployeeView Window
         /// </summary>
@@ -378,6 +427,7 @@ namespace Game_Project_Application
             receiptLookup.ShowDialog();
             uxEmployeeView.Enabled = true;
         }
+
         /// <summary>
         /// Opens the StoreView Window
         /// </summary>
@@ -391,13 +441,16 @@ namespace Game_Project_Application
             storeViewToolStripMenuItem.Enabled = true;
         }
 
+        /// <summary>
+        /// Makes sure the transaction button cannot be pressed multiple times while a transaction is being processed.
+        /// </summary>
         public void EnableTransactionButton()
         {
             btnFinishTransaction.Enabled = true;
         }
 
         /// <summary>
-        /// 
+        /// This method makes sure only numerical values are added to uxStoreId textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

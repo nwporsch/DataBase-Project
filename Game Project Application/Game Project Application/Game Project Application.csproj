@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerInput.cs">
       <SubType>Form</SubType>
