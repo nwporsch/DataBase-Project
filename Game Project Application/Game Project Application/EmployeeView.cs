@@ -17,19 +17,20 @@ namespace Game_Project_Application
     public partial class EmployeeView : Form
     {
         /// <summary>
-        /// A receiptSearchResults associated with the employeeView object for more information go to ReceiptSearchResults.cs
+        /// A form which works in tandem with Employee View to show search results.
         /// </summary>
         private ReceiptSearchResults searchWindow;
 
         /// <summary>
-        /// Constructor for the EmployeeView object.
+        /// Constructor for the Employee View form.
         /// </summary>
         public EmployeeView()
         {
             InitializeComponent();
         }
         /// <summary>
-        /// Handles a click event on the Find Receipt Button, Takes given input and creates a new SearchConditions then opens a window that displays the customer that was searched for
+        /// Handles a click event on the Find Receipt Button, Takes given input and creates a new SearchConditions; 
+        /// then opens a window that displays the matching customer's orders and information.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -81,7 +82,7 @@ namespace Game_Project_Application
 
 
         /// <summary>
-        /// Closes the Window
+        /// Button which closes the window.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -92,7 +93,7 @@ namespace Game_Project_Application
 
 
         /// <summary>
-        /// Makes sure only numerical values are allowed in uxReceiptId texbox
+        /// Makes sure only numerical values are allowed in uxCustomerId text box.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

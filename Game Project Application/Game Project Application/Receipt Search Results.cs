@@ -17,8 +17,8 @@ namespace Game_Project_Application
         /// Calls a method in OrderRepository to retrieve orders and their total/running total for a customer,
         /// whose information is passed by the user in EmployeeView.
         /// </summary>
-        /// <param name="ev"></param>
-        /// <param name="o"></param>
+        /// <param name="ev">The Employee View form that this form was initialized by.</param>
+        /// <param name="o">The search conditions needed to find the correct customer(s).</param>
         public ReceiptSearchResults(EmployeeView ev, SearchConditions o)
         {
             this.ev = ev;
