@@ -58,14 +58,18 @@ namespace Game_Project_Application
                             totalSales = k.GetDecimal(k.GetOrdinal("Sales")).ToString();
                             break;
                         }
-                        else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(12) && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
+                        else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
                         {
                             orders = k.GetInt32(k.GetOrdinal("YearlyOrders")).ToString();
                             totalSales = k.GetDecimal(k.GetOrdinal("YearlySales")).ToString();
-                            break;
-                        }
+                        }                                                                                 
                     }
-
+                    if(orders.Equals("") && totalSales.Equals(""))
+                    {
+                        orders = "0";
+                        totalSales = "0";
+                    }
+              
                     k.Close();
 
                     string[] output = { orders, totalSales };
@@ -98,62 +102,62 @@ namespace Game_Project_Application
 
                             s.Append("Month: January\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 2:
                             s.Append("Month: February\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 3:
                             s.Append("Month: March\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 4:
                             s.Append("Month: April\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 5:
                             s.Append("Month: May\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 6:
                             s.Append("Month: June\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 7:
                             s.Append("Month: July\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 8:
                             s.Append("Month: August\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 9:
                             s.Append("Month: September\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 10:
                             s.Append("Month: October\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 11:
                             s.Append("Month: November\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                         case 12:
                             s.Append("Month: December\r\n" +
                                      "Monthly Orders: " + output[0] + "\r\n" +
-                                     "Monthly Sales:  " + output[1] + "\r\n\r\n");
+                                     "Monthly Sales:  $" + output[1] + "\r\n\r\n");
                             break;
                     }
 
@@ -172,7 +176,7 @@ namespace Game_Project_Application
 
                 output = getSalesInfo(storeId, 0, year);
                 s.Append(year + " Yearly Orders: " + output[0] + "\r\n" +
-                         year + " Yearly Sales:  " + output[1]);
+                         year + " Yearly Sales:  $" + output[1]);
             }
 
             this.uxSalesText.Text = s.ToString();
