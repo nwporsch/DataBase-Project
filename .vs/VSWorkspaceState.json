@@ -3,10 +3,11 @@
     "",
     "\\Game Project Application",
     "\\Game Project Application\\Game Project Application",
+    "\\Game Project Application\\Game Project Application\\Documentation",
     "\\Game Project Application\\Game Project Application\\SQL",
     "\\Game Project Application\\Game Project Application\\SQL\\Procedures",
     "\\Game Project Application\\Game Project Application\\SQL\\Tables"
   ],
-  "SelectedNode": "\\Game Project Application\\Game Project Application.sln",
+  "SelectedNode": "\\Game Project Application\\Game Project Application\\SQL\\Tables",
   "PreviewInSolutionExplorer": false
 }
