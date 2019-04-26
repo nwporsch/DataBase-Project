@@ -1,9 +1,0 @@
-﻿IF OBJECT_ID(N'GameStore.Stores') IS NULL
-BEGIN
-   CREATE TABLE GameStore.Stores
-   (
-      StoreId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	  Address NVARCHAR(64) UNIQUE NOT NULL,
-	  City NVARCHAR(64) NOT NULL
-   );
-END;
