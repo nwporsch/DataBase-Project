@@ -410,7 +410,7 @@ namespace Game_Project_Application
         public void CreateOrder()
         {
             Order order = new Order(customer, orderLineList);
-            MessageBox.Show("Thank you for your purchase!\nYour Customer Id is: " + order.CustomerID.ToString() + "\nYour Order Id is: " + order.OrderID.ToString());
+            MessageBox.Show("Thank you, "+ customer.First + " "+ customer.Last + ", " +  "for your purchase!\nYour Customer Id is: " + order.CustomerID.ToString() + "\nYour Order Id is: " + order.OrderID.ToString());
             uxReceipt.Rows.Clear();
 
         }
