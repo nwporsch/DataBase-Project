@@ -405,7 +405,7 @@ namespace Game_Project_Application
         }
 
         /// <summary>
-        /// Creates an Order
+        /// Creates an Order and displays the customer's information and order Id after the order has been placed.
         /// </summary>
         public void CreateOrder()
         {
