@@ -36,45 +36,55 @@ namespace Game_Project_Application
         private string[] getSalesInfo(int storeId, int i, int year)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-            using (var connection = new SqlConnection(connectionString))
+            string[] output = { "", "" };
+            try
             {
-                using (var command = new SqlCommand("GameStore.GetSalesInfo", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("StoreId", storeId);
-                    connection.Open();
-
-                    var k = command.ExecuteReader();
-
-                    string orders = "";
-                    string totalSales = "";
-
-                    while (k.Read())
+                    using (var command = new SqlCommand("GameStore.GetSalesInfo", connection))
                     {
-                        if (k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(i) && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("StoreId", storeId);
+                        connection.Open();
+
+                        var k = command.ExecuteReader();
+
+                        string orders = "";
+                        string totalSales = "";
+
+                        while (k.Read())
                         {
-                            orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
-                            totalSales = k.GetDecimal(k.GetOrdinal("Sales")).ToString();
-                            break;
+                            if (k.GetInt32(k.GetOrdinal("OrderMonth")).Equals(i) && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
+                            {
+                                orders = k.GetInt32(k.GetOrdinal("OrderCount")).ToString();
+                                totalSales = k.GetDecimal(k.GetOrdinal("Sales")).ToString();
+                                break;
+                            }
+                            else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
+                            {
+                                orders = k.GetInt32(k.GetOrdinal("YearlyOrders")).ToString();
+                                totalSales = k.GetDecimal(k.GetOrdinal("YearlySales")).ToString();
+                            }
                         }
-                        else if (i == 0 && k.GetInt32(k.GetOrdinal("OrderYear")).Equals(year))
+                        if (orders.Equals("") && totalSales.Equals(""))
                         {
-                            orders = k.GetInt32(k.GetOrdinal("YearlyOrders")).ToString();
-                            totalSales = k.GetDecimal(k.GetOrdinal("YearlySales")).ToString();
-                        }                                                                                 
-                    }
-                    if(orders.Equals("") && totalSales.Equals(""))
-                    {
-                        orders = "0";
-                        totalSales = "0";
-                    }
-              
-                    k.Close();
+                            orders = "0";
+                            totalSales = "0";
+                        }
 
-                    string[] output = { orders, totalSales };
-                    return output;
+                        k.Close();
+
+                        output[0] = orders;
+                        output[1] = totalSales;
+                        return output;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
+                return output;
             }
         }
 

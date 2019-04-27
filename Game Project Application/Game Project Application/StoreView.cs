@@ -71,106 +71,116 @@ namespace Game_Project_Application
         private string[] getStoreInfo(int id)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.GetStoreInfo", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("StoreId", id);
-                    connection.Open();
-
-                    var k = command.ExecuteReader();
-
-
-                    string address ="";
-                    string city ="";
-                    string state ="";
-                    string weekdayHours = "";
-                    string weekendHours = "";
-                    string numOfGames = "";
-                    string totalSales = "";
-                    int hours;
-                    int minute;
-                    string m = "";
-                    TimeSpan time;
-
-                    while (k.Read())
+                    using (var command = new SqlCommand("GameStore.GetStoreInfo", connection))
                     {
-             
-                        address = k.GetString(k.GetOrdinal("Address"));
-                        city = k.GetString(k.GetOrdinal("City"));
-                        state = k.GetString(k.GetOrdinal("State"));
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("StoreId", id);
+                        connection.Open();
 
-                        if(k.GetString(k.GetOrdinal("Description")).Equals("Monday to Friday Hours"))
+                        var k = command.ExecuteReader();
+
+
+                        string address = "";
+                        string city = "";
+                        string state = "";
+                        string weekdayHours = "";
+                        string weekendHours = "";
+                        string numOfGames = "";
+                        string totalSales = "";
+                        int hours;
+                        int minute;
+                        string m = "";
+                        TimeSpan time;
+
+                        while (k.Read())
                         {
 
-                            time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
-                            hours = Convert.ToInt32(time.TotalHours);
-                            minute = ( hours * 60) - Convert.ToInt32(time.TotalMinutes);
+                            address = k.GetString(k.GetOrdinal("Address"));
+                            city = k.GetString(k.GetOrdinal("City"));
+                            state = k.GetString(k.GetOrdinal("State"));
 
-                            if (minute < 10)
+                            if (k.GetString(k.GetOrdinal("Description")).Equals("Monday to Friday Hours"))
                             {
-                                m = "0" + minute.ToString();
+
+                                time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
+                                hours = Convert.ToInt32(time.TotalHours);
+                                minute = (hours * 60) - Convert.ToInt32(time.TotalMinutes);
+
+                                if (minute < 10)
+                                {
+                                    m = "0" + minute.ToString();
+                                }
+                                else
+                                {
+                                    m = minute.ToString();
+                                }
+
+                                if (hours < 12)
+                                {
+
+
+                                    weekdayHours = hours.ToString() + ":" + m.ToString() + " AM";
+                                }
+                                else
+                                {
+
+                                    weekdayHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
+                                }
+
                             }
-                            else
+                            else if (k.GetString(k.GetOrdinal("Description")).Equals("Weekend Hours"))
                             {
-                                m = minute.ToString();
+                                time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
+                                hours = Convert.ToInt32(time.TotalHours);
+                                minute = (hours * 60) - Convert.ToInt32(time.TotalMinutes);
+
+                                if (minute < 10)
+                                {
+                                    m = "0" + minute.ToString();
+                                }
+                                else
+                                {
+                                    m = minute.ToString();
+                                }
+
+                                if (hours < 12)
+                                {
+
+                                    weekendHours = hours.ToString() + ":" + m.ToString() + " AM";
+                                }
+                                else
+                                {
+
+                                    weekendHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
+                                }
                             }
 
-                            if (hours < 12)
-                            {
-                                
 
-                                weekdayHours = hours.ToString() + ":" + m.ToString() + " AM";
-                            }
-                            else
-                            {
-                                
-                                weekdayHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
-                            }
+                            numOfGames = k.GetInt32(k.GetOrdinal("GameCount")).ToString();
+                            totalSales = "$" + k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
 
                         }
-                        else if(k.GetString(k.GetOrdinal("Description")).Equals("Weekend Hours"))
-                        {
-                            time = k.GetTimeSpan(k.GetOrdinal("StartingTime"));
-                            hours = Convert.ToInt32(time.TotalHours);
-                            minute = (hours * 60) - Convert.ToInt32(time.TotalMinutes);
 
-                            if (minute < 10)
-                            {
-                                m = "0" + minute.ToString();
-                            }
-                            else
-                            {
-                                m = minute.ToString();
-                            }
-
-                            if (hours < 12)
-                            {
-
-                                weekendHours = hours.ToString() + ":" + m.ToString() + " AM";
-                            }
-                            else
-                            {
-
-                                weekendHours = (hours % 12).ToString() + ":" + m.ToString() + " PM";
-                            }
-                        }
+                        string location = address + ", " + city + ", " + state;
 
 
-                        numOfGames = k.GetInt32(k.GetOrdinal("GameCount")).ToString();
-                        totalSales = "$" + k.GetDecimal(k.GetOrdinal("TotalSales")).ToString();
+                        k.Close();
 
+                        string[] output = { location, weekdayHours, weekendHours, numOfGames, totalSales };
+                        return output;
                     }
-
-                    string location = address + ", " + city + ", " + state;
-
-                    
-                    k.Close();
-
-                    string[] output = { location, weekdayHours, weekendHours, numOfGames, totalSales };
-                    return output;
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
+                string[] output = { "", "", "", "", "" };
+                return output;
+                
             }
         }
 
