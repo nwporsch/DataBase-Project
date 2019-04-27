@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.UpdateStoreQuantities
+﻿--Update the quantities of products to reflect when a product has been ordered. A product with quantity = 0
+--should not show up in search results, and cannot be added to an order.
+CREATE OR ALTER PROCEDURE GameStore.UpdateStoreQuantities
 	@OrderLineId INT,
 	@GameStoreInfoId INT,
 	@Quantity INT

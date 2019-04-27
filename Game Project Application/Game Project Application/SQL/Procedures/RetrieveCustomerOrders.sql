@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.RetrieveCustomerOrders
+﻿--Gets the total sales information for a given customer, including how much a customer has spent in each order,
+--and a running total of their overall spending
+CREATE OR ALTER PROCEDURE GameStore.RetrieveCustomerOrders
 @CustomerId INT,
 @First NVARCHAR(20),
 @Last NVARCHAR(20),

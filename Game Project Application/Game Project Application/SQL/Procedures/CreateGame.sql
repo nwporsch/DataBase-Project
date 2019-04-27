@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.CreateGame
+﻿--Adds a new game to the database
+CREATE OR ALTER PROCEDURE GameStore.CreateGame
 	@StoreId INT,
 	@Title NVARCHAR(64),
 	@UnitPrice DECIMAL(4,2),

@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.CreateCustomer
+﻿--Creates and adds a new customer to the database. 
+--Takes the name, email, and address information from the application and adds it to the Customers table in the database
+CREATE OR ALTER PROCEDURE GameStore.CreateCustomer
 	@FirstName NVARCHAR(20),
 	@LastName NVARCHAR(20),
 	@Email NVARCHAR(64),

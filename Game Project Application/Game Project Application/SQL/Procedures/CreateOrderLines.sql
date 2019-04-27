@@ -1,4 +1,6 @@
-﻿
+﻿--Creates or updates order lines in the database. When a new game is added to the order, the procedure either adds it to the order
+--if another copy of the game is not in the order, or, if there aldready exists a copy of the game in the order, the quantity 
+--ordered is updated instead. 
 CREATE OR ALTER PROCEDURE GameStore.CreateOrderLines
 	@OrderId INT,
 	@OrderLineId INT,

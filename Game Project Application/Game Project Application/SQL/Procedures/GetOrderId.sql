@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.GetOrderId
+﻿--Selects a given order from the database
+CREATE OR ALTER PROCEDURE GameStore.GetOrderId
 	@CustomerId INT
 AS
 

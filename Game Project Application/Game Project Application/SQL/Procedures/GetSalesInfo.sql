@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.GetSalesInfo
+﻿--Retireves the sales information of a store. The information is displayed per month per year, 
+--and gives how many sales made in a year and for how much
+CREATE OR ALTER PROCEDURE GameStore.GetSalesInfo
 	@StoreId INT
 AS
 

@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.RetrieveGames
+﻿--returns all games that match a given set of criteria. Used for search results. If an entry is blank,
+--then returns all possible values for said entry (i.e. if no title selected, return all titles that still
+--fall under the other criteria, and if no criteria is specified, return everything.
+CREATE OR ALTER PROCEDURE GameStore.RetrieveGames
 @Title NVARCHAR(128),
 @Genre NVARCHAR(128),
 @Platform NVARCHAR(128),

@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.GetStoreInfo
+﻿--Selects a store based on a given storeId and displays the information about a store, such as its
+--address, hours of operation, and its current stock and sales total
+CREATE OR ALTER PROCEDURE GameStore.GetStoreInfo
 	@StoreId INT
 AS
 

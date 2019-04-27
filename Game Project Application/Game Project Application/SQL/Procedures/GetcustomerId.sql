@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE GameStore.GetCustomerId
+﻿--Selects a given customer from the database
+CREATE OR ALTER PROCEDURE GameStore.GetCustomerId
 	@Email NVARCHAR(64),
 	@FirstName NVARCHAR(64),
 	@LastName NVARCHAR(64)
