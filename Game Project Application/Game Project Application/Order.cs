@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
@@ -218,38 +219,45 @@ namespace Game_Project_Application
             this.CustomerID = c.CustomerId;
             this.OrderList = orderList;
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.CreateOrder", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("CustomerId", this.CustomerID);
-                    connection.Open();
-                    
-                    int k = command.ExecuteNonQuery();
+                    using (var command = new SqlCommand("GameStore.CreateOrder", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("CustomerId", this.CustomerID);
+                        connection.Open();
 
-                    connection.Close();
+                        int k = command.ExecuteNonQuery();
+
+                        connection.Close();
+                    }
+
+                    using (var command = new SqlCommand("GameStore.GetOrderId", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("CustomerId", c.CustomerId);
+                        connection.Open();
+
+                        var k = command.ExecuteReader();
+                        k.Read();
+                        orderId = k.GetInt32(k.GetOrdinal("OrderId"));
+                        k.Close();
+                    }
                 }
 
-                using (var command = new SqlCommand("GameStore.GetOrderId", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("CustomerId", c.CustomerId);
-                    connection.Open();
 
-                    var k = command.ExecuteReader();
-                    k.Read();
-                    orderId = k.GetInt32(k.GetOrdinal("OrderId"));
-                    k.Close();
+                foreach (OrderLine orderLine in orderList)
+                {
+                    orderLine.OrderID = orderId;
+                    orderLine.SendToDatabase();
+                    total += orderLine.Quantity * orderLine.Price;
                 }
             }
-
-            foreach (OrderLine orderLine in orderList)
+            catch (Exception)
             {
-                orderLine.OrderID = orderId;
-                orderLine.SendToDatabase();
-                total += orderLine.Quantity * orderLine.Price;
+                MessageBox.Show("Unable to connect to database.");
             }
         }
 

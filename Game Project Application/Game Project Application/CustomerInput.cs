@@ -44,7 +44,6 @@ namespace Game_Project_Application
             string address;
             string city;
             string state;
-            bool foundCustomerId = false;
             bool legitCustomer = false;
             Customer c;
             if (uxEmail.Text == "")
@@ -61,51 +60,48 @@ namespace Game_Project_Application
                 state = uxState.Text;
                 c = new Customer(first, last, email, address, city, state);
                 string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-
-                using (var connection = new SqlConnection(connectionString))
+                try
                 {
-                    using (var command = new SqlCommand("GameStore.CreateCustomer", connection))
+                    using (var connection = new SqlConnection(connectionString))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("FirstName", c.First);
-                        command.Parameters.AddWithValue("LastName", c.Last);
-                        command.Parameters.AddWithValue("Email", c.Email);
-                        command.Parameters.AddWithValue("Address", c.Address);
-                        command.Parameters.AddWithValue("City", c.City);
-                        command.Parameters.AddWithValue("State", c.State);
-                        connection.Open();
-
-                        try
+                        using (var command = new SqlCommand("GameStore.CreateCustomer", connection))
                         {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.AddWithValue("FirstName", c.First);
+                            command.Parameters.AddWithValue("LastName", c.Last);
+                            command.Parameters.AddWithValue("Email", c.Email);
+                            command.Parameters.AddWithValue("Address", c.Address);
+                            command.Parameters.AddWithValue("City", c.City);
+                            command.Parameters.AddWithValue("State", c.State);
+                            connection.Open();
+
                             int k = command.ExecuteNonQuery();
                             connection.Close();
                             if (k != 0)
                             {
                                 MessageBox.Show("Added to our system!");
                             }
-                        }
-                        catch(Exception)
-                        {
+
+
+
                             legitCustomer = getCustomer(c);
-                            foundCustomerId = true;
+
+
                         }
 
-                        if (!foundCustomerId)
+                        this.Close();
+                        if (legitCustomer)
                         {
-                            legitCustomer = getCustomer(c);
+                            ga.CreateOrder();
                         }
 
-                        
+                        ga.EnableTransactionButton();
+
                     }
-
-                    this.Close();
-                    if (legitCustomer)
-                    {
-                        ga.CreateOrder();
-                    }
-
-                    ga.EnableTransactionButton();
-
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Unable to connect to database.");
                 }
             }
         }
@@ -117,34 +113,42 @@ namespace Game_Project_Application
         private bool getCustomer(Customer c)
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.GetCustomerId", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("Email", c.Email);
-                    command.Parameters.AddWithValue("FirstName", c.First);
-                    command.Parameters.AddWithValue("LastName", c.Last);
-                    connection.Open();
-
-                    var k = command.ExecuteReader();
-                    k.Read();
-                    int cid = k.GetInt32(k.GetOrdinal("CustomerId"));
-                    k.Close();
-                    c.CustomerId = cid;
-
-                    if(c.CustomerId > 0)
+                    using (var command = new SqlCommand("GameStore.GetCustomerId", connection))
                     {
-                        ga.Customer = c;
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Email already exists with a different user.");
-                        this.Close();
-                        return false;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("Email", c.Email);
+                        command.Parameters.AddWithValue("FirstName", c.First);
+                        command.Parameters.AddWithValue("LastName", c.Last);
+                        connection.Open();
+
+                        var k = command.ExecuteReader();
+                        k.Read();
+                        int cid = k.GetInt32(k.GetOrdinal("CustomerId"));
+                        k.Close();
+                        c.CustomerId = cid;
+
+                        if (c.CustomerId > 0)
+                        {
+                            ga.Customer = c;
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Email already exists with a different user.");
+                            this.Close();
+                            return false;
+                        }
                     }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
+                return false;
             }
         }
     }

@@ -405,12 +405,12 @@ namespace Game_Project_Application
         }
 
         /// <summary>
-        /// Creates an Order
+        /// Creates an Order and displays the customer's information and order Id after the order has been placed.
         /// </summary>
         public void CreateOrder()
         {
             Order order = new Order(customer, orderLineList);
-
+            MessageBox.Show("Thank you, "+ customer.First + " "+ customer.Last + ", " +  "for your purchase!\nYour Customer Id is: " + order.CustomerID.ToString() + "\nYour Order Id is: " + order.OrderID.ToString());
             uxReceipt.Rows.Clear();
 
         }

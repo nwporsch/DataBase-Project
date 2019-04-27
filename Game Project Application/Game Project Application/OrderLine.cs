@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Game_Project_Application
 {
@@ -165,28 +166,35 @@ namespace Game_Project_Application
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
             GetOrderLineId();
 
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.CreateOrderLines", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    //OrderId GameId Quantity Unit Price
-                    command.Parameters.AddWithValue("OrderId", orderId);
-                    command.Parameters.AddWithValue("OrderLineId", orderLineId);
-                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
-                    command.Parameters.AddWithValue("Quantity", quantity);
-                    command.Parameters.AddWithValue("UnitPrice", price);
-                    connection.Open();
+                    using (var command = new SqlCommand("GameStore.CreateOrderLines", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        //OrderId GameId Quantity Unit Price
+                        command.Parameters.AddWithValue("OrderId", orderId);
+                        command.Parameters.AddWithValue("OrderLineId", orderLineId);
+                        command.Parameters.AddWithValue("GameStoreInfoId", gameId);
+                        command.Parameters.AddWithValue("Quantity", quantity);
+                        command.Parameters.AddWithValue("UnitPrice", price);
+                        connection.Open();
 
-                    int k = command.ExecuteNonQuery();
-                    
-                    connection.Close();
+                        int k = command.ExecuteNonQuery();
+
+                        connection.Close();
 
 
+                    }
                 }
-            }
 
-            UpdateQuantities();
+                UpdateQuantities();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
+            }
         }
 
 
@@ -196,24 +204,31 @@ namespace Game_Project_Application
         private void UpdateQuantities()
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
-            GetOrderLineId();
-
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.UpdateStoreQuantities", connection))
+                GetOrderLineId();
+
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("OrderLineId", orderLineId);
-                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
-                    command.Parameters.AddWithValue("Quantity", quantity);
-                    connection.Open();
+                    using (var command = new SqlCommand("GameStore.UpdateStoreQuantities", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("OrderLineId", orderLineId);
+                        command.Parameters.AddWithValue("GameStoreInfoId", gameId);
+                        command.Parameters.AddWithValue("Quantity", quantity);
+                        connection.Open();
 
-                    int k = command.ExecuteNonQuery();
-                    
-                    connection.Close();
+                        int k = command.ExecuteNonQuery();
+
+                        connection.Close();
 
 
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
             }
         }
 
@@ -225,31 +240,38 @@ namespace Game_Project_Application
         {
             string connectionString = "Server=mssql.cs.ksu.edu;Database=cis560_team21; Integrated Security=true";
 
-            using (var connection = new SqlConnection(connectionString))
+            try
             {
-                using (var command = new SqlCommand("GameStore.GetOrderLineId", connection))
+                using (var connection = new SqlConnection(connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    //OrderId GameId Quantity Unit Price
-                    command.Parameters.AddWithValue("OrderId", orderId);
-                    command.Parameters.AddWithValue("GameStoreInfoId", gameId);
-                    connection.Open();
-
-                    var reader = command.ExecuteReader();
-
-                    if (reader.Read())
+                    using (var command = new SqlCommand("GameStore.GetOrderLineId", connection))
                     {
-                        orderLineId = reader.GetInt32(reader.GetOrdinal("OrderLineId"));
+                        command.CommandType = CommandType.StoredProcedure;
+                        //OrderId GameId Quantity Unit Price
+                        command.Parameters.AddWithValue("OrderId", orderId);
+                        command.Parameters.AddWithValue("GameStoreInfoId", gameId);
+                        connection.Open();
+
+                        var reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            orderLineId = reader.GetInt32(reader.GetOrdinal("OrderLineId"));
+                        }
+                        else
+                        {
+                            orderLineId = -1;
+                        }
+
+                        connection.Close();
+
+
                     }
-                    else
-                    {
-                        orderLineId = -1;
-                    }
-
-                    connection.Close();
-
-
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unable to connect to database.");
             }
         }
 
