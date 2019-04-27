@@ -52,9 +52,12 @@ namespace Game_Project_Application
                 if(output[4].Length == 0)
                 {
                     s = "Please enter a correct store Id.";
+                    MessageBox.Show(s);
                 }
-            
-                MessageBox.Show(s);
+                else if (!output[4].Equals("-1")){
+                    MessageBox.Show(s);
+                }
+                
             }
             else
             {
@@ -178,7 +181,7 @@ namespace Game_Project_Application
             catch (Exception)
             {
                 MessageBox.Show("Unable to connect to database.");
-                string[] output = { "", "", "", "", "" };
+                string[] output = { "", "", "", "", "-1" };
                 return output;
                 
             }

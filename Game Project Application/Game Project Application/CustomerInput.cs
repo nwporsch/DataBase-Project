@@ -148,6 +148,7 @@ namespace Game_Project_Application
             catch (Exception)
             {
                 MessageBox.Show("Unable to connect to database.");
+                return false;
             }
         }
     }

@@ -44,7 +44,6 @@ C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Pr
 C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
 C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
 C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SearchResults.resources
-C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
 C:\Users\Mitchell\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreApplication.resources
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe.config
 C:\Users\Jacob\Source\Repos\DataBase-Project\Game Project Application\Game Project Application\bin\Debug\Game Project Application.exe
@@ -325,3 +324,6 @@ U:\Data Bases\Project Final Version\Game Project Application\Game Project Applic
 U:\Data Bases\Project Final Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.csproj.CopyComplete
 U:\Data Bases\Project Final Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.exe
 U:\Data Bases\Project Final Version\Game Project Application\Game Project Application\obj\Debug\Game Project Application.pdb
+C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.GameApplication.resources
+C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.SalesInformation.resources
+C:\Users\porsc\Desktop\College Stuff\Semester 2\Databases\Project\Game Project Application\Game Project Application\obj\Debug\Game_Project_Application.StoreView.resources
